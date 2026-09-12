@@ -1299,6 +1299,50 @@
     .reveal { transition: none; opacity: 1; transform: none; }
   }
 </style>
+
+<style id="hoy-visual-balance">
+  /* HOY: light neutral break after the black hero */
+  #hoy.section-dark {
+    background: #F1F3F5 !important;
+    color: #0B132B !important;
+    border-bottom-color: rgba(11, 19, 43, 0.10) !important;
+  }
+  #hoy .eyebrow {
+    color: #2D5BFF !important;
+  }
+  #hoy .eyebrow::before {
+    background: #2D5BFF !important;
+  }
+  #hoy .section-head h2 {
+    color: #0B132B !important;
+  }
+  #hoy .head-sub {
+    color: #536071 !important;
+  }
+  #hoy .progression-track::before {
+    background: linear-gradient(90deg, #2D5BFF 0%, #D4E71F 100%) !important;
+    opacity: 0.55 !important;
+  }
+  #hoy .prog-step {
+    background: #0C1018 !important;
+    border: 1px solid rgba(11, 19, 43, 0.10) !important;
+    box-shadow: 0 14px 34px rgba(11, 19, 43, 0.10);
+  }
+  #hoy .prog-step:hover {
+    transform: translateY(-4px);
+    border-color: rgba(45, 91, 255, 0.45) !important;
+    box-shadow: 0 18px 40px rgba(11, 19, 43, 0.14);
+  }
+  #hoy .prog-marker {
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+  #hoy .prog-title {
+    color: #FFFFFF !important;
+  }
+  #hoy .prog-desc {
+    color: #D6DEEC !important;
+  }
+</style>
 <link rel="stylesheet" href="/assets/nav-unified.css">
 <script defer src="/assets/nav-unified.js"></script>
 </head>
@@ -1646,11 +1690,33 @@ Entender el contexto, hacer las preguntas correctas y conectar negocio, datos y 
 <section class="section-light" id="en-movimiento">
 <div class="wrap">
 <div class="section-head reveal in-view">
-<p class="eyebrow" id="movementEyebrow">EN MOVIMIENTO</p>
-<h2 id="movementHeadline">También aprendo estando donde ocurren las conversaciones.</h2>
-<p class="head-sub" id="movementIntro">Eventos, comunidades y espacios donde sigo explorando cómo evolucionan los datos, la tecnología, los negocios y las industrias que me interesan.</p>
+<p class="eyebrow" id="movementEyebrow">Beyond the Desk</p>
+<h2 id="movementHeadline">Experiencias, ideas y aprendizaje</h2>
+<p class="head-sub" id="movementIntro">Busco espacios que amplíen mi forma de entender el negocio, los datos y la tecnología. Conversaciones, experiencias y comunidades que me ayuden a descubrir nuevas perspectivas y convertirlas en mejores decisiones.</p>
 </div>
-<div class="gallery-mosaic reveal in-view" id="movementGallery" aria-live="polite"></div>
+<div class="gallery-mosaic reveal in-view" id="movementGallery" aria-live="polite"><div class="mosaic-left">
+      <div class="photo-frame featured-frame">
+        <div class="photo-caption" style="border-top:0;">
+          <div class="photo-meta">
+            <span class="photo-event">Aprender también es cambiar de perspectiva</span>
+            <span class="photo-loc mono">Formación · Mexico · 2026</span>
+          </div>
+          <p class="photo-note">El Master Internet Business de ISDI ha sido una oportunidad para ampliar mi forma de entender la tecnología: no solo desde los datos y la analítica, sino desde estrategia, producto, negocio y transformación. Me interesa especialmente ese punto donde distintas disciplinas se encuentran y permiten formular mejores preguntas antes de construir soluciones.</p>
+        </div>
+      </div></div><div class="mosaic-right">
+      <div class="photo-frame">
+        <div class="photo-caption" style="border-top:0;">
+          <div class="photo-meta">
+            <span class="photo-event">Release Before Ready</span>
+            <span class="photo-loc mono">Comunidad/Aprendizaje · Mexico · 2026</span>
+          </div>
+          <p class="photo-note">Las grandes ideas no tienen por qué ser perfectas; necesitan ser puestas a prueba.
+
+Tuve la oportunidad de participar en el hackathon Release Before Ready de 500, rodeado de personas increíblemente talentosas que creaban, experimentaban y compartían ideas. 
+
+Al trabajar en los ámbitos de ciencia de datos, analítica e IA, me encantó la mentalidad detrás de la experiencia: construir, probar, aprender e iterar.</p>
+        </div>
+      </div></div></div>
 </div>
 </section>
 <!-- ============ 10. MI FORMA DE VERLO (DARK #0B132B) ============ -->
@@ -1688,7 +1754,7 @@ Los datos pueden mostrar patrones y la tecnología puede acelerar soluciones. Pe
 <script>
 
 /* ================= EN MOVIMIENTO — contenido desde Decap CMS ================= */
-var movementData = null;
+var movementData = {"eyebrow_es": "Beyond the Desk", "eyebrow_en": "Beyond the Desk", "headline_es": "Experiencias, ideas y aprendizaje", "headline_en": "Experiences, ideas, and learning", "intro_es": "Busco espacios que amplíen mi forma de entender el negocio, los datos y la tecnología. Conversaciones, experiencias y comunidades que me ayuden a descubrir nuevas perspectivas y convertirlas en mejores decisiones.", "intro_en": "I seek spaces that broaden my understanding of business, data, and technology, conversations, experiences, and communities that help me discover new perspectives and turn them into better decisions.", "items": [{"description_en": "The Master Internet Business at ISDI has helped me broaden the way I think about technology—not only through data and analytics, but also through strategy, product, business and transformation. I am especially interested in the point where different disciplines meet and help us ask better questions before building solutions.", "type_en": "Learning", "title_en": "Learning also means changing perspective", "description_es": "El Master Internet Business de ISDI ha sido una oportunidad para ampliar mi forma de entender la tecnología: no solo desde los datos y la analítica, sino desde estrategia, producto, negocio y transformación. Me interesa especialmente ese punto donde distintas disciplinas se encuentran y permiten formular mejores preguntas antes de construir soluciones.", "location_en": "Mexico", "type_es": "Formación", "title_es": "Aprender también es cambiar de perspectiva", "location_es": "Mexico", "image": "/uploads/1778297999662.jpg", "year": "2026"}, {"description_en": "Great ideas don’t need to be perfect. They need to be tested.\n\nI had the opportunity to join Release Before Ready Hackathon by 500, surrounded by incredibly talented people building, experimenting, and sharing ideas.\n\nWorking across Data Science, Analytics & AI, I loved the mindset behind the experience: build, test, learn, and iterate.", "type_en": "Comunidad ", "title_en": "Release Before Ready", "description_es": "Las grandes ideas no tienen por qué ser perfectas; necesitan ser puestas a prueba.\n\nTuve la oportunidad de participar en el hackathon Release Before Ready de 500, rodeado de personas increíblemente talentosas que creaban, experimentaban y compartían ideas. \n\nAl trabajar en los ámbitos de ciencia de datos, analítica e IA, me encantó la mentalidad detrás de la experiencia: construir, probar, aprender e iterar.", "location_en": "México", "type_es": "Comunidad/Aprendizaje", "title_es": "Release Before Ready", "location_es": "Mexico", "image": "/uploads/rbr.jpg", "year": "2026"}]};
 
 function movementText(item, base) {
   if (!item) return '';
@@ -1745,10 +1811,16 @@ function renderMovement() {
 }
 
 function loadMovement() {
+  // Render embedded CMS content first so the section never appears empty.
+  renderMovement();
+  // Then refresh from Decap's JSON; if this request fails, the embedded content stays visible.
   fetch('/content/en-movimiento.json', { cache: 'no-store' })
     .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
     .then(function(data) { movementData = data; renderMovement(); })
-    .catch(function(err) { console.error('No se pudo cargar En movimiento:', err); });
+    .catch(function(err) {
+      console.error('No se pudo refrescar Beyond the Desk:', err);
+      renderMovement();
+    });
 }
 
 loadMovement();

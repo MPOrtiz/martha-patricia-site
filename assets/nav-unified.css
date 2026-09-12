@@ -1,3 +1,41 @@
+/* Shared desktop header typography and sizing */
+.nav {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+.nav-inner {
+  height: 72px !important;
+}
+.nav-links {
+  gap: 30px !important;
+}
+.nav-links > a.nav-link,
+.nav-dropdown-trigger,
+.mp-about-trigger {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+.nav-links > a.nav-link.is-active,
+.nav-dropdown-trigger.is-active,
+.mp-about-trigger.is-active {
+  font-weight: 600 !important;
+}
+.nav-links .lang-toggle,
+.nav-links .lang-toggle-text {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace !important;
+  font-size: 0.78rem !important;
+}
+.nav-links .btn,
+.nav-links .btn-nav-cta,
+.nav-links .btn-nav-contact {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+
 /* Unified navigation behavior across every page */
 .nav-dropdown, .mp-about-dropdown { position: relative; display: flex; align-items: center; }
 .nav-dropdown-trigger, .mp-about-trigger {

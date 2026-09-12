@@ -1,0 +1,2064 @@
+<!DOCTYPE html><html lang="es" style="width: 100%; min-height: 100%; position: relative;" class="stitch-anim-fade-in"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Martha Patricia Ortiz — Data Science · Analytics · Strategy</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0B132B;
+    --bg-dark-sub: #0E1A3A;
+    --bg-footer: #080E21;
+    --bg-light: #F4F5F7;
+    --bg-light-panel: #FAFAF7;
+    --border-light: rgba(11, 19, 43, 0.10);
+    --border-light-strong: rgba(11, 19, 43, 0.16);
+    --lime: #D4E71F;
+    --lime-hover: #E3F52D;
+    --blue: #2D5BFF;
+    --blue-dim: #1E3A7A;
+    --text-dark: #0B132B;
+    --text-muted: #5A6679;
+    --text-light: #FFFFFF;
+    --text-light-muted: #D0E0F0;
+    --text-light-faint: #8894AB;
+    --line-dark: rgba(255, 255, 255, 0.09);
+    --line-dark-strong: rgba(255, 255, 255, 0.16);
+    --maxw: 1140px;
+  }
+
+  /* Reset & Normal Document Flow (No overflow: hidden on html/body) */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--bg-dark);
+  }
+  body {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  #page {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.025em; }
+  .mono { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; }
+  :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 4px; }
+
+  /* Universal Container */
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 1. HEADER (Light Warm-Neutral #F4F5F7) */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 70;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid rgba(11, 19, 43, 0.12);
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .nav.nav-scrolled {
+    box-shadow: 0 4px 20px rgba(11, 19, 43, 0.08);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: opacity .2s ease;
+  }
+  .logo:hover { opacity: 0.85; }
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: conic-gradient(from 210deg, #2D5BFF, #D4E71F 55%, #2D5BFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    color: #0B132B;
+    box-shadow: 0 2px 6px rgba(11, 19, 43, 0.12);
+    position: relative;
+  }
+  .logo-mark::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 1px solid rgba(11, 19, 43, 0.12);
+    border-radius: 9px;
+    pointer-events: none;
+  }
+  .logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-size: 1.0rem;
+    color: var(--text-dark);
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #5A6679;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+    text-decoration: none;
+  }
+  .nav-links a.nav-link:hover {
+    color: var(--text-dark);
+  }
+  .nav-links a.nav-link.is-active {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+  .nav-links a.nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--lime);
+    border-radius: 2px;
+  }
+
+  /* Lang Toggle */
+  .lang-toggle-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-dark);
+    background: transparent;
+    border: 1px solid rgba(11, 19, 43, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px 8px;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    user-select: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .lang-toggle-text:hover {
+    background-color: rgba(11, 19, 43, 0.05);
+  }
+  .lang-toggle-text .lang-opt {
+    color: #7D8899;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .lang-toggle-text .lang-opt.active {
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+  .lang-toggle-text .lang-sep { color: #C0C7D2; }
+
+  /* Nav CTA Button */
+  .btn-nav-cta {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 700;
+    padding: 9px 18px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--lime);
+    color: var(--text-dark);
+    border: 1px solid rgba(11, 19, 43, 0.08);
+    box-shadow: 0 2px 8px rgba(212, 231, 31, 0.28);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-nav-cta:hover {
+    background-color: var(--lime-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 231, 31, 0.38);
+  }
+  .btn-nav-cta .cta-arrow {
+    display: inline-block;
+    font-size: 0.95rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .btn-nav-cta:hover .cta-arrow {
+    transform: translate(2px, -2px);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--text-dark);
+    transition: transform .3s ease, opacity .3s ease;
+  }
+
+  @media (max-width: 860px) {
+    .nav-links {
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--bg-light);
+      border-bottom: 1px solid rgba(11, 19, 43, 0.12);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(11, 19, 43, 0.08);
+      transition: max-height .35s ease;
+    }
+    .nav-links.open { max-height: 480px; }
+    .nav-links a.nav-link { width: 100%; padding: 14px 28px; border-bottom: 1px solid rgba(11, 19, 43, 0.06); }
+    .nav-links a.nav-link.is-active::after { display: none; }
+    .nav-links .lang-toggle-text { margin: 16px 28px; }
+    .nav-links .btn-nav-cta { margin: 0 28px 20px; }
+    .nav-toggle { display: flex; }
+  }
+
+  /* 2. HERO SECTION (Edge-to-Edge Deep Navy #0B132B) */
+  .hero {
+    position: relative;
+    width: 100%;
+    background: radial-gradient(circle at 82% 42%, #142554 0%, #0B132B 65%);
+    padding: 130px 0 65px;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  #heroCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+    max-width: 780px;
+  }
+  .hero-inner a, .hero-inner button { pointer-events: auto; }
+
+  .hero-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lime);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .hero-label::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: var(--lime);
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  /* Thesis Triad Headline */
+  .hero-thesis-triad {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.3rem, 4.4vw, 3.5rem);
+    line-height: 1.14;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    margin-bottom: 22px;
+  }
+  .hero-thesis-triad .thesis-line {
+    display: block;
+  }
+  .hero-thesis-triad .thesis-line.highlight {
+    color: var(--lime);
+  }
+
+  .hero-identity {
+    margin-bottom: 24px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: inline-block;
+  }
+  .hero-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    color: #FFFFFF;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .hero-role {
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    color: #A3B3D1;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  /* Buttons */
+  .btn {
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--lime);
+    color: #0B132B;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 16px rgba(212, 231, 31, 0.26);
+  }
+  .btn-primary:hover {
+    background: var(--lime-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 231, 31, 0.36);
+  }
+  .btn-ghost {
+    border: 1px solid rgba(45, 91, 255, 0.55);
+    color: #FFFFFF;
+    background: rgba(45, 91, 255, 0.10);
+  }
+  .btn-ghost:hover {
+    border-color: var(--lime);
+    background: rgba(45, 91, 255, 0.20);
+    transform: translateY(-2px);
+  }
+
+  /* 3. CREDIBILITY STRIP (Unified Warm Neutral #F4F5F7) */
+  #credibility-strip {
+    position: relative;
+    z-index: 20;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid rgba(11, 19, 43, 0.10);
+    width: 100%;
+  }
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 38px 0;
+    gap: 0;
+  }
+  .cred-col {
+    padding: 0 26px;
+    border-right: 1px solid rgba(11, 19, 43, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .cred-col:first-child { padding-left: 0; }
+  .cred-col:last-child { border-right: none; padding-right: 0; }
+
+  .cred-col-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.70rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+  .cred-col-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--lime);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .cred-col-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .cred-col-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 980px) {
+    .cred-grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 28px 0;
+      row-gap: 26px;
+    }
+    .cred-col { padding: 8px 20px; }
+    .cred-col:first-child { padding-left: 0; }
+    .cred-col:nth-child(2) { border-right: none; padding-right: 0; }
+    .cred-col:nth-child(3) { padding-left: 0; }
+    .cred-col:nth-child(4) { border-right: none; padding-right: 0; }
+  }
+  @media (max-width: 600px) {
+    .cred-grid {
+      grid-template-columns: 1fr;
+      row-gap: 22px;
+      padding: 24px 0;
+    }
+    .cred-col {
+      border-right: none;
+      border-bottom: 1px solid rgba(11, 19, 43, 0.10);
+      padding: 10px 0 18px 0;
+    }
+    .cred-col:last-child {
+      border-bottom: none;
+      padding-bottom: 6px;
+    }
+  }
+
+  /* 4. EXPLORA SECTION (#FAFAF7 Warm Light Background) */
+  #hub {
+    position: relative;
+    background-color: var(--bg-light-panel);
+    width: 100%;
+    border-bottom: 1px solid rgba(11, 19, 43, 0.10);
+    padding: 56px 0 64px;
+    color: var(--text-dark);
+  }
+  .hub-header {
+    margin-bottom: 24px;
+    max-width: 780px;
+  }
+  .hub-eyebrow-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .hub-eyebrow-tag::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--blue);
+    display: inline-block;
+  }
+  .hub-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 10px;
+  }
+  .hub-description {
+    color: #4A5568;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    max-width: 720px;
+  }
+
+  /* Segmented Perspective Control - Compact & Premium */
+  .hub-segmented-wrap {
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+  }
+  .hub-segmented-ctrl {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background-color: #E6ECF3;
+    padding: 3px;
+    border-radius: 9px;
+    border: 1px solid rgba(11, 19, 43, 0.10);
+    box-shadow: inset 0 1px 2px rgba(11, 19, 43, 0.04);
+  }
+  .hub-seg-btn {
+    border: none;
+    background: transparent;
+    padding: 7px 15px;
+    border-radius: 7px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #4A5568;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    user-select: none;
+    line-height: 1.2;
+  }
+  .hub-seg-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+    transition: stroke 0.2s ease;
+  }
+  .hub-seg-btn:hover:not(.is-active) {
+    color: var(--text-dark);
+    background-color: rgba(255, 255, 255, 0.55);
+  }
+  .hub-seg-btn.is-active {
+    background-color: #0B132B;
+    color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(11, 19, 43, 0.20);
+  }
+  .hub-seg-btn.is-active svg {
+    stroke: #FFFFFF;
+  }
+  .hub-seg-indicator {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--lime);
+    margin-left: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Cards Grid - Fixed Height & Non-shifting */
+  .hub-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    align-items: stretch;
+  }
+  .hub-box {
+    background: #FFFFFF;
+    border: 1px solid rgba(11, 19, 43, 0.08);
+    border-radius: 14px;
+    padding: 26px 24px 24px;
+    box-shadow: 0 4px 18px rgba(11, 19, 43, 0.03);
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+    text-decoration: none;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+  }
+  .hub-box:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45, 91, 255, 0.32);
+    box-shadow: 0 10px 26px rgba(11, 19, 43, 0.07);
+  }
+  .hub-box-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(11, 19, 43, 0.06);
+  }
+  .hub-box-num {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+  }
+  .hub-box-category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.70rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--blue);
+  }
+
+  .hub-card-dynamic {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    opacity: 1;
+    transition: opacity 220ms ease;
+  }
+  .hub-card-dynamic.is-fading { opacity: 0; }
+
+  .hub-box-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    min-height: 2.5em;
+  }
+  .hub-box-text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #4A5568;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    min-height: 4.65em;
+  }
+  .hub-box-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    transition: color 0.2s ease;
+  }
+  .hub-box:hover .hub-box-link {
+    color: var(--blue);
+  }
+  .hub-box-link span.arrow {
+    transition: transform 0.2s ease;
+  }
+  .hub-box:hover .hub-box-link span.arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 960px) {
+    .hub-cards-grid { grid-template-columns: 1fr; gap: 16px; }
+    .hub-box { min-height: auto; }
+    .hub-box-title, .hub-box-text { min-height: auto; }
+    #hub { padding: 48px 0; }
+  }
+
+  /* 5. CONTACT SECTION (Deep Dark Navy #0B132B) */
+  #contacto {
+    position: relative;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    width: 100%;
+    padding: 85px 0 95px;
+  }
+  .contact-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lime);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .contact-eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: var(--lime);
+    display: inline-block;
+  }
+  .contact-head-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.0rem, 3.8vw, 2.75rem);
+    line-height: 1.16;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+    max-width: 760px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 64px;
+    margin-top: 36px;
+  }
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  .contact-info p {
+    color: var(--text-light-muted);
+    font-size: 1.0rem;
+    margin-bottom: 32px;
+    max-width: 420px;
+    line-height: 1.6;
+  }
+  .contact-info-item {
+    padding: 18px 0;
+    border-top: 1px solid var(--line-dark);
+  }
+  .contact-info-item .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 6px;
+    display: block;
+    font-weight: 600;
+  }
+  .contact-info-item a, .contact-info-item span {
+    color: var(--text-light);
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: color .2s ease;
+  }
+  .contact-info-item a:hover { color: var(--lime); }
+  .contact-info-item .meta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: #A3B3D1;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .contact-info-item .meta-badge span.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--lime);
+  }
+
+  .form {
+    background: var(--bg-dark-sub);
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    padding: 38px 34px;
+    box-shadow: 0 16px 36px rgba(0,0,0,0.24);
+  }
+  .form-row-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .form-row { margin-bottom: 20px; }
+  .form-row label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light-faint);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .form-row input, .form-row textarea {
+    width: 100%;
+    background: rgba(11, 19, 43, 0.75);
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: var(--text-light);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.92rem;
+    transition: border-color .2s ease, background-color .2s ease;
+  }
+  .form-row input:focus, .form-row textarea:focus {
+    outline: none;
+    border-color: var(--lime);
+    background: var(--bg-dark);
+    box-shadow: 0 0 0 1px var(--lime);
+  }
+  .form-row textarea { resize: vertical; min-height: 100px; }
+  .form-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--text-light-faint);
+    margin-top: 18px;
+    line-height: 1.55;
+  }
+
+  /* 6. FOOTER (Deep Navy #080E21) */
+  footer.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 68px 0 42px;
+    position: relative;
+    z-index: 10;
+    background-color: var(--bg-footer);
+    width: 100%;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 56px;
+    margin-bottom: 52px;
+  }
+  @media (max-width: 800px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: 14px; }
+  .footer-brand p {
+    color: var(--text-light-muted);
+    font-size: 0.92rem;
+    max-width: 320px;
+    line-height: 1.55;
+  }
+  .footer-brand .logo-text { color: #FFFFFF; }
+  .footer-col h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .footer-col a {
+    display: block;
+    color: var(--text-light-muted);
+    font-size: 0.90rem;
+    margin-bottom: 12px;
+    transition: color .2s ease;
+  }
+  .footer-col a:hover { color: var(--lime); }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-light-faint);
+    padding-top: 28px;
+    border-top: 1px solid var(--line-dark);
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 110px 0 50px; min-height: auto; }
+    .form-row-pair { grid-template-columns: 1fr; }
+    .form { padding: 26px 20px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+
+  .site-logo-img { width: 210px; max-width: 220px; height: auto; object-fit: contain; display: block; }
+  @media (max-width: 900px) { .site-logo-img { width: 180px; } }
+  @media (max-width: 640px) { .site-logo-img { width: 150px; } }
+</style>
+<style class="">
+  #contacto .contact-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #2D5BFF;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  #contacto .contact-eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+    background: #2D5BFF;
+    display: inline-block;
+  }
+  #contacto .contact-head-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.1rem, 3.4vw, 2.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: #0B132B;
+    margin-bottom: 16px;
+    max-width: 520px;
+    font-weight: 700;
+  }
+  #contacto .contact-subheading {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: #475569;
+    max-width: 480px;
+    margin-bottom: 34px;
+  }
+  #contacto .contact-methods {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  #contacto .contact-info-item {
+    padding: 14px 0;
+    border-top: 1px solid rgba(11, 19, 43, 0.10);
+  }
+  #contacto .contact-info-item .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.70rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #2D5BFF;
+    margin-bottom: 4px;
+    display: block;
+    font-weight: 700;
+  }
+  #contacto .contact-info-item a, #contacto .contact-info-item span {
+    color: #0B132B;
+    font-size: 0.96rem;
+    font-weight: 600;
+    transition: color .2s ease;
+  }
+  #contacto .contact-info-item a:hover {
+    color: #2D5BFF;
+  }
+  #contacto .contact-info-item .meta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    color: #334155;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  #contacto .contact-info-item .meta-badge span.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #10B981;
+    display: inline-block;
+  }
+  #contacto .contact-microcopy {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: #64748B;
+    margin-top: 4px;
+  }
+  #contacto .form {
+    background: #FFFFFF;
+    border: 1px solid rgba(11, 19, 43, 0.10);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 16px 36px rgba(11, 19, 43, 0.05);
+  }
+  #contacto .form-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0B132B;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  #contacto .form-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.90rem;
+    color: #64748B;
+    margin-bottom: 24px;
+  }
+  #contacto .form-row label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.70rem;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: #475569;
+    font-weight: 600;
+    margin-bottom: 7px;
+    display: block;
+  }
+  #contacto .form-row input, #contacto .form-row textarea {
+    background: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    color: #0B132B;
+    padding: 11px 14px;
+    font-size: 0.92rem;
+    font-family: 'Manrope', sans-serif;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  #contacto .form-row input:focus, #contacto .form-row textarea:focus {
+    background: #FFFFFF;
+    border-color: #2D5BFF;
+    box-shadow: 0 0 0 2px rgba(45, 91, 255, 0.16);
+    outline: none;
+  }
+  #contacto .form-row textarea {
+    min-height: 96px;
+  }
+  #contacto .form-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  #contacto .form-actions .btn-primary {
+    background: #D4E71F;
+    color: #0B132B;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: 8px;
+    border: 1px solid rgba(11, 19, 43, 0.08);
+    box-shadow: 0 2px 10px rgba(212, 231, 31, 0.32);
+  }
+  #contacto .form-actions .btn-primary:hover {
+    background: #E4F050;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(212, 231, 31, 0.42);
+  }
+  #contacto .form-alt-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.80rem;
+    font-weight: 600;
+    color: #2D5BFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  #contacto .form-alt-link:hover {
+    color: #1E3A7A;
+    text-decoration: underline;
+  }
+  #contacto .form-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    color: #64748B;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+</style><style id="fullwidth-viewport-fix" class="">
+  :root {
+    --bg-dark: #050607 !important;
+    --bg-dark-sub: #0C0F14 !important;
+    --bg-footer: #050607 !important;
+    --maxw: 1440px !important;
+  }
+  html, body, #page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    background: #050607 !important;
+    background-color: #050607 !important;
+  }
+  .container, .wrap, .inner-container {
+    max-width: 1440px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: clamp(24px, 4vw, 64px) !important;
+    padding-right: clamp(24px, 4vw, 64px) !important;
+    box-sizing: border-box !important;
+  }
+  .nav {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+  }
+  .nav-inner {
+    max-width: 1440px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: clamp(24px, 4vw, 64px) !important;
+    padding-right: clamp(24px, 4vw, 64px) !important;
+    box-sizing: border-box !important;
+  }
+  .hero-viewport-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    margin-top: 66px !important;
+    padding: 0 !important;
+    background: #050607 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    position: relative !important;
+  }
+  @media (min-width: 1024px) {
+    .hero-viewport-group {
+      height: calc(100vh - 66px) !important;
+      min-height: 600px !important;
+      max-height: 960px !important;
+    }
+    .hero-viewport-group > section.hero {
+      flex: 1 1 auto !important;
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      background: radial-gradient(circle at 80% 45%, #0F1420 0%, #050607 72%) !important;
+    }
+    .hero-viewport-group > section.hero .container {
+      display: flex !important;
+      align-items: center !important;
+      height: 100% !important;
+    }
+    .hero-viewport-group > section.hero .hero-inner {
+      max-width: 620px !important;
+      flex: 0 0 auto !important;
+      padding: 24px 0 !important;
+    }
+    .hero-viewport-group > #credibility-strip {
+      flex: 0 0 auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .hero-viewport-group > #credibility-strip .cred-grid {
+      padding: 20px 0 !important;
+      gap: 20px !important;
+    }
+  }
+  @media (max-width: 1023px) {
+    .hero-viewport-group {
+      height: auto !important;
+      min-height: auto !important;
+    }
+    .hero-viewport-group > section.hero {
+      min-height: auto !important;
+      padding-top: 64px !important;
+      padding-bottom: 44px !important;
+      width: 100% !important;
+    }
+    .hero-viewport-group > #credibility-strip .cred-grid {
+      padding: 24px 0 !important;
+    }
+  }
+  #heroCanvas {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: auto !important;
+  }
+  #credibility-strip {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #F8FAFC !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+  }
+  #hub {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #FAFAFA !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    padding: 72px 0 80px !important;
+  }
+  #contacto {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #050607 !important;
+    padding: 88px 0 96px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  footer.site-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: #050607 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+</style></head>
+<body>
+<div id="page">
+<!-- 1. HEADER (Light Warm Neutral #F4F5F7) -->
+<nav class="nav" id="mainNav" style="position: fixed; top: 0px; left: 0px; right: 0px; width: 100%; z-index: 70; background-color: rgb(255, 255, 255) !important; border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important; box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 10px !important;">
+<div class="nav-inner" style="height: 72px; display: flex; align-items: center; justify-content: space-between; width: 100%; margin: 0px auto; box-sizing: border-box;">
+<a class="logo" href="/" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTgjJ4jQS-tERUEtTRbzyuF_9TsLa1oB8nCgR4ICMt-aBf0yJ8EUOrkHC5c66dWkS9A3hHRyXEZtlr-EK0ZlkPh0wGBEON09Im1tv3deUkCFB6v81XckrQQRO3XW5H-Kooizq3ohlOggqBSyJujXPqs15C6mnN0AgJYqhj5e1kHi7h6vSJRdr3crMjAjLNO-b_smMn9WkN4AfS-KG93WlYZxoDgufVc0l17H2c0Kqhq_UzSE5LwNbjEhQNh8E6tFPtdJA" alt="Martha Patricia" class="site-logo-img" style="width:210px;max-width:220px;height:auto;object-fit:contain;display:block;"></a>
+<button aria-expanded="false" aria-label="Menú" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+<div class="nav-links" id="navLinks"><a class="nav-link is-active" data-i18n="nav.home" href="/" style="color: rgb(11, 19, 43); font-weight: 600; position: relative; padding: 6px 0px; border-bottom: 2px solid rgb(212, 231, 31); transition: color 0.2s;">Inicio</a>
+<a class="nav-link" data-i18n="nav.services" href="/soluciones/" style="color: rgb(11, 19, 43); font-weight: 500; padding: 6px 0px; position: relative; transition: color 0.2s; border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#D4E71F';" onmouseout="this.style.borderBottomColor='transparent';">Soluciones</a>
+<a class="nav-link" data-i18n="nav.approach" href="/enfoque/" style="color: rgb(11, 19, 43); font-weight: 500; padding: 6px 0px; position: relative; transition: color 0.2s; border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#D4E71F';" onmouseout="this.style.borderBottomColor='transparent';">Enfoque</a>
+<a class="nav-link" data-i18n="nav.about" href="/sobre-mi/" style="color: rgb(11, 19, 43); font-weight: 500; padding: 6px 0px; position: relative; transition: color 0.2s; border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#D4E71F';" onmouseout="this.style.borderBottomColor='transparent';">Sobre mí</a>
+<button aria-label="Cambiar idioma" class="lang-toggle-text" id="langToggle" style="border: 1px solid rgb(208, 213, 221); color: rgb(11, 19, 43); background: rgb(255, 255, 255); border-radius: 6px; padding: 5px 10px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.78rem; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 4px;" onmouseover="this.style.borderColor='#D4E71F';" onmouseout="this.style.borderColor='#D0D5DD';">
+<span class="lang-opt active" id="langOptEs" style="color: #0B132B; font-weight: 700;">ES</span>
+<span class="lang-sep" style="color: #98A2B3;">/</span>
+<span class="lang-opt" id="langOptEn" style="color: #667085;">EN</span>
+</button>
+<a class="btn-nav-cta btn btn-primary" href="/contacto/" style="background-color: rgb(212, 231, 31); color: rgb(11, 19, 43); font-weight: 700; border: 1px solid rgba(11, 19, 43, 0.08); border-radius: 8px; padding: 9px 18px; font-size: 0.84rem; display: inline-flex; align-items: center; gap: 6px; box-shadow: rgba(212, 231, 31, 0.28) 0px 2px 8px; text-decoration: none; transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#2D5BFF'; this.style.color='#FFFFFF'; this.style.boxShadow='0 4px 14px rgba(45, 91, 255, 0.35)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.backgroundColor='#D4E71F'; this.style.color='#0B132B'; this.style.boxShadow='0 2px 8px rgba(212, 231, 31, 0.28)'; this.style.transform='translateY(0)';">
+<span data-i18n="nav.contact" class="">Contacto</span>
+<span class="cta-arrow">↗</span>
+</a></div>
+</div>
+</nav>
+<!-- 2. HERO SECTION (Edge-to-Edge Deep Navy #0B132B) -->
+<div class="hero-viewport-group" id="heroViewportGroup" style="margin-top: 72px !important;"><section class="hero" id="top" style="background: radial-gradient(circle at 80% 40%, rgb(12, 15, 22) 0%, rgb(5, 6, 7) 72%); border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; position: relative; width: 100%; box-sizing: border-box; overflow: hidden;">
+<canvas aria-hidden="true" id="heroCanvas" width="1600" height="975" data-theme="dark-noir" class=""></canvas>
+<div class="container">
+<div class="hero-inner"><div class="hero-label" data-i18n="hero.label" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(212, 231, 31); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px;"><span style="width: 20px; height: 2px; background: #D4E71F; border-radius: 2px; display: inline-block;"></span>DATA · NEGOCIO · TECNOLOGÍA</div>
+<h1 class="hero-thesis-triad" style="margin-bottom: 14px; font-size: clamp(2.1rem, 3.8vw, 3.2rem); line-height: 1.14;">
+<span class="thesis-line" data-i18n="hero.thesis1" style="display: block; color: #FFFFFF;">La tecnología acelera.</span>
+<span class="thesis-line" data-i18n="hero.thesis2" style="display: block; color: #FFFFFF;">Los datos orientan.</span>
+<span class="thesis-line highlight" data-i18n="hero.thesis3" style="display: block; color: #D4E71F;">La estrategia es humana.</span>
+</h1>
+<div class="hero-identity" style="margin-bottom: 16px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.12); display: inline-block;">
+<div class="hero-name" data-i18n="hero.name" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.35rem, 2.0vw, 1.8rem); color: #FFFFFF; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 4px;">Martha Patricia Ortiz</div>
+<div class="hero-role" data-i18n="hero.role" style="font-family: 'JetBrains Mono', monospace; font-size: clamp(0.84rem, 1.15vw, 0.94rem); color: #94A3B8; letter-spacing: 0.02em; font-weight: 500;">Data Scientist · Conectando negocio, datos y tecnología</div>
+</div>
+<div class="hero-actions" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+<a class="btn btn-primary" href="https://www.linkedin.com/in/marthapatriciaortiz/" rel="noopener" target="_blank" style="background: rgb(212, 231, 31); color: rgb(5, 6, 7); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.84rem; font-weight: 700; padding: 10px 22px; border-radius: 8px; border: 1px solid transparent; box-shadow: rgba(212, 231, 31, 0.28) 0px 4px 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+<span data-i18n="hero.linkedin" class="">Ver LinkedIn</span> →
+</a>
+<a class="btn btn-ghost" data-i18n="hero.contact" href="/contacto/" style="background: rgba(14, 18, 26, 0.85); border: 1px solid rgba(255, 255, 255, 0.18); color: rgb(255, 255, 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.84rem; font-weight: 600; padding: 10px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center;">Contáctame</a>
+</div></div>
+</div>
+</section><section id="credibility-strip" style="background-color: rgb(248, 250, 252); border-bottom: 1px solid rgb(226, 232, 240); width: 100%; position: relative; z-index: 20;" class="">
+<div class="container">
+<div class="cred-grid" style="padding: 16px 0px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0px;"><div class="cred-col" style="padding: 16px 24px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: flex-start;">
+  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c1.tag" class="">EXPERIENCIA</span></div>
+  <div class="cred-col-val" data-i18n="cred.c1.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">+6 años</div>
+  <div class="cred-col-sub" data-i18n="cred.c1.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Conectando negocio, operaciones, datos y tecnología.</div>
+</div>
+<div class="cred-col" style="padding: 16px 24px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: flex-start;">
+  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c2.tag" class="">ESCALA DE DATOS</span></div>
+  <div class="cred-col-val" data-i18n="cred.c2.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">Millones de registros</div>
+  <div class="cred-col-sub" data-i18n="cred.c2.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Procesados, transformados y modelados para análisis y toma de decisiones.</div>
+</div>
+<div class="cred-col" style="padding: 16px 24px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: flex-start;">
+  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c3.tag" class="">METODOLOGÍA</span></div>
+  <div class="cred-col-val" data-i18n="cred.c3.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">LEAN &amp; Green Belt</div>
+  <div class="cred-col-sub" data-i18n="cred.c3.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Mejora continua, experimentación, causa raíz y decisiones basadas en evidencia.</div>
+</div>
+<div class="cred-col" style="padding: 16px 24px; display: flex; flex-direction: column; justify-content: flex-start;">
+  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c4.tag" class="">FORMACIÓN TÉCNICA</span></div>
+  <div class="cred-col-val" data-i18n="cred.c4.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">Python · SQL · Cloud</div>
+  <div class="cred-col-sub" data-i18n="cred.c4.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Machine Learning, Analytics, BI, automatización y data pipelines.</div>
+</div></div>
+</div>
+</section></div>
+<!-- 3. CREDIBILITY STRIP (Unified Warm Neutral Band #F4F5F7) -->
+
+<!-- 4. EXPLORA SECTION (Compact, Warm Light #FAFAF7) -->
+<section id="hub">
+<div class="container">
+<div class="hub-header">
+<p class="hub-eyebrow-tag" data-i18n="hub.eyebrow">EXPLORA</p>
+<h2 class="hub-title" data-i18n="hub.title">Dos perspectivas. Una decisión.</h2>
+<p class="hub-description" data-i18n="hub.desc">Negocio, datos y tecnología no compiten entre sí. Explora cómo abordo los problemas desde una visión estratégica y una visión técnica.</p>
+</div>
+<!-- Segmented Perspective Control -->
+<div class="hub-segmented-wrap">
+<div aria-label="Perspectivas de trabajo" class="hub-segmented-ctrl" role="tablist">
+<button aria-selected="true" class="hub-seg-btn is-active" data-perspective="business" id="btnPerspectiveBusiness" role="tab">
+<svg aria-hidden="true" viewBox="0 0 24 24">
+<rect height="13" rx="2" width="18" x="3" y="8"></rect>
+<path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+<path d="M12 12v3"></path>
+</svg>
+<span data-i18n="hub.tab.business" class="">Negocio &amp; estrategia</span>
+<span aria-hidden="true" class="hub-seg-indicator"></span>
+</button>
+<button aria-selected="false" class="hub-seg-btn" data-perspective="tech" id="btnPerspectiveTech" role="tab">
+<svg aria-hidden="true" viewBox="0 0 24 24">
+<path d="M16 18l6-6-6-6"></path>
+<path d="M8 6l-6 6 6 6"></path>
+<path d="M14 4l-4 16"></path>
+</svg>
+<span data-i18n="hub.tab.tech" class="">Datos &amp; tecnología</span>
+</button>
+</div>
+</div>
+<!-- 3 Cards Grid -->
+<div class="hub-cards-grid">
+<!-- Card 01 -->
+<a class="hub-box" href="/enfoque/">
+<div class="hub-box-top">
+<span class="hub-box-num">01</span>
+<span class="hub-box-category" data-i18n="hub.c1.category">ENFOQUE</span>
+</div>
+<div class="hub-card-dynamic" id="cardDynamic1">
+<h3 class="hub-box-title" data-i18n="hub.c1.title">Del problema a la decisión</h3>
+<p class="hub-box-text" data-i18n="hub.c1.desc">Estructuro preguntas ambiguas, defino qué significa éxito y convierto el análisis en recomendaciones accionables.</p>
+<span class="hub-box-link"><span class="hub-box-link-text" data-i18n="hub.c1.link">Ver enfoque</span> <span class="arrow">→</span></span>
+</div>
+</a>
+<!-- Card 02 -->
+<a class="hub-box" href="/sobre-mi/">
+<div class="hub-box-top">
+<span class="hub-box-num">02</span>
+<span class="hub-box-category" data-i18n="hub.c2.category">SOBRE MÍ</span>
+</div>
+<div class="hub-card-dynamic" id="cardDynamic2">
+<h3 class="hub-box-title" data-i18n="hub.c2.title">Una perspectiva que cruza disciplinas</h3>
+<p class="hub-box-text" data-i18n="hub.c2.desc">Ingeniería, mejora continua, analytics y consultoría forman una manera de trabajar que conecta contexto, datos y ejecución.</p>
+<span class="hub-box-link"><span class="hub-box-link-text" data-i18n="hub.c2.link">Conocer mi trayectoria</span> <span class="arrow">→</span></span>
+</div>
+</a>
+<!-- Card 03 -->
+<a class="hub-box" href="/soluciones/">
+<div class="hub-box-top">
+<span class="hub-box-num">03</span>
+<span class="hub-box-category" data-i18n="hub.c3.category">SOLUCIONES</span>
+</div>
+<div class="hub-card-dynamic" id="cardDynamic3">
+<h3 class="hub-box-title" data-i18n="hub.c3.title">Impacto que se puede medir</h3>
+<p class="hub-box-text" data-i18n="hub.c3.desc">Diseño análisis, modelos y marcos de KPIs orientados a performance, eficiencia y mejores decisiones.</p>
+<span class="hub-box-link"><span class="hub-box-link-text" data-i18n="hub.c3.link">Ver soluciones</span> <span class="arrow">→</span></span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- 5. CONTACT SECTION (Deep Dark Navy #0B132B) -->
+<section id="contacto" style="position: relative; background-color: rgb(5, 6, 7); width: 100%; padding: 88px 0px 100px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);" class="">
+  <div class="container">
+    <div style="background: #0C0F14; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45); overflow: hidden; display: flex; flex-wrap: wrap;">
+      <!-- Left Column: Near-Black Editorial Column (~42%) -->
+      <div style="flex: 1 1 380px; max-width: 100%; background: radial-gradient(circle at top left, #10141B 0%, #050607 85%); padding: clamp(36px, 5vw, 56px) clamp(30px, 4vw, 48px); display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(255, 255, 255, 0.08);">
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D4E71F; font-weight: 700; margin-bottom: 18px;">
+            <span style="width: 20px; height: 2px; background: #D4E71F; border-radius: 2px;"></span>
+            <span data-i18n="contact.eyebrow" class="">CONTACTO</span>
+          </div>
+          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.95rem, 3.0vw, 2.45rem); font-weight: 700; color: #FFFFFF; line-height: 1.18; letter-spacing: -0.025em; margin-bottom: 18px;" data-i18n="contact.h2" class="">Hablemos de tu reto, tu equipo o tu próximo proyecto.</h2>
+          <p style="font-family: 'Manrope', sans-serif; font-size: 0.96rem; line-height: 1.62; color: #94A3B8; margin-bottom: 36px;" data-i18n="contact.info.body" class="">No necesitas llegar con todo resuelto. Podemos empezar por el contexto, el reto que quieres explorar o la decisión que necesitas tomar.</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            <div style="padding: 14px 0px; border-top: 1px solid rgba(255, 255, 255, 0.08);" class=""><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px; opacity: 1;" data-i18n="contact.info.email.k" class="">CORREO</span><a href="mailto:marthapatricia.orma@gmail.com" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; display: inline-block; opacity: 1; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">marthapatricia.orma@gmail.com</a></div><div style="padding: 14px 0px; border-top: 1px solid rgba(255, 255, 255, 0.08);" class=""><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 6px; opacity: 1;" class="">WHATSAPP</span><div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;"><a href="tel:+522221580381" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; opacity: 1; display: inline-block; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">+52 222 158 0381</a><a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; color: #D4E71F; text-decoration: none; opacity: 1; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease, transform 0.2s ease;" onmouseover="this.style.color='#E3F52D'; this.style.textDecoration='underline';" onmouseout="this.style.color='#D4E71F'; this.style.textDecoration='none';" class="">Escribir por WhatsApp ↗</a></div></div>
+            <div style="padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px;" data-i18n="contact.info.linkedin.k" class="">LINKEDIN</span>
+              <a href="https://www.linkedin.com/in/marthapatriciaortiz/" rel="noopener" target="_blank" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">linkedin.com/in/marthapatriciaortiz</a>
+            </div>
+            <div style="padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px;" data-i18n="contact.info.kaggle.k" class="">KAGGLE</span>
+              <a href="https://www.kaggle.com/marthapatriciaorma" rel="noopener" target="_blank" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">kaggle.com/marthapatriciaorma</a>
+            </div>
+            <div style="padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px;" data-i18n="contact.info.response.k" class="">DISPONIBILIDAD</span>
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; color: #94A3B8; font-family: 'JetBrains Mono', monospace;" class="">
+                <span style="width: 7px; height: 7px; border-radius: 50%; background-color: #10B981; box-shadow: 0 0 8px #10B981; display: inline-block;"></span>
+                <span data-i18n="contact.info.response.v" class="">Respuesta en aprox. 2 días hábiles</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-family: Inter, sans-serif; font-size: 0.82rem; line-height: 1.5; color: rgb(100, 116, 139); margin-top: 28px;" data-i18n="contact.info.micro" class="">También puedes contactarme directamente por WhatsApp, correo o LinkedIn.</p>
+      </div>
+
+      <!-- Right Column: Light Warm-Neutral Background with White Card Form (~58%) -->
+      <div style="flex: 1 1 460px; max-width: 100%; background-color: #F5F6F3; padding: clamp(32px, 5vw, 54px) clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center;">
+        <div style="background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(5, 6, 7, 0.08); box-shadow: 0 8px 30px rgba(5, 6, 7, 0.04); padding: clamp(28px, 4vw, 38px);">
+          <form class="form" id="contactForm" style="background: transparent; border: none; padding: 0; box-shadow: none;">
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; font-weight: 700; color: #050607; letter-spacing: -0.02em; margin-bottom: 6px;" data-i18n="contact.form.title" class="">Cuéntame un poco.</h3>
+            <p style="font-family: 'Inter', sans-serif; font-size: 0.90rem; color: #5A6679; margin-bottom: 24px;" data-i18n="contact.form.subtitle" class="">Con unas líneas es suficiente para empezar.</p>
+            
+            <div class="form-row-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px;">
+              <div style="display: flex; flex-direction: column;">
+                <label for="firstName" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.firstname" class="">Nombre</label>
+                <input id="firstName" name="firstName" required="" type="text" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label for="lastName" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.lastname" class="">Apellido</label>
+                <input id="lastName" name="lastName" required="" type="text" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
+              </div>
+            </div>
+            
+            <div class="form-row-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px;">
+              <div style="display: flex; flex-direction: column;">
+                <label for="email" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.email" class="">Correo</label>
+                <input id="email" name="email" required="" type="email" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label for="phone" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.phone" class="">Teléfono</label>
+                <input id="phone" name="phone" type="tel" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
+              </div>
+            </div>
+            
+            <div style="margin-bottom: 16px;">
+              <label for="company" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.company" class="">Empresa / Organización</label>
+              <input id="company" name="company" type="text" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
+            </div>
+            
+            <div style="margin-bottom: 22px;">
+              <label for="message" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.message" class="">Comentarios</label>
+              <textarea id="message" name="message" required="" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 12px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; min-height: 100px; resize: vertical; outline: none; transition: border-color 0.2s, box-shadow 0.2s;"></textarea>
+            </div>
+            
+            <div class="form-actions" style="display: flex; flex-direction: column; width: 100%; margin-top: 12px;"><button class="btn btn-primary" type="submit" style="width: 100%; height: 50px; display: flex; align-items: center; justify-content: center; background-color: #D4E71F; color: #0B132B; font-family: 'Space Grotesk', 'JetBrains Mono', sans-serif; font-size: 0.92rem; font-weight: 600; border-radius: 8px; border: 1.5px solid transparent; box-shadow: 0 3px 12px rgba(212, 231, 31, 0.28); cursor: pointer; text-decoration: none; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#2D5BFF'; this.style.color='#FFFFFF'; this.style.borderColor='#2D5BFF'; this.style.boxShadow='0 4px 16px rgba(45, 91, 255, 0.35)';" onmouseout="this.style.backgroundColor='#D4E71F'; this.style.color='#0B132B'; this.style.borderColor='transparent'; this.style.boxShadow='0 3px 12px rgba(212, 231, 31, 0.28)';" data-i18n="contact.form.submit">Enviar mensaje →</button><div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; flex-wrap: wrap;"><span style="color: #64748B;" class="">¿Prefieres WhatsApp?</span><a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; color: #0B132B; font-weight: 600; text-decoration: none; background: transparent; border: none; padding: 0; transition: color 0.2s ease;" onmouseover="this.style.color='#2D5BFF'; var s=this.querySelector('svg'); if(s) s.style.fill='#2D5BFF';" onmouseout="this.style.color='#0B132B'; var s=this.querySelector('svg'); if(s) s.style.fill='#0B132B';"><svg style="width: 14px; height: 14px; fill: #0B132B; transition: fill 0.2s ease; flex-shrink: 0;" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.23-1.63a11.93 11.93 0 0 0 5.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.52-8.43zM12.07 21.88h-.01c-1.8 0-3.56-.48-5.1-1.39l-.37-.22-3.79.99 1.01-3.69-.24-.38a9.92 9.92 0 0 1-1.52-5.22c0-5.5 4.47-9.97 9.98-9.97 2.66 0 5.16 1.04 7.04 2.92a9.93 9.93 0 0 1 2.92 7.05c0 5.5-4.47 9.91-9.92 9.91zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.6-.49-.52-.68-.53l-.58-.01c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.13 3.25 5.15 4.56.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35z"></path></svg><span class="">Escribirme por WhatsApp ↗</span></a></div></div>
+            
+            <p class="form-note" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.74rem; color: rgb(148, 163, 184); margin-top: 16px; line-height: 1.5; text-align: left;" data-i18n="contact.form.note">Al enviar, se abrirá tu correo con el mensaje preparado.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 6. FOOTER (Deep Dark Navy #080E21) -->
+<footer class="site-footer" style="background-color: rgb(5, 6, 7); border-top: 1px solid rgba(255, 255, 255, 0.08); width: 100%;"><div class="container">
+  <div class="footer-grid" style="display: grid; grid-template-columns: 1.6fr 1fr 1.2fr; gap: 56px; margin-bottom: 52px;">
+    <!-- Columna 1: Marca -->
+    <div class="footer-brand">
+      <div style="margin-bottom: 4px;">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: #FFFFFF; letter-spacing: -0.02em; display: block;" class="">Martha Patricia</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: #D4E71F; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; display: block; margin-top: 3px;" class="">Technology &amp; Data Strategy</span>
+      </div>
+      <p style="color: #94A3B8; font-size: 0.90rem; max-width: 360px; line-height: 1.6; margin-top: 10px;" class="">Conectamos estrategia, datos y tecnología para transformar retos complejos en soluciones reales y medibles.</p>
+    </div>
+    <!-- Columna 2: Navegación -->
+    <div class="footer-col"><h4 style="color: rgb(68, 117, 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; font-weight: 700;" class="">NAVEGACIÓN</h4>
+      <a href="/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Inicio</a>
+      <a href="/enfoque/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Enfoque</a>
+      <a href="/sobre-mi/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Sobre mí</a>
+      <a href="/soluciones/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Soluciones</a>
+      <a href="/contacto/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Contacto</a></div>
+    <!-- Columna 3: Contacto -->
+    <div class="footer-col">
+      <h4 style="color: #4475FF; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; font-weight: 700;" class="">CONTACTO</h4>
+      <div style="margin-bottom: 14px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px;" class="">WhatsApp</span>
+        <a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="color: rgb(220, 227, 240); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">+52 222 158 0381</a>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px;" class="">Teléfono</span>
+        <a href="tel:+522221580381" style="color: #DCE3F0; text-decoration: none; font-size: 0.90rem; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">+52 222 158 0381</a>
+      </div>
+      <div style="margin-bottom: 14px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px;" class="">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/marthapatriciaortiz/" target="_blank" rel="noopener" style="color: #DCE3F0; text-decoration: none; font-size: 0.90rem; transition: color 0.2s ease; display: inline-flex; align-items: center; gap: 4px;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Martha Patricia Ortiz →</a>
+      </div>
+    </div>
+  </div>
+  <!-- Barra inferior -->
+  <div class="footer-bottom" style="display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;">
+    <span style="color: #64748B;" class="">© 2026 Martha Patricia Ortiz</span>
+    <span style="display: inline-flex; align-items: center; gap: 8px; color: #94A3B8; font-size: 0.74rem;" class="">
+      <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block;"></span>
+      Technology · Data · Strategy
+    </span>
+  </div>
+</div></footer>
+</div>
+<script>
+// Dynamic navigation scroll state
+var navElement = document.getElementById('mainNav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 15) {
+    navElement.classList.add('nav-scrolled');
+  } else {
+    navElement.classList.remove('nav-scrolled');
+  }
+}, { passive: true });
+
+// Perspective Data dictionary (ES / EN)
+var currentPerspective = 'business';
+var perspectiveData = {
+  es: {
+    business: {
+      c1Title: "Del problema a la decisión",
+      c1Desc: "Estructuro preguntas ambiguas, defino qué significa éxito y convierto el análisis en recomendaciones accionables.",
+      c1Link: "Ver enfoque",
+      c2Title: "Una perspectiva que cruza disciplinas",
+      c2Desc: "Ingeniería, mejora continua, analytics y consultoría forman una manera de trabajar que conecta contexto, datos y ejecución.",
+      c2Link: "Conocer mi trayectoria",
+      c3Title: "Impacto que se puede medir",
+      c3Desc: "Diseño análisis, modelos y marcos de KPIs orientados a performance, eficiencia y mejores decisiones.",
+      c3Link: "Ver soluciones"
+    },
+    tech: {
+      c1Title: "De hipótesis a evidencia",
+      c1Desc: "Combino análisis estadístico, experimentación y Machine Learning para entender qué ocurre, por qué ocurre y qué hacer después.",
+      c1Link: "Ver enfoque",
+      c2Title: "Modelos que se pueden explicar",
+      c2Desc: "He desarrollado modelos de churn, riesgo y propensión, incorporando interpretabilidad con SHAP y feature importance.",
+      c2Link: "Conocer mi trayectoria",
+      c3Title: "De los datos a producción",
+      c3Desc: "Python, SQL, AWS y dbt para construir análisis, modelos y pipelines reproducibles que puedan escalar.",
+      c3Link: "Ver soluciones"
+    }
+  },
+  en: {
+    business: {
+      c1Title: "From problem to decision",
+      c1Desc: "I structure ambiguous questions, define what success looks like, and translate analysis into actionable recommendations.",
+      c1Link: "View approach",
+      c2Title: "A cross-disciplinary perspective",
+      c2Desc: "Engineering, continuous improvement, analytics, and strategy integrated into a cohesive way of solving problems.",
+      c2Link: "About my journey",
+      c3Title: "Measurable business impact",
+      c3Desc: "I build KPI frameworks, quantitative models, and actionable insights geared toward performance and operational efficiency.",
+      c3Link: "View solutions"
+    },
+    tech: {
+      c1Title: "From hypothesis to evidence",
+      c1Desc: "Combining statistical inference, controlled experimentation, and Machine Learning to understand cause, effect, and next steps.",
+      c1Link: "View approach",
+      c2Title: "Explainable models in production",
+      c2Desc: "Developed churn, risk, and propensity models with full feature importance interpretability using SHAP.",
+      c2Link: "About my journey",
+      c3Title: "From raw data to production",
+      c3Desc: "Python, SQL, AWS, and dbt to engineer reproducible, scalable data pipelines and production-ready models.",
+      c3Link: "View solutions"
+    }
+  }
+};
+
+// Bilingual dictionary
+var currentLang = 'es';
+var i18n = {
+  es: {
+    "nav.home": "Inicio",
+    "nav.approach": "Enfoque",
+    "nav.about": "Sobre mí",
+    "nav.services": "Soluciones",
+    "nav.contact": "Contacto",
+    "hero.label": "DATA · NEGOCIO · TECNOLOGÍA",
+    "hero.thesis1": "La tecnología acelera.",
+    "hero.thesis2": "Los datos orientan.",
+    "hero.thesis3": "La estrategia es humana.",
+    "hero.name": "Martha Patricia Ortiz",
+    "hero.role": "Data Scientist · Conectando negocio, datos y tecnología",
+    "hero.linkedin": "Ver LinkedIn",
+    "hero.contact": "Contáctame",
+    "cred.c1.tag": "01. EXPERIENCIA",
+    "cred.c1.val": "+6 años",
+    "cred.c1.sub": "Conectando industria automotriz y analítica avanzada.",
+    "cred.c2.tag": "02. IMPACTO DE NEGOCIO",
+    "cred.c2.val": "Defectos <0.5%",
+    "cred.c2.sub": "Reducción de defectos y modelos predictivos en producción.",
+    "cred.c3.tag": "03. METODOLOGÍA",
+    "cred.c3.val": "Six Sigma Green Belt",
+    "cred.c3.sub": "Experimentación DOE y machine learning con SHAP.",
+    "cred.c4.tag": "04. CAPACIDAD TÉCNICA",
+    "cred.c4.val": "Python · SQL · AWS",
+    "cred.c4.sub": "dbt, Scikit-learn, Tableau y data pipelines.",
+    "hub.eyebrow": "EXPLORA",
+    "hub.title": "Dos perspectivas. Una decisión.",
+    "hub.desc": "Negocio, datos y tecnología no compiten entre sí. Explora cómo abordo los problemas desde una visión estratégica y una visión técnica.",
+    "hub.tab.business": "Negocio & estrategia",
+    "hub.tab.tech": "Datos & tecnología",
+    "hub.c1.category": "ENFOQUE",
+    "hub.c2.category": "SOBRE MÍ",
+    "hub.c3.category": "SOLUCIONES",
+    "contact.eyebrow": "Contacto",
+    "contact.h2": "Hablemos de datos, negocio o tu próximo proyecto",
+    "contact.info.body": "Si prefieres saltarte el formulario, escríbeme directo por correo o LinkedIn.",
+    "contact.info.email.k": "Correo",
+    "contact.info.linkedin.k": "LinkedIn",
+    "contact.info.kaggle.k": "Kaggle",
+    "contact.info.response.k": "Disponibilidad",
+    "contact.info.response.v": "Respuesta en aprox. 2 días hábiles",
+    "contact.form.firstname": "Nombre",
+    "contact.form.lastname": "Apellido",
+    "contact.form.email": "Correo",
+    "contact.form.phone": "Teléfono",
+    "contact.form.message": "Comentarios",
+    "contact.form.submit": "Enviar mensaje",
+    "contact.form.note": "Al enviar se abrirá tu cliente de correo con el mensaje ya redactado, listo para confirmar y enviar.",
+    "footer.blurb": "Traduzco problemas de negocio ambiguos en decisiones respaldadas por datos y tecnología.",
+    "footer.sitecol.title": "Sitio",
+    "footer.contactcol.title": "Contacto",
+    "footer.copyright": "© 2026 Martha Patricia Ortiz. Puebla, México."
+  },
+  en: {
+    "nav.home": "Home",
+    "nav.approach": "Approach",
+    "nav.about": "About me",
+    "nav.services": "Solutions",
+    "nav.contact": "Contact",
+    "hero.label": "DATA · BUSINESS · TECHNOLOGY",
+    "hero.thesis1": "Technology accelerates.",
+    "hero.thesis2": "Data guides.",
+    "hero.thesis3": "Strategy is human.",
+    "hero.name": "Martha Patricia Ortiz",
+    "hero.role": "Data Scientist · Connecting business, data, and engineering",
+    "hero.linkedin": "View LinkedIn",
+    "hero.contact": "Contact me",
+    "cred.c1.tag": "01. EXPERIENCE",
+    "cred.c1.val": "+6 years",
+    "cred.c1.sub": "Bridging automotive engineering and advanced analytics.",
+    "cred.c2.tag": "02. BUSINESS IMPACT",
+    "cred.c2.val": "Defects <0.5%",
+    "cred.c2.sub": "Defect reduction & predictive models in production.",
+    "cred.c3.tag": "03. METHODOLOGY",
+    "cred.c3.val": "Six Sigma Green Belt",
+    "cred.c3.sub": "DOE experimentation & explainable ML with SHAP.",
+    "cred.c4.tag": "04. TECH CAPABILITY",
+    "cred.c4.val": "Python · SQL · AWS",
+    "cred.c4.sub": "dbt, Scikit-learn, Tableau & scalable pipelines.",
+    "hub.eyebrow": "EXPLORE",
+    "hub.title": "Two perspectives. One decision.",
+    "hub.desc": "Business, data, and technology do not compete. Explore how I approach challenges through both a strategic business lens and deep technical expertise.",
+    "hub.tab.business": "Business & strategy",
+    "hub.tab.tech": "Data & technology",
+    "hub.c1.category": "APPROACH",
+    "hub.c2.category": "ABOUT ME",
+    "hub.c3.category": "SOLUTIONS",
+    "contact.eyebrow": "Contact",
+    "contact.h2": "Let's discuss data, business, or your upcoming project",
+    "contact.info.body": "If you'd rather skip the form, reach out directly via email or LinkedIn.",
+    "contact.info.email.k": "Email",
+    "contact.info.linkedin.k": "LinkedIn",
+    "contact.info.kaggle.k": "Kaggle",
+    "contact.info.response.k": "Availability",
+    "contact.info.response.v": "Typical response within ~2 business days",
+    "contact.form.firstname": "First Name",
+    "contact.form.lastname": "Last Name",
+    "contact.form.email": "Email",
+    "contact.form.phone": "Phone",
+    "contact.form.message": "Comments",
+    "contact.form.submit": "Send message",
+    "contact.form.note": "Submitting will open your default email client with the message pre-filled, ready to review and send.",
+    "footer.blurb": "Translating ambiguous business challenges into clear, high-leverage data and engineering decisions.",
+    "footer.sitecol.title": "Site",
+    "footer.contactcol.title": "Contact",
+    "footer.copyright": "© 2026 Martha Patricia Ortiz. Puebla, Mexico."
+  }
+};
+
+function updatePerspectiveContent(perspective, smooth) {
+  var lang = currentLang;
+  var data = perspectiveData[lang] ? perspectiveData[lang][perspective] : perspectiveData['es'][perspective];
+  var cardDynamics = [
+    document.getElementById('cardDynamic1'),
+    document.getElementById('cardDynamic2'),
+    document.getElementById('cardDynamic3')
+  ];
+
+  function applyData() {
+    if (cardDynamics[0]) {
+      var t1 = cardDynamics[0].querySelector('.hub-box-title');
+      var d1 = cardDynamics[0].querySelector('.hub-box-text');
+      var l1 = cardDynamics[0].querySelector('.hub-box-link-text');
+      if (t1) t1.textContent = data.c1Title;
+      if (d1) d1.textContent = data.c1Desc;
+      if (l1) l1.textContent = data.c1Link;
+    }
+    if (cardDynamics[1]) {
+      var t2 = cardDynamics[1].querySelector('.hub-box-title');
+      var d2 = cardDynamics[1].querySelector('.hub-box-text');
+      var l2 = cardDynamics[1].querySelector('.hub-box-link-text');
+      if (t2) t2.textContent = data.c2Title;
+      if (d2) d2.textContent = data.c2Desc;
+      if (l2) l2.textContent = data.c2Link;
+    }
+    if (cardDynamics[2]) {
+      var t3 = cardDynamics[2].querySelector('.hub-box-title');
+      var d3 = cardDynamics[2].querySelector('.hub-box-text');
+      var l3 = cardDynamics[2].querySelector('.hub-box-link-text');
+      if (t3) t3.textContent = data.c3Title;
+      if (d3) d3.textContent = data.c3Desc;
+      if (l3) l3.textContent = data.c3Link;
+    }
+  }
+
+  if (!smooth) {
+    applyData();
+    return;
+  }
+
+  cardDynamics.forEach(function(el) { if (el) el.classList.add('is-fading'); });
+  setTimeout(function() {
+    applyData();
+    cardDynamics.forEach(function(el) { if (el) el.classList.remove('is-fading'); });
+  }, 220);
+}
+
+function switchPerspective(newPerspective) {
+  if (currentPerspective === newPerspective) return;
+  currentPerspective = newPerspective;
+
+  var btnBiz = document.getElementById('btnPerspectiveBusiness');
+  var btnTech = document.getElementById('btnPerspectiveTech');
+
+  if (newPerspective === 'business') {
+    btnBiz.classList.add('is-active');
+    btnBiz.setAttribute('aria-selected', 'true');
+    if (!btnBiz.querySelector('.hub-seg-indicator')) {
+      var dot = document.createElement('span');
+      dot.className = 'hub-seg-indicator';
+      dot.setAttribute('aria-hidden', 'true');
+      btnBiz.appendChild(dot);
+    }
+    btnTech.classList.remove('is-active');
+    btnTech.setAttribute('aria-selected', 'false');
+    var oldDot = btnTech.querySelector('.hub-seg-indicator');
+    if (oldDot) oldDot.remove();
+  } else {
+    btnTech.classList.add('is-active');
+    btnTech.setAttribute('aria-selected', 'true');
+    if (!btnTech.querySelector('.hub-seg-indicator')) {
+      var dot2 = document.createElement('span');
+      dot2.className = 'hub-seg-indicator';
+      dot2.setAttribute('aria-hidden', 'true');
+      btnTech.appendChild(dot2);
+    }
+    btnBiz.classList.remove('is-active');
+    btnBiz.setAttribute('aria-selected', 'false');
+    var oldDot2 = btnBiz.querySelector('.hub-seg-indicator');
+    if (oldDot2) oldDot2.remove();
+  }
+
+  updatePerspectiveContent(newPerspective, true);
+}
+
+document.getElementById('btnPerspectiveBusiness').addEventListener('click', function() {
+  switchPerspective('business');
+});
+document.getElementById('btnPerspectiveTech').addEventListener('click', function() {
+  switchPerspective('tech');
+});
+
+// Language Switcher
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var dict = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  var optEs = document.getElementById('langOptEs');
+  var optEn = document.getElementById('langOptEn');
+  if (optEs && optEn) {
+    if (lang === 'es') {
+      optEs.classList.add('active');
+      optEn.classList.remove('active');
+    } else {
+      optEn.classList.add('active');
+      optEs.classList.remove('active');
+    }
+  }
+
+  updatePerspectiveContent(currentPerspective, false);
+}
+
+document.getElementById('langToggle').addEventListener('click', function() {
+  applyLang(currentLang === 'es' ? 'en' : 'es');
+});
+
+// Mobile Nav Toggle
+var navToggle = document.getElementById('navToggle');
+var navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', function() {
+  var isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+// Contact Form Handler
+var contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  var f = contactForm;
+  var name = (f.firstName.value.trim() + ' ' + f.lastName.value.trim()).trim();
+  var subject = 'Contacto desde portafolio: ' + name;
+  var body =
+    'Nombre: ' + name + '\n' +
+    'Correo: ' + f.email.value.trim() + '\n' +
+    'Teléfono: ' + f.phone.value.trim() + '\n\n' +
+    'Comentarios:\n' + f.message.value.trim();
+  window.location.href = 'mailto:marthapatricia.orma@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+
+// Smooth Animated Flow Constellation in Hero Canvas
+(function() {
+  var canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var w = 0, h = 0, dpr = 1;
+  var mouse = { x: -9999, y: -9999, active: false };
+
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', function() {
+    resize();
+    initNodes();
+  });
+
+  var heroElem = document.getElementById('top');
+  if (heroElem) {
+    heroElem.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+    heroElem.addEventListener('mouseleave', function() {
+      mouse.active = false;
+      mouse.x = -9999;
+      mouse.y = -9999;
+    });
+  }
+
+  var nodes = [];
+  function initNodes() {
+    nodes = [];
+    var count = Math.floor(Math.min(52, Math.max(34, w / 26)));
+    var clusters = [
+      { x: w * 0.72, y: h * 0.32, spread: Math.min(180, w * 0.16) },
+      { x: w * 0.86, y: h * 0.54, spread: Math.min(170, w * 0.15) },
+      { x: w * 0.68, y: h * 0.76, spread: Math.min(150, w * 0.14) }
+    ];
+
+    var limeBudget = 5;
+    var limeAssigned = 0;
+
+    for (var i = 0; i < count; i++) {
+      var x, y;
+      var inCluster = Math.random() < 0.82;
+      if (inCluster) {
+        var c = clusters[Math.floor(Math.random() * clusters.length)];
+        var angle = Math.random() * Math.PI * 2;
+        var dist = Math.pow(Math.random(), 1.1) * c.spread;
+        x = c.x + Math.cos(angle) * dist;
+        y = c.y + Math.sin(angle) * dist;
+      } else {
+        x = w * (0.50 + Math.random() * 0.48);
+        y = h * (0.08 + Math.random() * 0.84);
+      }
+
+      if (x < w * 0.46) {
+        x = w * (0.52 + Math.random() * 0.44);
+      }
+
+      var isLime = false;
+      if (x > w * 0.54 && limeAssigned < limeBudget && Math.random() < 0.28) {
+        isLime = true;
+        limeAssigned++;
+      }
+
+      var radius, color, glow = false;
+      if (isLime) {
+        radius = 3.2 + Math.random() * 1.6;
+        color = { r: 212, g: 231, b: 31, a: 0.95 };
+        glow = true;
+      } else {
+        var rc = Math.random();
+        if (rc < 0.45) {
+          radius = 2.3 + Math.random() * 2.0;
+          color = { r: 45, g: 91, b: 255, a: 0.85 };
+          glow = (radius > 3.4);
+        } else if (rc < 0.78) {
+          radius = 1.9 + Math.random() * 1.6;
+          color = { r: 140, g: 175, b: 255, a: 0.75 };
+        } else {
+          radius = 1.6 + Math.random() * 1.2;
+          color = { r: 220, g: 235, b: 255, a: 0.80 };
+        }
+      }
+
+      var vx = (Math.random() - 0.5) * 0.45;
+      var vy = (Math.random() - 0.5) * 0.40;
+      if (Math.abs(vx) < 0.12) vx = vx < 0 ? -0.2 : 0.2;
+      if (Math.abs(vy) < 0.12) vy = vy < 0 ? -0.2 : 0.2;
+
+      nodes.push({
+        x: x, y: y,
+        originX: x, originY: y,
+        vx: vx, vy: vy,
+        phase: Math.random() * Math.PI * 2,
+        oscFreq: 0.02 + Math.random() * 0.02,
+        radius: radius,
+        color: color,
+        isLime: isLime,
+        glow: glow
+      });
+    }
+  }
+
+  resize();
+  initNodes();
+
+  var frame = 0;
+  function render() {
+    ctx.clearRect(0, 0, w, h);
+    frame++;
+
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!reduceMotion) {
+        n.x += n.vx + Math.sin(frame * n.oscFreq + n.phase) * 0.22;
+        n.y += n.vy + Math.cos(frame * n.oscFreq + n.phase) * 0.20;
+
+        if (Math.abs(n.x - n.originX) > 48) n.vx *= -1;
+        if (Math.abs(n.y - n.originY) > 42) n.vy *= -1;
+
+        if (mouse.active && mouse.x > w * 0.42) {
+          var dx = n.x - mouse.x;
+          var dy = n.y - mouse.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          var repelRadius = 120;
+          if (dist < repelRadius && dist > 1) {
+            var force = (1 - dist / repelRadius) * 1.3;
+            n.x += (dx / dist) * force;
+            n.y += (dy / dist) * force;
+          }
+        }
+      }
+    }
+
+    var maxDist = 110;
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        if (nodes[i].x < w * 0.44 || nodes[j].x < w * 0.44) continue;
+        var dx = nodes[i].x - nodes[j].x;
+        var dy = nodes[i].y - nodes[j].y;
+        var d2 = dx * dx + dy * dy;
+
+        if (d2 < maxDist * maxDist) {
+          var dist = Math.sqrt(d2);
+          var lineAlpha = (1 - dist / maxDist) * 0.28;
+
+          var r = 45, g = 91, b = 255;
+          var strokeW = 0.85;
+
+          if (nodes[i].isLime || nodes[j].isLime) {
+            r = 195; g = 225; b = 40;
+            lineAlpha = Math.min(0.50, lineAlpha * 1.4);
+            strokeW = 1.0;
+          }
+
+          ctx.lineWidth = strokeW;
+          ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + lineAlpha + ')';
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    for (var k = 0; k < nodes.length; k++) {
+      var p = nodes[k];
+      var pulse = reduceMotion ? 1 : (1 + 0.08 * Math.sin(frame * 0.04 + p.phase));
+
+      if (p.glow) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * 2.4 * pulse, 0, Math.PI * 2);
+        ctx.fillStyle = p.isLime ? 'rgba(212, 231, 31, 0.16)' : 'rgba(45, 91, 255, 0.18)';
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.color.r + ',' + p.color.g + ',' + p.color.b + ',' + p.color.a + ')';
+      ctx.fill();
+    }
+
+    if (!reduceMotion) {
+      requestAnimationFrame(render);
+    }
+  }
+
+  if (reduceMotion) {
+    render();
+  } else {
+    requestAnimationFrame(render);
+  }
+})();
+</script>
+
+
+
+
+
+
+
+
+<div id="snapdom-measure-slot" aria-hidden="true" style="position: absolute; left: -99999px; top: 0px; width: 0px; height: 0px; overflow: hidden; opacity: 0; pointer-events: none; contain: size layout style;"></div>
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,62 @@
+{
+  "eyebrow_es": "EN MOVIMIENTO",
+  "eyebrow_en": "IN MOTION",
+  "headline_es": "También aprendo estando donde ocurren las conversaciones.",
+  "headline_en": "I also learn by being where the conversations happen.",
+  "intro_es": "Eventos, comunidades y espacios donde sigo explorando cómo evolucionan los datos, la tecnología, los negocios y las industrias que me interesan.",
+  "intro_en": "Events, communities and spaces where I keep exploring how data, technology, business and the industries I care about are evolving.",
+  "items": [
+    {
+      "image": "",
+      "title_es": "Cumbre de Innovación & Negocios Digitales",
+      "title_en": "Innovation & Digital Business Summit",
+      "type_es": "CONFERENCIA",
+      "type_en": "CONFERENCE",
+      "location_es": "CDMX",
+      "location_en": "Mexico City",
+      "year": "2024",
+      "description_es": "Intercambio de perspectivas sobre adopción de IA en modelos de negocio tradicionales y nuevos ecosistemas digitales.",
+      "description_en": "Exchange of perspectives on AI adoption in traditional business models and emerging digital ecosystems.",
+      "link": ""
+    },
+    {
+      "image": "",
+      "title_es": "Data & AI Meetups",
+      "title_en": "Data & AI Meetups",
+      "type_es": "COMUNIDAD TECH",
+      "type_en": "TECH COMMUNITY",
+      "location_es": "",
+      "location_en": "",
+      "year": "2024",
+      "description_es": "Charlas sobre explicabilidad en modelos de Machine Learning (SHAP) y buenas prácticas en producción.",
+      "description_en": "Talks on explainability in Machine Learning models (SHAP) and production best practices.",
+      "link": ""
+    },
+    {
+      "image": "",
+      "title_es": "Innovation & Diversity Challenge",
+      "title_en": "Innovation & Diversity Challenge",
+      "type_es": "CHALLENGE",
+      "type_en": "CHALLENGE",
+      "location_es": "Nacional",
+      "location_en": "National",
+      "year": "2023",
+      "description_es": "Reconocimiento Top 5 nacional desarrollando prototipos basados en analítica exploratoria e hipótesis de impacto.",
+      "description_en": "Top 5 national recognition for developing prototypes based on exploratory analytics and impact hypotheses.",
+      "link": ""
+    },
+    {
+      "image": "",
+      "title_es": "Foro de Manufactura Avanzada & Calidad",
+      "title_en": "Advanced Manufacturing & Quality Forum",
+      "type_es": "FORO",
+      "type_en": "FORUM",
+      "location_es": "Puebla",
+      "location_en": "Puebla",
+      "year": "",
+      "description_es": "Conexión continua con la base industrial, optimización de líneas y control de procesos en tiempo real.",
+      "description_en": "Ongoing connection with industry, line optimization and real-time process control.",
+      "link": ""
+    }
+  ]
+}

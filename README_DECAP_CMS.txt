@@ -32,3 +32,11 @@ FLUJO DE EDICIÓN
 
 NOTA
 Git Gateway no se usa en esta configuración porque Netlify lo marcó como deprecated para nuevas configuraciones en 2026. Se usa el backend GitHub directo con OAuth de Netlify.
+
+
+RESEÑAS / TESTIMONIOS
+--------------------
+- Los clientes envían su reseña desde /resenas/ usando Netlify Forms.
+- Nada se publica automáticamente. Revisa las respuestas en Netlify > Forms.
+- Para publicar una reseña aprobada: entra a /admin/ > Reseñas aprobadas > Testimonios del sitio, agrega el testimonio y publica.
+- El correo del cliente es solo para validación y no forma parte del contenido público.

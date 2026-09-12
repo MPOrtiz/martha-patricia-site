@@ -1,7 +1,7 @@
 # DECAPH CMS — reemplaza REPO_OWNER/REPO_NAME con tu repositorio de GitHub.
 backend:
   name: github
-  repo: REPO_OWNER/REPO_NAME
+  repo: MPOrtiz/martha-patricia-site
   branch: main
 
 site_url: https://marthapatriciaortiz.com

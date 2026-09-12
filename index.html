@@ -1,97 +1,205 @@
-<!DOCTYPE html><html lang="es" style="width: 100%; min-height: 100%; position: relative;" class="stitch-anim-fade-in"><head>
+<!DOCTYPE html><html lang="es" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Martha Patricia Ortiz — Data Science · Analytics · Strategy</title>
+<title>Sobre mí — Martha Patricia Ortiz</title>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
   :root {
     --bg-dark: #0B132B;
-    --bg-dark-sub: #0E1A3A;
-    --bg-footer: #080E21;
-    --bg-light: #F4F5F7;
-    --bg-light-panel: #FAFAF7;
-    --border-light: rgba(11, 19, 43, 0.10);
-    --border-light-strong: rgba(11, 19, 43, 0.16);
-    --lime: #D4E71F;
-    --lime-hover: #E3F52D;
+    --bg-dark-2: #0E1A3A;
+    --bg-dark-3: #122447;
+    --bg-light: #FAFAF7;
+    --bg-light-card: #FFFFFF;
     --blue: #2D5BFF;
     --blue-dim: #1E3A7A;
+    --lime: #D4E71F;
+    --lime-hover: #E4F050;
     --text-dark: #0B132B;
-    --text-muted: #5A6679;
+    --text-dark-muted: #4B5565;
+    --text-dark-faint: #738096;
     --text-light: #FFFFFF;
-    --text-light-muted: #D0E0F0;
-    --text-light-faint: #8894AB;
-    --line-dark: rgba(255, 255, 255, 0.09);
-    --line-dark-strong: rgba(255, 255, 255, 0.16);
-    --maxw: 1140px;
+    --text-light-muted: #E2E8F0;
+    --text-light-faint: #9AA5BD;
+    --line-dark: rgba(11, 19, 43, 0.12);
+    --line-dark-strong: rgba(11, 19, 43, 0.22);
+    --line-light: rgba(255, 255, 255, 0.10);
+    --line-light-strong: rgba(255, 255, 255, 0.20);
+    --radius: 8px;
+    --maxw: 1160px;
   }
 
-  /* Reset & Normal Document Flow (No overflow: hidden on html/body) */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html {
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: var(--bg-dark);
-  }
+  html { scroll-behavior: smooth; }
   body {
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    overflow-y: visible;
   }
-  #page {
-    width: 100%;
-    min-height: 100%;
-    position: relative;
-    overflow-x: hidden;
+
+  /* Offset for sticky header navigation */
+  #hoy, #perspectiva, #trayectoria, #experiencia, #tecnologia, #formacion, #en-movimiento {
+    scroll-margin-top: 100px;
   }
 
   a { color: inherit; text-decoration: none; }
   ul { list-style: none; }
-  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.025em; }
-  .mono { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; }
-  :focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.015em; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
 
-  /* Universal Container */
-  .container {
+  :focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
     max-width: var(--maxw);
     margin: 0 auto;
     padding: 0 28px;
-    width: 100%;
-    box-sizing: border-box;
   }
 
-  /* 1. HEADER (Light Warm-Neutral #F4F5F7) */
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 70;
-    background-color: var(--bg-light);
-    border-bottom: 1px solid rgba(11, 19, 43, 0.12);
-    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+  /* BUTTONS */
+  .btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
   }
-  .nav.nav-scrolled {
-    box-shadow: 0 4px 20px rgba(11, 19, 43, 0.08);
+  .btn-primary {
+    background: var(--lime);
+    color: #0B132B;
+    border: 1px solid var(--lime);
+  }
+  .btn-primary:hover {
+    background: var(--lime-hover);
+    border-color: var(--lime-hover);
+    transform: translateY(-2px);
+  }
+  .btn-ghost-light {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1px solid var(--line-light-strong);
+  }
+  .btn-ghost-light:hover {
+    border-color: var(--lime);
+    color: var(--lime);
+    transform: translateY(-2px);
+  }
+  .btn-small {
+    padding: 8px 18px;
+    font-size: 0.76rem;
+  }
+
+  /* SECTION RHYTHM */
+  .section-dark {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 96px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .section-dark-alt {
+    background: var(--bg-dark-2);
+    color: var(--text-light);
+    padding: 96px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .section-light {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: 96px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(11, 19, 43, 0.08);
+  }
+
+  /* EYEBROWS */
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 20px;
+    height: 1px;
+    display: inline-block;
+  }
+  .section-dark .eyebrow,
+  .section-dark-alt .eyebrow {
+    color: var(--lime);
+  }
+  .section-dark .eyebrow::before,
+  .section-dark-alt .eyebrow::before {
+    background: var(--lime);
+  }
+  .section-light .eyebrow {
+    color: var(--blue);
+  }
+  .section-light .eyebrow::before {
+    background: var(--blue);
+  }
+
+  /* SECTION HEADERS */
+  .section-head {
+    margin-bottom: 48px;
+    max-width: 820px;
+  }
+  .section-head h2 {
+    font-size: clamp(2rem, 3.4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .section-head p.head-sub {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .section-dark .head-sub,
+  .section-dark-alt .head-sub {
+    color: var(--text-light-muted);
+  }
+  .section-light .head-sub {
+    color: var(--text-dark-muted);
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ================= NAVIGATION & DROPDOWN ================= */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: rgba(250, 250, 247, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line-dark);
   }
   .nav-inner {
     display: flex;
@@ -105,17 +213,20 @@
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    transition: opacity .2s ease;
+    gap: 11px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    letter-spacing: 0.04em;
   }
-  .logo:hover { opacity: 0.85; }
   .logo-mark {
     width: 32px;
     height: 32px;
-    border-radius: 8px;
+    border-radius: 9px;
     flex-shrink: 0;
-    background: conic-gradient(from 210deg, #2D5BFF, #D4E71F 55%, #2D5BFF);
+    position: relative;
+    background: conic-gradient(from 210deg, var(--blue), var(--lime) 60%, var(--blue));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,118 +234,127 @@
     font-weight: 700;
     font-size: 0.72rem;
     color: #0B132B;
-    box-shadow: 0 2px 6px rgba(11, 19, 43, 0.12);
-    position: relative;
+    box-shadow: 0 2px 6px rgba(11,19,43,0.12);
   }
-  .logo-mark::after {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border: 1px solid rgba(11, 19, 43, 0.12);
-    border-radius: 9px;
-    pointer-events: none;
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
   }
-  .logo-text {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    font-size: 1.0rem;
-    color: var(--text-dark);
-  }
-
-  .nav-links { display: flex; align-items: center; gap: 28px; }
   .nav-links a.nav-link {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: #5A6679;
-    position: relative;
-    padding: 6px 0;
+    color: var(--text-dark-muted);
     transition: color 0.2s ease;
-    text-decoration: none;
   }
   .nav-links a.nav-link:hover {
-    color: var(--text-dark);
+    color: var(--blue);
   }
   .nav-links a.nav-link.is-active {
     color: var(--text-dark);
     font-weight: 600;
+    position: relative;
   }
   .nav-links a.nav-link.is-active::after {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: -6px;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 2px;
-    background: var(--lime);
+    background: var(--blue);
     border-radius: 2px;
   }
 
-  /* Lang Toggle */
-  .lang-toggle-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+  /* DROPDOWN */
+  .nav-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--text-dark);
     background: transparent;
-    border: 1px solid rgba(11, 19, 43, 0.15);
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 5px 8px;
-    letter-spacing: 0.05em;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    user-select: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: none;
+    padding: 6px 0;
+    font-family: 'Inter', sans-serif;
   }
-  .lang-toggle-text:hover {
-    background-color: rgba(11, 19, 43, 0.05);
-  }
-  .lang-toggle-text .lang-opt {
-    color: #7D8899;
-    font-weight: 500;
-    transition: color 0.2s ease;
-  }
-  .lang-toggle-text .lang-opt.active {
-    color: var(--text-dark);
-    font-weight: 700;
-  }
-  .lang-toggle-text .lang-sep { color: #C0C7D2; }
-
-  /* Nav CTA Button */
-  .btn-nav-cta {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-size: 0.84rem;
-    font-weight: 700;
-    padding: 9px 18px;
-    border-radius: 8px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background-color: var(--lime);
-    color: var(--text-dark);
-    border: 1px solid rgba(11, 19, 43, 0.08);
-    box-shadow: 0 2px 8px rgba(212, 231, 31, 0.28);
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .btn-nav-cta:hover {
-    background-color: var(--lime-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(212, 231, 31, 0.38);
-  }
-  .btn-nav-cta .cta-arrow {
-    display: inline-block;
-    font-size: 0.95rem;
-    line-height: 1;
+  .nav-dropdown-trigger .chevron {
+    font-size: 0.68rem;
     transition: transform 0.2s ease;
+    display: inline-block;
   }
-  .btn-nav-cta:hover .cta-arrow {
-    transform: translate(2px, -2px);
+  .nav-dropdown:hover .nav-dropdown-trigger .chevron,
+  .nav-dropdown.is-open .nav-dropdown-trigger .chevron {
+    transform: rotate(180deg);
+  }
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #FFFFFF;
+    border: 1px solid var(--line-dark);
+    border-radius: 10px;
+    box-shadow: 0 14px 32px rgba(11, 19, 43, 0.08);
+    width: 220px;
+    padding: 8px 0;
+    display: none;
+    z-index: 100;
+    flex-direction: column;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    display: flex;
+  }
+  .nav-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 18px;
+    font-size: 0.86rem;
+    color: var(--text-dark-muted);
+    font-weight: 500;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(45, 91, 255, 0.06);
+    color: var(--blue);
+    padding-left: 21px;
+  }
+  .nav-dropdown-menu a span.sub-arrow {
+    font-size: 0.72rem;
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .nav-dropdown-menu a:hover span.sub-arrow {
+    opacity: 1;
+    transform: translateX(2px);
   }
 
+  .lang-toggle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 999px;
+    padding: 6px 14px;
+    color: var(--text-dark);
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .lang-toggle:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
   .nav-toggle {
     display: none;
     flex-direction: column;
@@ -251,1562 +371,1637 @@
     width: 100%;
     height: 2px;
     background: var(--text-dark);
-    transition: transform .3s ease, opacity .3s ease;
+    transition: 0.2s ease;
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 890px) {
     .nav-links {
       position: absolute;
       top: 72px;
       left: 0;
       right: 0;
-      background: var(--bg-light);
-      border-bottom: 1px solid rgba(11, 19, 43, 0.12);
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--line-dark);
       flex-direction: column;
       align-items: flex-start;
       gap: 0;
       max-height: 0;
       overflow: hidden;
-      box-shadow: 0 12px 24px rgba(11, 19, 43, 0.08);
-      transition: max-height .35s ease;
+      transition: max-height 0.35s ease;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
     }
-    .nav-links.open { max-height: 480px; }
-    .nav-links a.nav-link { width: 100%; padding: 14px 28px; border-bottom: 1px solid rgba(11, 19, 43, 0.06); }
-    .nav-links a.nav-link.is-active::after { display: none; }
-    .nav-links .lang-toggle-text { margin: 16px 28px; }
-    .nav-links .btn-nav-cta { margin: 0 28px 20px; }
+    .nav-links.open { max-height: 600px; overflow-y: auto; }
+    .nav-links a.nav-link,
+    .nav-dropdown {
+      width: 100%;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .nav-links a.nav-link { padding: 14px 28px; }
+    .nav-dropdown {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-dropdown-trigger {
+      width: 100%;
+      padding: 14px 28px;
+      justify-content: space-between;
+    }
+    .nav-dropdown-menu {
+      position: static;
+      transform: none;
+      width: 100%;
+      box-shadow: none;
+      border: none;
+      background: var(--bg-light);
+      padding: 4px 0 12px 0;
+      display: none;
+    }
+    .nav-dropdown.is-open .nav-dropdown-menu {
+      display: flex;
+    }
+    .nav-dropdown-menu a {
+      padding: 10px 36px;
+      font-size: 0.84rem;
+    }
+    .nav-links .lang-toggle { margin: 16px 28px 10px; }
+    .nav-links .btn { margin: 6px 28px 20px; }
     .nav-toggle { display: flex; }
   }
 
-  /* 2. HERO SECTION (Edge-to-Edge Deep Navy #0B132B) */
-  .hero {
+  /* ================= 2. HERO (DARK / HUMAN-FIRST) ================= */
+  .hero-section {
+    padding: 88px 0 96px;
+    background:
+      radial-gradient(circle at 82% 38%, rgba(45, 91, 255, 0.16) 0%, rgba(45, 91, 255, 0.04) 28%, transparent 54%),
+      linear-gradient(180deg, #050607 0%, #070A10 100%);
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent 0%, transparent 56%, rgba(255,255,255,0.015) 100%);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+    gap: 64px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-section .eyebrow {
+    color: #8FADFF;
+  }
+  .hero-section .eyebrow::before {
+    background: #2D5BFF;
+  }
+  .hero-headline {
+    font-size: clamp(2.6rem, 4.8vw, 4.15rem);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    margin-bottom: 26px;
+    max-width: 760px;
+  }
+  .accent-lime {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: var(--lime);
+    box-shadow: none;
+    display: inline;
+  }
+  .hero-support {
+    font-size: 1.14rem;
+    color: #C7D0DE;
+    line-height: 1.72;
+    margin-bottom: 34px;
+    max-width: 680px;
+  }
+  .hero-author-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 2px 0 2px 16px;
+    background: transparent;
+    border: 0;
+    border-left: 2px solid var(--lime);
+    border-radius: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #D9E0EA;
+    box-shadow: none;
+  }
+  .hero-author-tag .dot {
+    display: none;
+  }
+
+  .constellation-wrapper {
     position: relative;
     width: 100%;
-    background: radial-gradient(circle at 82% 42%, #142554 0%, #0B132B 65%);
-    padding: 130px 0 65px;
-    min-height: 580px;
+    height: 440px;
+    border-radius: 24px;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(45, 91, 255, 0.18), transparent 42%),
+      linear-gradient(145deg, rgba(14,26,58,0.95), rgba(5,6,7,0.98));
+    border: 1px solid rgba(255,255,255,0.11);
+    overflow: hidden;
+    box-shadow: 0 28px 70px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.04);
     display: flex;
     align-items: center;
-    box-sizing: border-box;
-    overflow: hidden;
+    justify-content: center;
   }
-  #heroCanvas {
+  .constellation-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255,255,255,0.045);
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  #constellationCanvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    pointer-events: auto;
-  }
-  .hero-inner {
-    position: relative;
-    z-index: 2;
-    pointer-events: none;
-    max-width: 780px;
-  }
-  .hero-inner a, .hero-inner button { pointer-events: auto; }
-
-  .hero-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--lime);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-  .hero-label::before {
-    content: "";
-    width: 22px;
-    height: 2px;
-    background: var(--lime);
-    border-radius: 2px;
-    display: inline-block;
-  }
-
-  /* Thesis Triad Headline */
-  .hero-thesis-triad {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2.3rem, 4.4vw, 3.5rem);
-    line-height: 1.14;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-    margin-bottom: 22px;
-  }
-  .hero-thesis-triad .thesis-line {
     display: block;
   }
-  .hero-thesis-triad .thesis-line.highlight {
-    color: var(--lime);
+  .constellation-badge {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    background: rgba(5, 8, 15, 0.72);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    color: #9FB1D0;
+    letter-spacing: 0.07em;
+    pointer-events: none;
+    z-index: 2;
   }
 
-  .hero-identity {
-    margin-bottom: 24px;
-    padding-top: 6px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    display: inline-block;
-  }
-  .hero-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
-    color: #FFFFFF;
-    letter-spacing: -0.025em;
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
-  .hero-role {
-    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-    font-size: 0.88rem;
-    color: #A3B3D1;
-    letter-spacing: 0.03em;
-    font-weight: 500;
+  @media (max-width: 900px) {
+    .hero-section { padding: 58px 0 68px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 38px; }
+    .hero-headline { font-size: clamp(2.35rem, 10vw, 3.3rem); max-width: 100%; }
+    .hero-support { font-size: 1.04rem; }
+    .constellation-wrapper { height: 330px; border-radius: 18px; }
   }
 
-  .hero-actions {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 6px;
+  @media (max-width: 560px) {
+    .hero-section { padding: 48px 0 58px; }
+    .hero-headline { font-size: clamp(2.15rem, 10.5vw, 2.75rem); line-height: 1.08; }
+    .hero-support { font-size: 1rem; line-height: 1.66; margin-bottom: 28px; }
+    .hero-author-tag { font-size: 0.72rem; line-height: 1.55; }
+    .constellation-wrapper { height: 280px; }
   }
 
-  /* Buttons */
-  .btn {
-    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    padding: 12px 24px;
-    border-radius: 8px;
+  /* ================= 3. HOY (DARK #0B132B) ================= */
+  .progression-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+  .progression-track::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 32px;
+    right: 32px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--lime) 100%);
+    opacity: 0.4;
+    z-index: 0;
+  }
+  .prog-step {
+    position: relative;
+    z-index: 1;
+    background: rgba(18, 36, 71, 0.45);
+    border: 1px solid var(--line-light);
+    border-radius: 12px;
+    padding: 30px 26px;
+    backdrop-filter: blur(6px);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .prog-step:hover {
+    transform: translateY(-3px);
+    border-color: var(--line-light-strong);
+  }
+  .prog-marker {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .btn-primary {
-    background: var(--lime);
-    color: #0B132B;
-    border: 1px solid transparent;
-    box-shadow: 0 4px 16px rgba(212, 231, 31, 0.26);
-  }
-  .btn-primary:hover {
-    background: var(--lime-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 231, 31, 0.36);
-  }
-  .btn-ghost {
-    border: 1px solid rgba(45, 91, 255, 0.55);
-    color: #FFFFFF;
-    background: rgba(45, 91, 255, 0.10);
-  }
-  .btn-ghost:hover {
-    border-color: var(--lime);
-    background: rgba(45, 91, 255, 0.20);
-    transform: translateY(-2px);
-  }
-
-  /* 3. CREDIBILITY STRIP (Unified Warm Neutral #F4F5F7) */
-  #credibility-strip {
-    position: relative;
-    z-index: 20;
-    background-color: var(--bg-light);
-    border-bottom: 1px solid rgba(11, 19, 43, 0.10);
-    width: 100%;
-  }
-  .cred-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 38px 0;
-    gap: 0;
-  }
-  .cred-col {
-    padding: 0 26px;
-    border-right: 1px solid rgba(11, 19, 43, 0.12);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .cred-col:first-child { padding-left: 0; }
-  .cred-col:last-child { border-right: none; padding-right: 0; }
-
-  .cred-col-tag {
+    gap: 8px;
+    background: var(--bg-dark);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line-light-strong);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.70rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--lime);
+    margin-bottom: 18px;
+  }
+  .prog-step:first-child .prog-marker { color: #8FADFF; border-color: rgba(45, 91, 255, 0.4); }
+  .prog-step:last-child .prog-marker { color: var(--lime); border-color: rgba(212, 231, 31, 0.5); }
+  .prog-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  .prog-desc {
+    font-size: 0.92rem;
+    color: var(--text-light-muted);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 820px) {
+    .progression-track {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .progression-track::before { display: none; }
+  }
+
+  /* ================= 4. PERSPECTIVA (LIGHT #FAFAF7) ================= */
+  .persp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--line-dark);
+    border-radius: 16px;
+    background: #FFFFFF;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(11,19,43,0.03);
+  }
+  .persp-col {
+    padding: 40px 32px;
+    position: relative;
+  }
+  .persp-col:not(:last-child) {
+    border-right: 1px solid var(--line-dark);
+  }
+  .persp-num {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--blue);
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
+    padding: 4px 8px;
+    background: rgba(45, 91, 255, 0.08);
+    border-radius: 4px;
   }
-  .cred-col-dot {
+  .persp-phrase {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.32rem;
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .persp-text {
+    color: var(--text-dark-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  @media (max-width: 860px) {
+    .persp-grid { grid-template-columns: 1fr; }
+    .persp-col:not(:last-child) { border-right: none; border-bottom: 1px solid var(--line-dark); }
+  }
+
+  /* ================= 5. TRAYECTORIA (DARK #0B132B) ================= */
+  .milestones-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 36px;
+  }
+  .milestones-track::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--line-light-strong);
+    z-index: 0;
+  }
+  .m-item {
+    position: relative;
+    z-index: 1;
+    padding-top: 36px;
+  }
+  .m-dot {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 0 5px var(--bg-dark);
+  }
+  .m-item.m-current .m-dot {
+    background: var(--lime);
+    box-shadow: 0 0 0 5px var(--bg-dark), 0 0 12px rgba(212, 231, 31, 0.6);
+  }
+  .m-card {
+    background: var(--bg-dark-2);
+    border: 1px solid var(--line-light);
+    border-radius: 12px;
+    padding: 24px;
+    height: 100%;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .m-item.m-current .m-card {
+    border-color: rgba(212, 231, 31, 0.35);
+    background: linear-gradient(180deg, rgba(18, 36, 71, 0.6) 0%, rgba(14, 26, 58, 0.9) 100%);
+  }
+  .m-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-light-strong);
+  }
+  .m-date {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #8FADFF;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+  .m-item.m-current .m-date { color: var(--lime); }
+  .m-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .m-org {
+    font-size: 0.86rem;
+    color: #8FADFF;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .m-item.m-current .m-org { color: rgba(212, 231, 31, 0.9); }
+  .m-desc {
+    color: var(--text-light-muted);
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 820px) {
+    .milestones-track {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 16px;
+    }
+    .milestones-track::before {
+      top: 20px;
+      bottom: 20px;
+      left: 7px;
+      right: auto;
+      width: 1px;
+      height: auto;
+    }
+    .m-item {
+      padding-top: 0;
+      padding-left: 28px;
+    }
+    .m-dot {
+      top: 18px;
+      left: 1px;
+    }
+  }
+
+  /* ================= 6. EXPERIENCIA & IMPACTO (DARK ALT #0E1A3A) ================= */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .impact-card {
+    background: rgba(11, 19, 43, 0.65);
+    border: 1px solid var(--line-light);
+    border-radius: 12px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .impact-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+  .impact-card h3 {
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .impact-body {
+    color: var(--text-light-muted);
+    font-size: 0.93rem;
+    line-height: 1.62;
+    flex-grow: 1;
+  }
+  .impact-body strong {
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+
+  @media (max-width: 860px) {
+    .impact-grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* ================= 7. TECNOLOGÍA (LIGHT #FAFAF7) ================= */
+  .tech-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+  .tech-group {
+    background: #FFFFFF;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(11,19,43,0.02);
+  }
+  .tech-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tech-label::before {
+    content: "";
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: var(--lime);
-    display: inline-block;
-    flex-shrink: 0;
+    background: var(--blue);
   }
-  .cred-col-val {
-    font-family: 'Space Grotesk', sans-serif;
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    padding: 7px 12px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 6px;
+    color: var(--text-dark-muted);
+    background: #FFFFFF;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .chip:hover {
+    border-color: #0B132B;
+    background: rgba(212, 231, 31, 0.15);
+    color: var(--text-dark);
+    transform: translateY(-1px);
+  }
+  .chip-highlight {
+    background: rgba(45, 91, 255, 0.08);
+    border-color: var(--blue);
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  /* Experience interaction: highlight capability tags on hover */
+  #experiencia .capability-block {
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  #experiencia .capability-block:hover {
+    transform: translateY(-2px);
+    border-color: rgba(45, 91, 255, 0.28) !important;
+    box-shadow: 0 10px 28px rgba(11, 19, 43, 0.08) !important;
+  }
+  #experiencia .capability-block:hover .chip {
+    background: rgba(45, 91, 255, 0.08) !important;
+    border-color: rgba(45, 91, 255, 0.34) !important;
+    color: #2D5BFF !important;
+  }
+  #experiencia .capability-block .chip:hover {
+    background: #2D5BFF !important;
+    border-color: #2D5BFF !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+  }
+
+  /* Technology section — dark contrast block */
+  #tecnologia {
+    background: #050607 !important;
+    color: #FFFFFF;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  #tecnologia .section-head .eyebrow {
+    color: #5E81FF;
+  }
+  #tecnologia .section-head h2 {
+    color: #FFFFFF;
+  }
+  #tecnologia .section-head .head-sub {
+    color: #A8B3C7;
+  }
+  #tecnologia .tech-group {
+    background: #0C0F14;
+    border-color: rgba(255,255,255,0.11);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.24);
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  }
+  #tecnologia .tech-group:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45,91,255,0.60);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.34), 0 0 0 1px rgba(45,91,255,0.10);
+  }
+  #tecnologia .tech-label {
+    color: #6F91FF;
+  }
+  #tecnologia .tech-label::before {
+    background: #D4E71F;
+  }
+  #tecnologia .chip {
+    color: #DDE5F2;
+    background: #111722;
+    border-color: rgba(255,255,255,0.16);
+  }
+  #tecnologia .chip-highlight {
+    color: #8FADFF;
+    background: rgba(45,91,255,0.14);
+    border-color: rgba(94,129,244,0.70);
+  }
+  #tecnologia .chip:hover {
+    background: #2D5BFF;
+    border-color: #2D5BFF;
+    color: #FFFFFF;
+    box-shadow: 0 5px 16px rgba(45,91,255,0.26);
+  }
+
+  /* ================= 8. FORMACIÓN (LIGHT #FAFAF7) ================= */
+  .edu-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  .edu-pillar {
+    background: #FFFFFF;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    padding: 32px 28px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .edu-pillar:hover {
+    transform: translateY(-2px);
+    border-color: var(--blue);
+  }
+  .edu-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .edu-pillar h3 {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-dark);
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    line-height: 1.35;
   }
-  .cred-col-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.82rem;
-    line-height: 1.45;
-    color: var(--text-muted);
-  }
-
-  @media (max-width: 980px) {
-    .cred-grid {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 28px 0;
-      row-gap: 26px;
-    }
-    .cred-col { padding: 8px 20px; }
-    .cred-col:first-child { padding-left: 0; }
-    .cred-col:nth-child(2) { border-right: none; padding-right: 0; }
-    .cred-col:nth-child(3) { padding-left: 0; }
-    .cred-col:nth-child(4) { border-right: none; padding-right: 0; }
-  }
-  @media (max-width: 600px) {
-    .cred-grid {
-      grid-template-columns: 1fr;
-      row-gap: 22px;
-      padding: 24px 0;
-    }
-    .cred-col {
-      border-right: none;
-      border-bottom: 1px solid rgba(11, 19, 43, 0.10);
-      padding: 10px 0 18px 0;
-    }
-    .cred-col:last-child {
-      border-bottom: none;
-      padding-bottom: 6px;
-    }
-  }
-
-  /* 4. EXPLORA SECTION (#FAFAF7 Warm Light Background) */
-  #hub {
-    position: relative;
-    background-color: var(--bg-light-panel);
-    width: 100%;
-    border-bottom: 1px solid rgba(11, 19, 43, 0.10);
-    padding: 56px 0 64px;
-    color: var(--text-dark);
-  }
-  .hub-header {
-    margin-bottom: 24px;
-    max-width: 780px;
-  }
-  .hub-eyebrow-tag {
+  .edu-sub {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.74rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--blue);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-weight: 700;
+    font-size: 0.76rem;
+    color: var(--text-dark-faint);
+    margin-bottom: 14px;
   }
-  .hub-eyebrow-tag::before {
-    content: '';
-    width: 24px;
-    height: 2px;
-    background: var(--blue);
-    display: inline-block;
-  }
-  .hub-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(1.85rem, 3.2vw, 2.45rem);
-    font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1.18;
-    letter-spacing: -0.025em;
-    margin-bottom: 10px;
-  }
-  .hub-description {
-    color: #4A5568;
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.96rem;
+  .edu-desc {
+    font-size: 0.92rem;
+    color: var(--text-dark-muted);
     line-height: 1.55;
-    max-width: 720px;
   }
 
-  /* Segmented Perspective Control - Compact & Premium */
-  .hub-segmented-wrap {
-    margin-bottom: 26px;
+  .edu-subrow {
     display: flex;
-    align-items: center;
-  }
-  .hub-segmented-ctrl {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    background-color: #E6ECF3;
-    padding: 3px;
-    border-radius: 9px;
-    border: 1px solid rgba(11, 19, 43, 0.10);
-    box-shadow: inset 0 1px 2px rgba(11, 19, 43, 0.04);
-  }
-  .hub-seg-btn {
-    border: none;
-    background: transparent;
-    padding: 7px 15px;
-    border-radius: 7px;
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    color: #4A5568;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-    user-select: none;
-    line-height: 1.2;
-  }
-  .hub-seg-btn svg {
-    width: 14px;
-    height: 14px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    flex-shrink: 0;
-    transition: stroke 0.2s ease;
-  }
-  .hub-seg-btn:hover:not(.is-active) {
-    color: var(--text-dark);
-    background-color: rgba(255, 255, 255, 0.55);
-  }
-  .hub-seg-btn.is-active {
-    background-color: #0B132B;
-    color: #FFFFFF;
-    box-shadow: 0 2px 8px rgba(11, 19, 43, 0.20);
-  }
-  .hub-seg-btn.is-active svg {
-    stroke: #FFFFFF;
-  }
-  .hub-seg-indicator {
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--lime);
-    margin-left: 2px;
-    flex-shrink: 0;
-  }
-
-  /* Cards Grid - Fixed Height & Non-shifting */
-  .hub-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    align-items: stretch;
-  }
-  .hub-box {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 24px;
     background: #FFFFFF;
-    border: 1px solid rgba(11, 19, 43, 0.08);
-    border-radius: 14px;
-    padding: 26px 24px 24px;
-    box-shadow: 0 4px 18px rgba(11, 19, 43, 0.03);
-    display: flex;
-    flex-direction: column;
-    min-height: 240px;
-    text-decoration: none;
-    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
-  }
-  .hub-box:hover {
-    transform: translateY(-3px);
-    border-color: rgba(45, 91, 255, 0.32);
-    box-shadow: 0 10px 26px rgba(11, 19, 43, 0.07);
-  }
-  .hub-box-top {
-    display: flex;
+    border: 1px dashed var(--line-dark-strong);
+    border-radius: 10px;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(11, 19, 43, 0.06);
   }
-  .hub-box-num {
-    font-family: 'Space Grotesk', monospace;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1;
-  }
-  .hub-box-category {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.70rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--blue);
-  }
-
-  .hub-card-dynamic {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    opacity: 1;
-    transition: opacity 220ms ease;
-  }
-  .hub-card-dynamic.is-fading { opacity: 0; }
-
-  .hub-box-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.18rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-    min-height: 2.5em;
-  }
-  .hub-box-text {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: #4A5568;
-    margin-bottom: 20px;
-    flex-grow: 1;
-    min-height: 4.65em;
-  }
-  .hub-box-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    transition: color 0.2s ease;
-  }
-  .hub-box:hover .hub-box-link {
-    color: var(--blue);
-  }
-  .hub-box-link span.arrow {
-    transition: transform 0.2s ease;
-  }
-  .hub-box:hover .hub-box-link span.arrow {
-    transform: translateX(4px);
-  }
-
-  @media (max-width: 960px) {
-    .hub-cards-grid { grid-template-columns: 1fr; gap: 16px; }
-    .hub-box { min-height: auto; }
-    .hub-box-title, .hub-box-text { min-height: auto; }
-    #hub { padding: 48px 0; }
-  }
-
-  /* 5. CONTACT SECTION (Deep Dark Navy #0B132B) */
-  #contacto {
-    position: relative;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    width: 100%;
-    padding: 85px 0 95px;
-  }
-  .contact-eyebrow {
+  .edu-subrow-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.74rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--lime);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-    font-weight: 600;
-  }
-  .contact-eyebrow::before {
-    content: "";
-    width: 22px;
-    height: 2px;
-    background: var(--lime);
-    display: inline-block;
-  }
-  .contact-head-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2.0rem, 3.8vw, 2.75rem);
-    line-height: 1.16;
-    letter-spacing: -0.025em;
-    margin-bottom: 16px;
-    color: #FFFFFF;
-    max-width: 760px;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: 64px;
-    margin-top: 36px;
-  }
-  @media (max-width: 900px) {
-    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  }
-
-  .contact-info p {
-    color: var(--text-light-muted);
-    font-size: 1.0rem;
-    margin-bottom: 32px;
-    max-width: 420px;
-    line-height: 1.6;
-  }
-  .contact-info-item {
-    padding: 18px 0;
-    border-top: 1px solid var(--line-dark);
-  }
-  .contact-info-item .k {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 6px;
-    display: block;
-    font-weight: 600;
-  }
-  .contact-info-item a, .contact-info-item span {
-    color: var(--text-light);
-    font-size: 0.98rem;
-    font-weight: 500;
-    transition: color .2s ease;
-  }
-  .contact-info-item a:hover { color: var(--lime); }
-  .contact-info-item .meta-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
-    color: #A3B3D1;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  .contact-info-item .meta-badge span.dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--lime);
-  }
-
-  .form {
-    background: var(--bg-dark-sub);
-    border: 1px solid var(--line-dark);
-    border-radius: 12px;
-    padding: 38px 34px;
-    box-shadow: 0 16px 36px rgba(0,0,0,0.24);
-  }
-  .form-row-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-  .form-row { margin-bottom: 20px; }
-  .form-row label {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--text-light-faint);
-    margin-bottom: 8px;
-    font-weight: 500;
+    color: var(--text-dark-faint);
+    font-weight: 600;
   }
-  .form-row input, .form-row textarea {
-    width: 100%;
-    background: rgba(11, 19, 43, 0.75);
-    border: 1px solid var(--line-dark-strong);
-    border-radius: 6px;
-    padding: 12px 16px;
-    color: var(--text-light);
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.92rem;
-    transition: border-color .2s ease, background-color .2s ease;
-  }
-  .form-row input:focus, .form-row textarea:focus {
-    outline: none;
-    border-color: var(--lime);
-    background: var(--bg-dark);
-    box-shadow: 0 0 0 1px var(--lime);
-  }
-  .form-row textarea { resize: vertical; min-height: 100px; }
-  .form-note {
+  .edu-subitem {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.74rem;
-    color: var(--text-light-faint);
-    margin-top: 18px;
-    line-height: 1.55;
+    font-size: 0.78rem;
+    color: var(--text-dark);
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--bg-light);
+    border: 1px solid var(--line-dark);
   }
 
-  /* 6. FOOTER (Deep Navy #080E21) */
-  footer.site-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 68px 0 42px;
+  @media (max-width: 860px) {
+    .edu-pillars { grid-template-columns: 1fr; }
+  }
+
+  /* ================= 9. EN MOVIMIENTO (LIGHT #FAFAF7) ================= */
+  .gallery-mosaic {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 24px;
+  }
+  .mosaic-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .mosaic-right {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
+  .photo-frame {
+    background: #FFFFFF;
+    border: 1px solid var(--line-dark);
+    border-radius: 14px;
+    overflow: hidden;
     position: relative;
-    z-index: 10;
-    background-color: var(--bg-footer);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .photo-frame:hover {
+    transform: translateY(-3px);
+    border-color: var(--blue);
+    box-shadow: 0 10px 28px rgba(11, 19, 43, 0.06);
+  }
+  .photo-placeholder {
+    background: linear-gradient(135deg, #EEF2F6 0%, #E2E8F0 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-height: 180px;
+  }
+  .featured-frame .photo-placeholder { min-height: 290px; }
+  .photo-ph-content {
+    text-align: center;
+    padding: 24px;
+    z-index: 1;
+  }
+  .photo-ph-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid var(--line-dark);
+    border-radius: 6px;
+    color: var(--text-dark-muted);
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .photo-ph-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dark-faint);
+  }
+
+  .photo-media {
+    background: linear-gradient(135deg, #EEF2F6 0%, #E2E8F0 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+  }
+  .featured-frame .photo-media { min-height: 290px; }
+  .photo-media img {
+    display: block;
     width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+  }
+  .movement-card-link { color: inherit; text-decoration: none; display: contents; }
+  .movement-empty {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dark-faint);
+  }
+  .featured-frame .movement-empty { min-height: 290px; }
+
+  .photo-caption {
+    padding: 16px 20px;
+    background: #FFFFFF;
+    border-top: 1px solid var(--line-dark);
+  }
+  .photo-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .photo-event {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .photo-loc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--blue);
+  }
+  .photo-note {
+    font-size: 0.84rem;
+    color: var(--text-dark-muted);
+    line-height: 1.45;
+  }
+
+  @media (max-width: 860px) {
+    .gallery-mosaic { grid-template-columns: 1fr; }
+    .featured-frame .photo-placeholder { min-height: 220px; }
+  }
+
+  /* ================= 10. MI FORMA DE VERLO (DARK #0B132B) ================= */
+  .differentiator-box {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .diff-headline {
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 700;
+    line-height: 1.18;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .diff-support {
+    font-size: 1.2rem;
+    color: var(--text-light-muted);
+    line-height: 1.68;
+    max-width: 860px;
+  }
+  .diff-support .human-highlight {
+    color: var(--lime);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212, 231, 31, 0.4);
+    padding-bottom: 2px;
+  }
+
+  /* ================= 11. CTA & FOOTER (DARK #0B132B) ================= */
+  .cta-box {
+    background: var(--bg-dark-2);
+    border: 1px solid var(--line-light-strong);
+    border-radius: 20px;
+    padding: 56px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+  }
+  .cta-copy h3 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+  .cta-copy p {
+    font-size: 1.1rem;
+    color: var(--text-light-muted);
+  }
+  .cta-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .cta-box { padding: 40px 28px; flex-direction: column; align-items: flex-start; }
+  }
+
+  footer.site-footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border-top: 1px solid var(--line-light);
+    padding: 72px 28px 40px;
+    position: relative;
+    z-index: 1;
   }
   .footer-grid {
+    max-width: var(--maxw);
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
-    gap: 56px;
-    margin-bottom: 52px;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
   }
-  @media (max-width: 800px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
-  .footer-brand { display: flex; flex-direction: column; gap: 14px; }
+  .footer-brand .logo { color: #FFFFFF; }
   .footer-brand p {
     color: var(--text-light-muted);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     max-width: 320px;
     line-height: 1.55;
   }
-  .footer-brand .logo-text { color: #FFFFFF; }
   .footer-col h4 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 20px;
-    font-weight: 700;
+    color: #8FADFF;
+    margin-bottom: 18px;
+    font-weight: 600;
   }
   .footer-col a {
     display: block;
     color: var(--text-light-muted);
-    font-size: 0.90rem;
+    font-size: 0.95rem;
     margin-bottom: 12px;
-    transition: color .2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
   }
-  .footer-col a:hover { color: var(--lime); }
+  .footer-col a:hover {
+    color: var(--lime);
+    transform: translateX(2px);
+  }
   .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: var(--maxw);
+    margin: 0 auto;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--text-light-faint);
     padding-top: 28px;
-    border-top: 1px solid var(--line-dark);
-  }
-
-  @media (max-width: 640px) {
-    .hero { padding: 110px 0 50px; min-height: auto; }
-    .form-row-pair { grid-template-columns: 1fr; }
-    .form { padding: 26px 20px; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
-  }
-
-  .site-logo-img { width: 210px; max-width: 220px; height: auto; object-fit: contain; display: block; }
-  @media (max-width: 900px) { .site-logo-img { width: 180px; } }
-  @media (max-width: 640px) { .site-logo-img { width: 150px; } }
-</style>
-<style class="">
-  #contacto .contact-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.76rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #2D5BFF;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-    font-weight: 700;
-  }
-  #contacto .contact-eyebrow::before {
-    content: '';
-    width: 22px;
-    height: 2px;
-    background: #2D5BFF;
-    display: inline-block;
-  }
-  #contacto .contact-head-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(2.1rem, 3.4vw, 2.6rem);
-    line-height: 1.18;
-    letter-spacing: -0.03em;
-    color: #0B132B;
-    margin-bottom: 16px;
-    max-width: 520px;
-    font-weight: 700;
-  }
-  #contacto .contact-subheading {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.02rem;
-    line-height: 1.6;
-    color: #475569;
-    max-width: 480px;
-    margin-bottom: 34px;
-  }
-  #contacto .contact-methods {
+    border-top: 1px solid var(--line-light);
     display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-  }
-  #contacto .contact-info-item {
-    padding: 14px 0;
-    border-top: 1px solid rgba(11, 19, 43, 0.10);
-  }
-  #contacto .contact-info-item .k {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.70rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #2D5BFF;
-    margin-bottom: 4px;
-    display: block;
-    font-weight: 700;
-  }
-  #contacto .contact-info-item a, #contacto .contact-info-item span {
-    color: #0B132B;
-    font-size: 0.96rem;
-    font-weight: 600;
-    transition: color .2s ease;
-  }
-  #contacto .contact-info-item a:hover {
-    color: #2D5BFF;
-  }
-  #contacto .contact-info-item .meta-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.86rem;
-    color: #334155;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  #contacto .contact-info-item .meta-badge span.dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #10B981;
-    display: inline-block;
-  }
-  #contacto .contact-microcopy {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.86rem;
-    line-height: 1.5;
-    color: #64748B;
-    margin-top: 4px;
-  }
-  #contacto .form {
-    background: #FFFFFF;
-    border: 1px solid rgba(11, 19, 43, 0.10);
-    border-radius: 16px;
-    padding: 36px 32px;
-    box-shadow: 0 16px 36px rgba(11, 19, 43, 0.05);
-  }
-  #contacto .form-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #0B132B;
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
-  }
-  #contacto .form-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.90rem;
-    color: #64748B;
-    margin-bottom: 24px;
-  }
-  #contacto .form-row label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.70rem;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    color: #475569;
-    font-weight: 600;
-    margin-bottom: 7px;
-    display: block;
-  }
-  #contacto .form-row input, #contacto .form-row textarea {
-    background: #F8FAFC;
-    border: 1px solid #CBD5E1;
-    border-radius: 8px;
-    color: #0B132B;
-    padding: 11px 14px;
-    font-size: 0.92rem;
-    font-family: 'Manrope', sans-serif;
-    width: 100%;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  }
-  #contacto .form-row input:focus, #contacto .form-row textarea:focus {
-    background: #FFFFFF;
-    border-color: #2D5BFF;
-    box-shadow: 0 0 0 2px rgba(45, 91, 255, 0.16);
-    outline: none;
-  }
-  #contacto .form-row textarea {
-    min-height: 96px;
-  }
-  #contacto .form-actions {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 10px;
+    gap: 12px;
   }
-  #contacto .form-actions .btn-primary {
-    background: #D4E71F;
-    color: #0B132B;
-    font-weight: 700;
-    padding: 13px 26px;
-    border-radius: 8px;
-    border: 1px solid rgba(11, 19, 43, 0.08);
-    box-shadow: 0 2px 10px rgba(212, 231, 31, 0.32);
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
   }
-  #contacto .form-actions .btn-primary:hover {
-    background: #E4F050;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(212, 231, 31, 0.42);
-  }
-  #contacto .form-alt-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.80rem;
-    font-weight: 600;
-    color: #2D5BFF;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  #contacto .form-alt-link:hover {
-    color: #1E3A7A;
-    text-decoration: underline;
-  }
-  #contacto .form-note {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.74rem;
-    color: #64748B;
-    margin-top: 14px;
-    line-height: 1.5;
-  }
-</style><style id="fullwidth-viewport-fix" class="">
-  :root {
-    --bg-dark: #050607 !important;
-    --bg-dark-sub: #0C0F14 !important;
-    --bg-footer: #050607 !important;
-    --maxw: 1440px !important;
-  }
-  html, body, #page {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
-    background: #050607 !important;
-    background-color: #050607 !important;
-  }
-  .container, .wrap, .inner-container {
-    max-width: 1440px !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: clamp(24px, 4vw, 64px) !important;
-    padding-right: clamp(24px, 4vw, 64px) !important;
-    box-sizing: border-box !important;
-  }
-  .nav {
-    width: 100% !important;
-    max-width: 100% !important;
-    background: rgba(255, 255, 255, 0.96) !important;
+</style>
+<link rel="stylesheet" href="/assets/nav-unified.css">
+<script defer src="/assets/nav-unified.js"></script>
+</head>
+<body><style id="theme-palette-override" class="">:root {
+  --bg-dark: #050607 !important;
+  --bg-dark-2: #0C0F14 !important;
+  --bg-dark-3: #10141B !important;
+  --line-light: rgba(255, 255, 255, 0.08) !important;
+  --line-light-strong: rgba(255, 255, 255, 0.16) !important;
+}
+.section-dark,
+.section-dark-alt,
+footer.site-footer {
+  background: #050607 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.prog-step {
+  background: #0C0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.prog-marker {
+  background: #10141B !important;
+}
+.m-card,
+.impact-card {
+  background: #0C0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.cta-box {
+  background: #0C0F14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}</style>
+<div id="page">
+<!-- ============ NAVIGATION ============ -->
+<style id="nav-white-style" class="">
+  nav.nav {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+    height: 72px !important;
   }
   .nav-inner {
-    max-width: 1440px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding-left: clamp(24px, 4vw, 64px) !important;
-    padding-right: clamp(24px, 4vw, 64px) !important;
-    box-sizing: border-box !important;
+    height: 72px !important;
   }
-  .hero-viewport-group {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    margin-top: 66px !important;
-    padding: 0 !important;
-    background: #050607 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    position: relative !important;
+  .nav-inner .logo {
+    color: #0B132B !important;
+    font-weight: 700 !important;
   }
-  @media (min-width: 1024px) {
-    .hero-viewport-group {
-      height: calc(100vh - 66px) !important;
-      min-height: 600px !important;
-      max-height: 960px !important;
-    }
-    .hero-viewport-group > section.hero {
-      flex: 1 1 auto !important;
-      min-height: 0 !important;
-      height: auto !important;
-      padding: 0 !important;
-      display: flex !important;
-      align-items: center !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      background: radial-gradient(circle at 80% 45%, #0F1420 0%, #050607 72%) !important;
-    }
-    .hero-viewport-group > section.hero .container {
-      display: flex !important;
-      align-items: center !important;
-      height: 100% !important;
-    }
-    .hero-viewport-group > section.hero .hero-inner {
-      max-width: 620px !important;
-      flex: 0 0 auto !important;
-      padding: 24px 0 !important;
-    }
-    .hero-viewport-group > #credibility-strip {
-      flex: 0 0 auto !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-    .hero-viewport-group > #credibility-strip .cred-grid {
-      padding: 20px 0 !important;
-      gap: 20px !important;
-    }
+  .nav-links a.nav-link {
+    color: #0B132B !important;
+    font-weight: 500 !important;
+    position: relative;
+    transition: color 0.2s ease;
   }
-  @media (max-width: 1023px) {
-    .hero-viewport-group {
-      height: auto !important;
-      min-height: auto !important;
-    }
-    .hero-viewport-group > section.hero {
-      min-height: auto !important;
-      padding-top: 64px !important;
-      padding-bottom: 44px !important;
-      width: 100% !important;
-    }
-    .hero-viewport-group > #credibility-strip .cred-grid {
-      padding: 24px 0 !important;
-    }
+  .nav-links a.nav-link:hover {
+    color: #0B132B !important;
   }
-  #heroCanvas {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    pointer-events: auto !important;
+  .nav-links a.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #D4E71F;
+    border-radius: 2px;
   }
-  #credibility-strip {
-    width: 100% !important;
-    max-width: 100% !important;
-    background-color: #F8FAFC !important;
-    border-bottom: 1px solid #E2E8F0 !important;
+  .nav-dropdown-trigger {
+    color: #0B132B !important;
+    font-weight: 500 !important;
+    position: relative;
+    transition: color 0.2s ease;
   }
-  #hub {
-    width: 100% !important;
-    max-width: 100% !important;
-    background-color: #FAFAFA !important;
-    border-bottom: 1px solid #E2E8F0 !important;
-    padding: 72px 0 80px !important;
+  .nav-dropdown-trigger.is-active,
+  .nav-dropdown-trigger:hover {
+    color: #0B132B !important;
+    font-weight: 600 !important;
   }
-  #contacto {
-    width: 100% !important;
-    max-width: 100% !important;
-    background-color: #050607 !important;
-    padding: 88px 0 96px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  .nav-dropdown-trigger.is-active::after,
+  .nav-dropdown-trigger:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: #D4E71F !important;
+    border-radius: 2px;
   }
-  footer.site-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    background-color: #050607 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  .nav-dropdown-menu {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
   }
-</style><link rel="stylesheet" href="/assets/nav-unified.css">
-<script defer src="/assets/nav-unified.js"></script>
-<link rel="stylesheet" href="/assets/reviews.css">
-<script defer src="/assets/reviews.js"></script>
-</head>
-<body>
-<div id="page">
-<!-- 1. HEADER (Light Warm Neutral #F4F5F7) -->
-<nav class="nav" id="mainNav" style="position: fixed; top: 0px; left: 0px; right: 0px; width: 100%; z-index: 70; background-color: rgb(255, 255, 255) !important; border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important; box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 10px !important;">
-<div class="nav-inner" style="height: 72px; display: flex; align-items: center; justify-content: space-between; width: 100%; margin: 0px auto; box-sizing: border-box;">
-<a class="logo" href="/" style="display:flex;align-items:center;text-decoration:none;flex-shrink:0;"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTgjJ4jQS-tERUEtTRbzyuF_9TsLa1oB8nCgR4ICMt-aBf0yJ8EUOrkHC5c66dWkS9A3hHRyXEZtlr-EK0ZlkPh0wGBEON09Im1tv3deUkCFB6v81XckrQQRO3XW5H-Kooizq3ohlOggqBSyJujXPqs15C6mnN0AgJYqhj5e1kHi7h6vSJRdr3crMjAjLNO-b_smMn9WkN4AfS-KG93WlYZxoDgufVc0l17H2c0Kqhq_UzSE5LwNbjEhQNh8E6tFPtdJA" alt="Martha Patricia" class="site-logo-img" style="width:210px;max-width:220px;height:auto;object-fit:contain;display:block;"></a>
-<button aria-expanded="false" aria-label="Menú" class="nav-toggle" id="navToggle">
+  .nav-dropdown-menu a {
+    color: #4B5565 !important;
+    font-weight: 500 !important;
+  }
+  .nav-dropdown-menu a:hover {
+    background: rgba(212, 231, 31, 0.12) !important;
+    color: #0B132B !important;
+  }
+  .lang-toggle {
+    background: #FFFFFF !important;
+    color: #0B132B !important;
+    border: 1px solid #D0D5DD !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+  }
+  .lang-toggle:hover {
+    border-color: #0B132B !important;
+    background: #F4F5F6 !important;
+  }
+  .btn-nav-contact {
+    background: #D4E71F !important;
+    color: #0B132B !important;
+    border: 1px solid #D4E71F !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+  }
+  .btn-nav-contact:hover {
+    background: #2D5BFF !important;
+    border-color: #2D5BFF !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+  }
+  .nav-toggle span {
+    background: #0B132B !important;
+  }
+</style><nav class="nav">
+<div class="nav-inner">
+<a class="logo" href="/" style="display: flex; align-items: center;"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZbT1Q9-V613nHL2qSsqMwySpISsG625MbzSdMN9Vp4URz99seodM969SuoMKINM-B1JReW8q_hPKKlEem5qjuNxKLybLFSwFGwIM22Y_cgKD4kA5jFHJuT8t25Te1molvxr21vKi7FskHxrrrMpYefLIpxZLwt0n7t5WmzxRKR0y8ywGi61xd2-467giQLR7apT30jWlG5Qdvmzcq6UOezIuXex43TMB7sKM9XDvtjYpmk1Do2UCaiZu1CVJg9L90Yp8" alt="Martha Patricia" style="width: 210px; max-width: 220px; height: auto; object-fit: contain; display: block; mix-blend-mode: multiply;"></a>
+<button aria-expanded="false" aria-label="Menu" class="nav-toggle" id="navToggle">
 <span></span><span></span><span></span>
 </button>
-<div class="nav-links" id="navLinks"><a class="nav-link is-active" data-i18n="nav.home" href="/" style="color: rgb(11, 19, 43); font-weight: 600; position: relative; padding: 6px 0px; border-bottom: 2px solid rgb(212, 231, 31); transition: color 0.2s;">Inicio</a>
-<a class="nav-link" data-i18n="nav.services" href="/soluciones/" style="color: rgb(11, 19, 43); font-weight: 500; padding: 6px 0px; position: relative; transition: color 0.2s; border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#D4E71F';" onmouseout="this.style.borderBottomColor='transparent';">Soluciones</a>
-<a class="nav-link" data-i18n="nav.approach" href="/enfoque/" style="color: rgb(11, 19, 43); font-weight: 500; padding: 6px 0px; position: relative; transition: color 0.2s; border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#D4E71F';" onmouseout="this.style.borderBottomColor='transparent';">Enfoque</a>
-<a class="nav-link" data-i18n="nav.about" href="/sobre-mi/" style="color: rgb(11, 19, 43); font-weight: 500; padding: 6px 0px; position: relative; transition: color 0.2s; border-bottom: 2px solid transparent;" onmouseover="this.style.borderBottomColor='#D4E71F';" onmouseout="this.style.borderBottomColor='transparent';">Sobre mí</a>
-<button aria-label="Cambiar idioma" class="lang-toggle-text" id="langToggle" style="border: 1px solid rgb(208, 213, 221); color: rgb(11, 19, 43); background: rgb(255, 255, 255); border-radius: 6px; padding: 5px 10px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.78rem; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 4px;" onmouseover="this.style.borderColor='#D4E71F';" onmouseout="this.style.borderColor='#D0D5DD';">
-<span class="lang-opt active" id="langOptEs" style="color: #0B132B; font-weight: 700;">ES</span>
-<span class="lang-sep" style="color: #98A2B3;">/</span>
-<span class="lang-opt" id="langOptEn" style="color: #667085;">EN</span>
+<div class="nav-links" id="navLinks"><a class="nav-link" data-i18n="nav.home" href="/">Inicio</a>
+<a class="nav-link" data-i18n="nav.services" href="/soluciones/">Soluciones</a>
+<a class="nav-link" data-i18n="nav.approach" href="/enfoque/">Enfoque</a>
+<!-- Dropdown Sobre mí (Activo) -->
+<div class="nav-dropdown" id="navAboutDropdown">
+<button aria-expanded="false" aria-haspopup="true" class="nav-dropdown-trigger is-active" id="aboutDropdownBtn">
+<span data-i18n="nav.about" class="">Sobre mí</span>
+<span class="chevron">▾</span>
 </button>
-<a class="btn-nav-cta btn btn-primary" href="/contacto/" style="background-color: rgb(212, 231, 31); color: rgb(11, 19, 43); font-weight: 700; border: 1px solid rgba(11, 19, 43, 0.08); border-radius: 8px; padding: 9px 18px; font-size: 0.84rem; display: inline-flex; align-items: center; gap: 6px; box-shadow: rgba(212, 231, 31, 0.28) 0px 2px 8px; text-decoration: none; transition: background-color 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.backgroundColor='#2D5BFF'; this.style.color='#FFFFFF'; this.style.boxShadow='0 4px 14px rgba(45, 91, 255, 0.35)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.backgroundColor='#D4E71F'; this.style.color='#0B132B'; this.style.boxShadow='0 2px 8px rgba(212, 231, 31, 0.28)'; this.style.transform='translateY(0)';">
-<span data-i18n="nav.contact" class="">Contacto</span>
-<span class="cta-arrow">↗</span>
-</a></div>
+<div class="nav-dropdown-menu" id="aboutDropdownMenu">
+<a href="#hoy"><span data-i18n="menu.hoy" class="">Hoy</span> <span class="sub-arrow">→</span></a>
+<a href="#perspectiva"><span data-i18n="menu.persp" class="">Perspectiva</span> <span class="sub-arrow">→</span></a>
+<a href="#trayectoria"><span data-i18n="menu.tray" class="">Trayectoria</span> <span class="sub-arrow">→</span></a>
+<a href="#experiencia"><span data-i18n="menu.exp" class="">Experiencia</span> <span class="sub-arrow">→</span></a>
+<a href="#tecnologia"><span data-i18n="menu.tech" class="">Tecnología</span> <span class="sub-arrow">→</span></a>
+<a href="#formacion"><span data-i18n="menu.edu" class="">Formación</span> <span class="sub-arrow">→</span></a>
+<a href="#en-movimiento"><span data-i18n="menu.mov" class="">En movimiento</span> <span class="sub-arrow">→</span></a>
+</div>
+</div>
+<button class="lang-toggle" id="langToggle">ES / EN</button>
+<a class="btn btn-primary btn-small btn-nav-contact" data-i18n="nav.contact" href="/contacto/">Contacto ↗</a></div>
 </div>
 </nav>
-<!-- 2. HERO SECTION (Edge-to-Edge Deep Navy #0B132B) -->
-<div class="hero-viewport-group" id="heroViewportGroup" style="margin-top: 72px !important;"><section class="hero" id="top" style="background: radial-gradient(circle at 80% 40%, rgb(12, 15, 22) 0%, rgb(5, 6, 7) 72%); border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; position: relative; width: 100%; box-sizing: border-box; overflow: hidden;">
-<canvas aria-hidden="true" id="heroCanvas" width="1600" height="975" data-theme="dark-noir" class=""></canvas>
-<div class="container">
-<div class="hero-inner"><div class="hero-label" data-i18n="hero.label" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(212, 231, 31); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px;"><span style="width: 20px; height: 2px; background: #D4E71F; border-radius: 2px; display: inline-block;"></span>DATA · NEGOCIO · TECNOLOGÍA</div>
-<h1 class="hero-thesis-triad" style="margin-bottom: 14px; font-size: clamp(2.1rem, 3.8vw, 3.2rem); line-height: 1.14;">
-<span class="thesis-line" data-i18n="hero.thesis1" style="display: block; color: #FFFFFF;">La tecnología acelera.</span>
-<span class="thesis-line" data-i18n="hero.thesis2" style="display: block; color: #FFFFFF;">Los datos orientan.</span>
-<span class="thesis-line highlight" data-i18n="hero.thesis3" style="display: block; color: #D4E71F;">La estrategia es humana.</span>
+<!-- ============ 2. HERO (DARK / HUMAN-FIRST) ============ -->
+<section class="hero-section">
+<div class="wrap">
+<div class="hero-grid">
+<div class="reveal in-view">
+<p class="eyebrow" data-i18n="hero.eyebrow">SOBRE MÍ</p>
+<h1 class="hero-headline" data-i18n="hero.headline">
+Creo que la tecnología es más poderosa cuando <mark class="accent-lime">parte de las personas.</mark>
 </h1>
-<div class="hero-identity" style="margin-bottom: 16px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.12); display: inline-block;">
-<div class="hero-name" data-i18n="hero.name" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(1.35rem, 2.0vw, 1.8rem); color: #FFFFFF; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 4px;">Martha Patricia Ortiz</div>
-<div class="hero-role" data-i18n="hero.role" style="font-family: 'JetBrains Mono', monospace; font-size: clamp(0.84rem, 1.15vw, 0.94rem); color: #94A3B8; letter-spacing: 0.02em; font-weight: 500;">Data Scientist · Conectando negocio, datos y tecnología</div>
+<p class="hero-support" data-i18n="hero.support">
+Entender el contexto, hacer las preguntas correctas y conectar negocio, datos y tecnología es lo que convierte una herramienta en una solución.
+</p>
+<div class="hero-author-tag">
+<span class="dot"></span>
+<span data-i18n="hero.author" class="">Martha Patricia Ortiz · Data Science · Analytics · Strategy</span>
 </div>
-<div class="hero-actions" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
-<a class="btn btn-primary" href="https://www.linkedin.com/in/marthapatriciaortiz/" rel="noopener" target="_blank" style="background: rgb(212, 231, 31); color: rgb(5, 6, 7); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.84rem; font-weight: 700; padding: 10px 22px; border-radius: 8px; border: 1px solid transparent; box-shadow: rgba(212, 231, 31, 0.28) 0px 4px 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-<span data-i18n="hero.linkedin" class="">Ver LinkedIn</span> →
-</a>
-<a class="btn btn-ghost" data-i18n="hero.contact" href="/contacto/" style="background: rgba(14, 18, 26, 0.85); border: 1px solid rgba(255, 255, 255, 0.18); color: rgb(255, 255, 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.84rem; font-weight: 600; padding: 10px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center;">Contáctame</a>
+</div>
+<div class="reveal in-view">
+<div class="constellation-wrapper">
+<canvas height="420" id="constellationCanvas" width="445"></canvas>
+<div class="constellation-badge mono" data-i18n="hero.canvas_badge">SISTEMA · CONEXIONES · DATOS</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ 3. SECCIÓN 'HOY' (id="hoy") (DARK #0B132B) ============ -->
+<section class="section-dark" id="hoy">
+<div class="wrap">
+<div class="section-head reveal in-view">
+<p class="eyebrow" data-i18n="hoy.eyebrow">HOY</p>
+<h2 data-i18n="hoy.headline" class="">De una pregunta abierta a una decisión que se puede ejecutar.</h2>
+<p class="head-sub" data-i18n="hoy.sub">Mi trabajo comienza entendiendo qué decisión necesitamos tomar. A partir de ahí estructuro la pregunta, construyo la evidencia y elijo la tecnología adecuada para convertirla en una solución.</p>
+</div>
+<div class="progression-track reveal in-view"><div class="prog-step">
+<span class="prog-marker mono">01 · ENTENDER</span>
+<h3 class="prog-title" data-i18n="hoy.s1.title">Entender el problema</h3>
+<div class="mono" style="font-size:0.78rem;color:#8FADFF;margin-bottom:10px;font-weight:500;" data-i18n="hoy.s1.sub">Contexto · pregunta · hipótesis · métricas</div>
+<p class="prog-desc" data-i18n="hoy.s1.desc">Alinear qué necesitamos resolver y cómo sabremos si una decisión funciona.</p>
+</div>
+<div class="prog-step">
+<span class="prog-marker mono">02 · ANALIZAR</span>
+<h3 class="prog-title" data-i18n="hoy.s2.title">Construir evidencia</h3>
+<div class="mono" style="font-size:0.78rem;color:#8FADFF;margin-bottom:10px;font-weight:500;" data-i18n="hoy.s2.sub">Datos · experimentación · machine learning</div>
+<p class="prog-desc" data-i18n="hoy.s2.desc">Identificar patrones, probar hipótesis y separar evidencia de intuición.</p>
+</div>
+<div class="prog-step">
+<span class="prog-marker mono">03 · ACTIVAR</span>
+<h3 class="prog-title" data-i18n="hoy.s3.title">Convertir evidencia en acción</h3>
+<div class="mono" style="font-size: 0.78rem; color: rgb(212, 231, 31); margin-bottom: 10px; font-weight: 500;" data-i18n="hoy.s3.sub">Recomendaciones · KPIs · Soluciones</div>
+<p class="prog-desc" data-i18n="hoy.s3.desc">Traducir los hallazgos en decisiones, procesos y soluciones que puedan ejecutarse y medirse.</p>
 </div></div>
 </div>
-</section><section id="credibility-strip" style="background-color: rgb(248, 250, 252); border-bottom: 1px solid rgb(226, 232, 240); width: 100%; position: relative; z-index: 20;" class="">
-<div class="container">
-<div class="cred-grid" style="padding: 16px 0px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0px;"><div class="cred-col" style="padding: 16px 24px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: flex-start;">
-  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c1.tag" class="">EXPERIENCIA</span></div>
-  <div class="cred-col-val" data-i18n="cred.c1.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">+6 años</div>
-  <div class="cred-col-sub" data-i18n="cred.c1.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Conectando negocio, operaciones, datos y tecnología.</div>
+</section>
+<!-- ============ 4. SECCIÓN 'PERSPECTIVA' (id="perspectiva") (LIGHT #FAFAF7) ============ -->
+<section class="section-light" id="perspectiva">
+<div class="wrap">
+<div class="section-head reveal in-view">
+<p class="eyebrow" data-i18n="persp.eyebrow">PERSPECTIVA</p>
+<h2 data-i18n="persp.headline" class="">Mi forma de resolver problemas se construyó desde tres mundos.</h2>
 </div>
-<div class="cred-col" style="padding: 16px 24px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: flex-start;">
-  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c2.tag" class="">ESCALA DE DATOS</span></div>
-  <div class="cred-col-val" data-i18n="cred.c2.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">Millones de registros</div>
-  <div class="cred-col-sub" data-i18n="cred.c2.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Procesados, transformados y modelados para análisis y toma de decisiones.</div>
+<div class="persp-grid reveal in-view"><div class="persp-col">
+<span class="persp-num" data-i18n="persp.c1.num">01 — INGENIERÍA</span>
+<h3 class="persp-phrase" data-i18n="persp.c1.phrase">Ver el sistema completo.</h3>
+<p class="persp-text" data-i18n="persp.c1.text">Me enseñó a buscar causas, entender procesos y trabajar con restricciones reales.</p>
 </div>
-<div class="cred-col" style="padding: 16px 24px; border-right: 1px solid rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; justify-content: flex-start;">
-  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c3.tag" class="">METODOLOGÍA</span></div>
-  <div class="cred-col-val" data-i18n="cred.c3.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">LEAN &amp; Green Belt</div>
-  <div class="cred-col-sub" data-i18n="cred.c3.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Mejora continua, experimentación, causa raíz y decisiones basadas en evidencia.</div>
+<div class="persp-col">
+<span class="persp-num" data-i18n="persp.c2.num">02 — DATOS</span>
+<h3 class="persp-phrase" data-i18n="persp.c2.phrase">Convertir intuiciones en evidencia.</h3>
+<p class="persp-text" data-i18n="persp.c2.text">Me permiten comprobar hipótesis, identificar patrones y medir lo que realmente ocurre.</p>
 </div>
-<div class="cred-col" style="padding: 16px 24px; display: flex; flex-direction: column; justify-content: flex-start;">
-  <div class="cred-col-tag" style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; display: inline-flex; align-items: center; gap: 7px; margin-bottom: 6px;"><span class="cred-col-dot" style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block; flex-shrink: 0;"></span><span data-i18n="cred.c4.tag" class="">FORMACIÓN TÉCNICA</span></div>
-  <div class="cred-col-val" data-i18n="cred.c4.val" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.05rem, 1.3vw, 1.22rem); font-weight: 700; color: #0F172A; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 4px;">Python · SQL · Cloud</div>
-  <div class="cred-col-sub" data-i18n="cred.c4.sub" style="font-family: 'Inter', sans-serif; font-size: 0.81rem; line-height: 1.45; color: #475569;">Machine Learning, Analytics, BI, automatización y data pipelines.</div>
+<div class="persp-col">
+<span class="persp-num" data-i18n="persp.c3.num">03 — NEGOCIO</span>
+<h3 class="persp-phrase" data-i18n="persp.c3.phrase">Poner la decisión en el centro.</h3>
+<p class="persp-text" data-i18n="persp.c3.text">Ayuda a definir qué importa, qué resultado buscamos y qué vale la pena cambiar.</p>
 </div></div>
 </div>
-</section></div>
-<!-- 3. CREDIBILITY STRIP (Unified Warm Neutral Band #F4F5F7) -->
-
-<!-- 4. EXPLORA SECTION (Compact, Warm Light #FAFAF7) -->
-<section id="hub">
-<div class="container">
-<div class="hub-header">
-<p class="hub-eyebrow-tag" data-i18n="hub.eyebrow">EXPLORA</p>
-<h2 class="hub-title" data-i18n="hub.title">Dos perspectivas. Una decisión.</h2>
-<p class="hub-description" data-i18n="hub.desc">Negocio, datos y tecnología no compiten entre sí. Explora cómo abordo los problemas desde una visión estratégica y una visión técnica.</p>
+</section>
+<!-- ============ 5. SECCIÓN 'TRAYECTORIA' (id="trayectoria") (DARK #0B132B) ============ -->
+<section class="section-dark" id="trayectoria"><div class="wrap"><div class="section-head reveal in-view"><p class="eyebrow" data-i18n="tray.eyebrow">TRAYECTORIA PROFESIONAL</p><h2 data-i18n="tray.headline" class="">Distintos contextos. Una forma de resolver problemas que fue evolucionando.</h2></div><div class="reveal in-view" style="margin-top: 48px; position: relative;"><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; position: relative;" class=""><div style="position: absolute; top: 12px; left: 16px; right: 16px; height: 1px; background: linear-gradient(90deg, rgba(45, 91, 255, 0.5) 0%, rgba(212, 231, 31, 0.7) 100%); z-index: 0;"></div><div style="position: relative; z-index: 1; padding-top: 32px; background: #0C0F14; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 28px 24px;"><div style="position: absolute; top: -7px; left: 24px; width: 15px; height: 15px; border-radius: 50%; background: #2D5BFF; box-shadow: 0 0 0 5px #050607, 0 0 10px rgba(45,91,255,0.4);"></div><div class="mono" style="font-size: 0.78rem; font-weight: 600; color: #8FADFF; letter-spacing: 0.06em; margin-bottom: 8px;" data-i18n="tray.m1.date">2018 — 2021</div><h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;" data-i18n="tray.m1.title" class="">Data &amp; Process Analyst</h3><div class="mono" style="font-size: 0.82rem; color: #8FADFF; margin-bottom: 12px; font-weight: 500;" data-i18n="tray.m1.org">Manufactura</div><p style="font-size: 0.9rem; color: #9AA5BD; line-height: 1.6; border-left: 2px solid rgba(45, 91, 255, 0.3); padding-left: 14px;" data-i18n="tray.m1.desc" class="">Procesos · Six Sigma · DOE · mejora continua y análisis de causas raíz en entornos de alta exigencia operacional.</p></div><div style="position: relative; z-index: 1; padding-top: 32px; background: #0C0F14; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 28px 24px;"><div style="position: absolute; top: -7px; left: 24px; width: 15px; height: 15px; border-radius: 50%; background: #5E81F4; box-shadow: 0 0 0 5px #050607, 0 0 10px rgba(94,129,244,0.4);"></div><div class="mono" style="font-size: 0.78rem; font-weight: 600; color: #8FADFF; letter-spacing: 0.06em; margin-bottom: 8px;" data-i18n="tray.m2.date">2021 — 2024</div><h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;" data-i18n="tray.m2.title" class="">Financial Leader &amp; Team Coach</h3><div class="mono" style="font-size: 0.82rem; color: #8FADFF; margin-bottom: 12px; font-weight: 500;" data-i18n="tray.m2.org">Innovation Program</div><p style="font-size: 0.9rem; color: #9AA5BD; line-height: 1.6; border-left: 2px solid rgba(94, 129, 244, 0.3); padding-left: 14px;" data-i18n="tray.m2.desc" class="">Negocio · innovación · modelado financiero · liderazgo de equipos multidisciplinarios y experimentación por hipótesis.</p></div><div style="position: relative; z-index: 1; padding-top: 32px; background: #0C0F14; border: 1px solid rgba(212, 231, 31, 0.25); border-radius: 12px; padding: 28px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);"><div style="position: absolute; top: -8px; left: 24px; width: 17px; height: 17px; border-radius: 50%; background: #D4E71F; box-shadow: 0 0 0 5px #050607, 0 0 16px rgba(212, 231, 31, 0.7);"></div><div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px;"><span class="mono" style="font-size: 0.78rem; font-weight: 700; color: #D4E71F; letter-spacing: 0.06em;" data-i18n="tray.m3.date">2024 — PRESENTE</span><span class="mono" style="font-size: 0.65rem; background: rgba(212,231,31,0.15); border: 1px solid rgba(212,231,31,0.4); color: #D4E71F; padding: 2px 8px; border-radius: 999px;">ACTUAL</span></div><h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;" data-i18n="tray.m3.title" class="">Data Scientist / Analytics Consultant</h3><p style="font-size: 0.9rem; color: #E2E8F0; line-height: 1.6; border-left: 2px solid #D4E71F; padding-left: 14px;" data-i18n="tray.m3.desc" class="">Analytics avanzado · Machine Learning · estrategia de negocio · pipelines cloud y soluciones analíticas end-to-end.</p></div></div></div></div></section>
+<!-- ============ 6. SECCIÓN 'EXPERIENCIA / IMPACTO' (id="experiencia") (DARK ALT #0E1A3A) ============ -->
+<section class="section-light" id="experiencia"><div class="wrap"><div class="section-head reveal in-view"><p class="eyebrow" data-i18n="impact.eyebrow">EXPERIENCIA &amp; IMPACTO</p><h2 data-i18n="impact.headline" class="">Capacidades aplicadas a problemas reales.</h2><p class="head-sub" data-i18n="impact.sub">Más que una lista de roles, esta es la combinación de análisis, negocio y ejecución que llevo a los proyectos.</p></div><!-- 2A: Metric & Credential Indicator Strip --><div class="reveal in-view" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 48px; padding: 18px 24px; background: #FFFFFF; border: 1px solid rgba(11, 19, 43, 0.12); border-radius: 12px; box-shadow: 0 4px 16px rgba(11,19,43,0.03);"><div style="padding: 10px 12px; border-right: 1px solid rgba(11, 19, 43, 0.08);"><div class="mono" style="font-size: 1.25rem; font-weight: 700; color: #2D5BFF; line-height: 1.2; margin-bottom: 4px;">5+ años</div><div style="font-size: 0.8rem; color: #4B5565; line-height: 1.4;" class="">Data Science · Analytics · Consultoría</div></div><div style="padding: 10px 12px; border-right: 1px solid rgba(11, 19, 43, 0.08);"><div class="mono" style="font-size: 1.25rem; font-weight: 700; color: #2D5BFF; line-height: 1.2; margin-bottom: 4px;">End-to-end</div><div style="font-size: 0.8rem; color: #4B5565; line-height: 1.4;" class="">Del problema a la recomendación</div></div><div style="padding: 10px 12px; border-right: 1px solid rgba(11, 19, 43, 0.08);"><div class="mono" style="font-size: 1.25rem; font-weight: 700; color: #2D5BFF; line-height: 1.2; margin-bottom: 4px;">Lean Six Sigma</div><div style="font-size: 0.8rem; color: #4B5565; line-height: 1.4;" class="">DOE · causa raíz · mejora continua</div></div><div style="padding: 10px 12px;"><div class="mono" style="font-size: 1.15rem; font-weight: 700; color: #2D5BFF; line-height: 1.2; margin-bottom: 4px;">Python · SQL · AWS · dbt</div><div style="font-size: 0.8rem; color: #4B5565; line-height: 1.4;" class="">Stack aplicado a soluciones analíticas</div></div></div><!-- 2B: 3 Editorial Capability Blocks --><div class="reveal in-view" style="display: flex; flex-direction: column; gap: 24px;"><!-- Block 1 --><div style="background: #FFFFFF; border: 1px solid rgba(11, 19, 43, 0.12); border-left: 4px solid #2D5BFF; border-radius: 12px; padding: 32px 36px; box-shadow: 0 4px 18px rgba(11,19,43,0.03);" class="capability-block"><div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;"><span class="mono" style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #2D5BFF; font-weight: 600;">01 · ANALÍTICA AVANZADA &amp; ML</span></div><h3 style="font-size: 1.35rem; font-weight: 700; color: #0B132B; margin-bottom: 12px; line-height: 1.3;" class="">Modelos y análisis orientados a decisión.</h3><p style="font-size: 0.96rem; color: #4B5565; line-height: 1.65; margin-bottom: 20px;" class="">Proyectos analíticos desde el planteamiento del problema hasta la recomendación. Modelos de churn, propensión y riesgo interpretados con SHAP, pipelines reproducibles en AWS y dbt, y marcos de KPIs para conectar resultados analíticos con estrategia.</p><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip mono" style="font-size: 0.74rem; background: rgba(45, 91, 255, 0.06); border-color: rgba(45, 91, 255, 0.25); color: #2D5BFF;">Churn, propensión y riesgo</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">SHAP e interpretabilidad</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">AWS + dbt pipelines</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">KPI frameworks</span></div></div><!-- Block 2 --><div style="background: #FFFFFF; border: 1px solid rgba(11, 19, 43, 0.12); border-left: 4px solid #0B132B; border-radius: 12px; padding: 32px 36px; box-shadow: 0 4px 18px rgba(11,19,43,0.03);" class="capability-block"><div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;"><span class="mono" style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #0B132B; font-weight: 600;">02 · INNOVACIÓN &amp; NEGOCIO</span></div><h3 style="font-size: 1.35rem; font-weight: 700; color: #0B132B; margin-bottom: 12px; line-height: 1.3;" class="">Explorar, validar y aterrizar oportunidades.</h3><p style="font-size: 0.96rem; color: #4B5565; line-height: 1.65; margin-bottom: 20px;" class="">Dirección de equipos multidisciplinarios, modelado financiero y exploración de oportunidades con base en datos. Uso de EDA y experimentación basada en hipótesis para validar propuestas de valor y conectar análisis con decisiones de negocio.</p><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip mono" style="font-size: 0.74rem; background: rgba(11, 19, 43, 0.05); border-color: rgba(11, 19, 43, 0.2); color: #0B132B;">Modelado financiero</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">Equipos multidisciplinarios</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">EDA</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">Experimentación por hipótesis</span></div></div><!-- Block 3 --><div style="background: #FFFFFF; border: 1px solid rgba(11, 19, 43, 0.12); border-left: 4px solid #738096; border-radius: 12px; padding: 32px 36px; box-shadow: 0 4px 18px rgba(11,19,43,0.03);" class="capability-block"><div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;"><span class="mono" style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #4B5565; font-weight: 600;">03 · INDUSTRIA &amp; EXCELENCIA OPERACIONAL</span></div><h3 style="font-size: 1.35rem; font-weight: 700; color: #0B132B; margin-bottom: 12px; line-height: 1.3;" class="">Rigor operativo y mejora continua.</h3><p style="font-size: 0.96rem; color: #4B5565; line-height: 1.65; margin-bottom: 20px;" class="">Aplicación de Six Sigma, DOE, monitoreo estadístico y análisis de causa raíz en contextos de alta exigencia operativa. Mejora continua enfocada en reducir variabilidad y elevar la calidad del proceso.</p><div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip mono" style="font-size: 0.74rem; background: rgba(115, 128, 150, 0.08); border-color: rgba(115, 128, 150, 0.25); color: #4B5565;">Six Sigma</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">DOE</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">Causa raíz</span><span class="chip mono" style="font-size: 0.74rem; background: #FAFAF7;">Mejora continua</span></div></div></div></div></section>
+<!-- ============ 7. SECCIÓN 'TECNOLOGÍA' (id="tecnologia") (LIGHT #FAFAF7) ============ -->
+<section class="section-light" id="tecnologia">
+<div class="wrap">
+<div class="section-head reveal in-view">
+<p class="eyebrow" data-i18n="tech.eyebrow">TECNOLOGÍA</p>
+<h2 data-i18n="tech.headline" class="">La tecnología cambia. La capacidad de elegirla bien es lo importante.</h2>
+<p class="head-sub" data-i18n="tech.sub">No parto de una herramienta favorita. Elijo el stack según el problema, los datos disponibles y lo que necesitamos poner en operación.</p>
 </div>
-<!-- Segmented Perspective Control -->
-<div class="hub-segmented-wrap">
-<div aria-label="Perspectivas de trabajo" class="hub-segmented-ctrl" role="tablist">
-<button aria-selected="true" class="hub-seg-btn is-active" data-perspective="business" id="btnPerspectiveBusiness" role="tab">
-<svg aria-hidden="true" viewBox="0 0 24 24">
-<rect height="13" rx="2" width="18" x="3" y="8"></rect>
-<path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-<path d="M12 12v3"></path>
-</svg>
-<span data-i18n="hub.tab.business" class="">Negocio &amp; estrategia</span>
-<span aria-hidden="true" class="hub-seg-indicator"></span>
-</button>
-<button aria-selected="false" class="hub-seg-btn" data-perspective="tech" id="btnPerspectiveTech" role="tab">
-<svg aria-hidden="true" viewBox="0 0 24 24">
-<path d="M16 18l6-6-6-6"></path>
-<path d="M8 6l-6 6 6 6"></path>
-<path d="M14 4l-4 16"></path>
-</svg>
-<span data-i18n="hub.tab.tech" class="">Datos &amp; tecnología</span>
-</button>
+<div class="tech-groups reveal in-view">
+<!-- Group 1: DATA & ML -->
+<div class="tech-group">
+<span class="tech-label mono" data-i18n="tech.g1">DATA &amp; MACHINE LEARNING</span>
+<div class="chip-row">
+<span class="chip chip-highlight">Python</span>
+<span class="chip chip-highlight">SQL</span>
+<span class="chip">Scikit-learn</span>
+<span class="chip">XGBoost</span>
+<span class="chip">LightGBM</span>
+<span class="chip">TensorFlow</span>
+<span class="chip">PyTorch</span>
 </div>
 </div>
-<!-- 3 Cards Grid -->
-<div class="hub-cards-grid">
-<!-- Card 01 -->
-<a class="hub-box" href="/enfoque/">
-<div class="hub-box-top">
-<span class="hub-box-num">01</span>
-<span class="hub-box-category" data-i18n="hub.c1.category">ENFOQUE</span>
+<!-- Group 2: ANALYTICS & EXPERIMENTACIÓN -->
+<div class="tech-group">
+<span class="tech-label mono" data-i18n="tech.g2">ANALYTICS &amp; EXPERIMENTACIÓN</span>
+<div class="chip-row">
+<span class="chip">Statistical Analysis</span>
+<span class="chip">A/B Testing</span>
+<span class="chip">DOE</span>
+<span class="chip">SHAP</span>
+<span class="chip">Feature Engineering</span>
+<span class="chip">KPI Design</span>
 </div>
-<div class="hub-card-dynamic" id="cardDynamic1">
-<h3 class="hub-box-title" data-i18n="hub.c1.title">Del problema a la decisión</h3>
-<p class="hub-box-text" data-i18n="hub.c1.desc">Estructuro preguntas ambiguas, defino qué significa éxito y convierto el análisis en recomendaciones accionables.</p>
-<span class="hub-box-link"><span class="hub-box-link-text" data-i18n="hub.c1.link">Ver enfoque</span> <span class="arrow">→</span></span>
 </div>
-</a>
-<!-- Card 02 -->
-<a class="hub-box" href="/sobre-mi/">
-<div class="hub-box-top">
-<span class="hub-box-num">02</span>
-<span class="hub-box-category" data-i18n="hub.c2.category">SOBRE MÍ</span>
+<!-- Group 3: DATA & CLOUD -->
+<div class="tech-group">
+<span class="tech-label mono" data-i18n="tech.g3">DATA &amp; CLOUD</span>
+<div class="chip-row">
+<span class="chip">AWS Athena</span>
+<span class="chip">AWS S3</span>
+<span class="chip">dbt</span>
+<span class="chip">Azure ML</span>
+<span class="chip">MLflow</span>
+<span class="chip">Docker</span>
+<span class="chip">GitHub</span>
 </div>
-<div class="hub-card-dynamic" id="cardDynamic2">
-<h3 class="hub-box-title" data-i18n="hub.c2.title">Una perspectiva que cruza disciplinas</h3>
-<p class="hub-box-text" data-i18n="hub.c2.desc">Ingeniería, mejora continua, analytics y consultoría forman una manera de trabajar que conecta contexto, datos y ejecución.</p>
-<span class="hub-box-link"><span class="hub-box-link-text" data-i18n="hub.c2.link">Conocer mi trayectoria</span> <span class="arrow">→</span></span>
 </div>
-</a>
-<!-- Card 03 -->
-<a class="hub-box" href="/soluciones/">
-<div class="hub-box-top">
-<span class="hub-box-num">03</span>
-<span class="hub-box-category" data-i18n="hub.c3.category">SOLUCIONES</span>
+<!-- Group 4: AI & GENERATIVE AI -->
+<div class="tech-group">
+<span class="tech-label mono" data-i18n="tech.g4">AI &amp; GENERATIVE AI</span>
+<div class="chip-row">
+<span class="chip">LLM Applications</span>
+<span class="chip">AI-assisted Development</span>
+<span class="chip">NLP</span>
+<span class="chip">Prompt Engineering</span>
 </div>
-<div class="hub-card-dynamic" id="cardDynamic3">
-<h3 class="hub-box-title" data-i18n="hub.c3.title">Impacto que se puede medir</h3>
-<p class="hub-box-text" data-i18n="hub.c3.desc">Diseño análisis, modelos y marcos de KPIs orientados a performance, eficiencia y mejores decisiones.</p>
-<span class="hub-box-link"><span class="hub-box-link-text" data-i18n="hub.c3.link">Ver soluciones</span> <span class="arrow">→</span></span>
 </div>
-</a>
+<!-- Group 5: VISUALIZACIÓN -->
+<div class="tech-group">
+<span class="tech-label mono" data-i18n="tech.g5">VISUALIZACIÓN</span>
+<div class="chip-row">
+<span class="chip">Tableau</span>
+<span class="chip">Streamlit</span>
+</div>
+</div>
 </div>
 </div>
 </section>
-
-<!-- CLIENT PERSPECTIVES / REVIEWS -->
-<section class="reviews-section" id="resenas">
-  <div class="container">
-    <div class="reviews-head">
-      <div class="reviews-copy">
-        <p class="reviews-eyebrow" id="reviewsEyebrow">COLABORACIONES</p>
-        <h2 class="reviews-title" id="reviewsHeadline">Lo que dicen quienes han trabajado conmigo.</h2>
-        <p class="reviews-intro" id="reviewsIntro">Perspectivas de clientes y colaboradores sobre el proceso, la colaboración y el valor generado.</p>
-      </div>
-      <a class="reviews-cta" id="reviewsCta" href="/resenas/">Compartir tu experiencia <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="reviews-grid" id="reviewsGrid" aria-live="polite"></div>
-    <p class="reviews-empty" id="reviewsEmpty">Esta sección se construye con experiencias reales. Las reseñas se publican únicamente con autorización.</p>
-  </div>
+<!-- ============ 8. SECCIÓN 'FORMACIÓN' (id="formacion") (LIGHT #FAFAF7) ============ -->
+<section class="section-light" id="formacion" style="background: #F4F4EE; border-bottom: 1px solid rgba(11, 19, 43, 0.08);">
+<div class="wrap">
+<div class="section-head reveal in-view">
+<p class="eyebrow" data-i18n="edu.eyebrow">FORMACIÓN</p>
+<h2 data-i18n="edu.headline" class="">Una base que combina sistemas, datos y negocio.</h2>
+</div>
+<div class="edu-pillars reveal in-view">
+<div class="edu-pillar">
+<span class="edu-tag mono" data-i18n="edu.p1.tag">01 · BASE</span>
+<h3 data-i18n="edu.p1.title" class="">Ingeniería Industrial</h3>
+<div class="edu-sub mono" data-i18n="edu.p1.sub">Universidad Iberoamericana Puebla · Graduada con honores · GPA 4.0</div>
+<p class="edu-desc" data-i18n="edu.p1.desc">Procesos, estadística, estructuras de datos, optimización y pensamiento sistémico aplicado a la resolución de problemas reales.</p>
+</div>
+<div class="edu-pillar">
+<span class="edu-tag mono" data-i18n="edu.p2.tag">02 · ESPECIALIZACIÓN</span>
+<h3 data-i18n="edu.p2.title" class="">Data Science</h3>
+<div class="edu-sub mono" data-i18n="edu.p2.sub">TripleTen · Diploma Especializado</div>
+<p class="edu-desc" data-i18n="edu.p2.desc">Machine Learning supervisado y no supervisado, NLP, análisis estadístico riguroso y desarrollo de soluciones analíticas de software.</p>
+</div>
+<div class="edu-pillar">
+<span class="edu-tag mono" data-i18n="edu.p3.tag">03 · NEGOCIO</span>
+<h3 data-i18n="edu.p3.title" class="">Negocios de Internet</h3>
+<div class="edu-sub mono" data-i18n="edu.p3.sub">ISDI México · En curso</div>
+<p class="edu-desc" data-i18n="edu.p3.desc">Transformación digital, estrategia de negocio, economía de plataformas y ecosistemas de innovación tecnológica.</p>
+</div>
+</div>
+<div class="edu-subrow reveal in-view">
+<span class="edu-subrow-label mono" data-i18n="edu.creds.label">Certificaciones adicionales:</span>
+<span class="edu-subitem" data-i18n="edu.creds.c1">Lean Six Sigma Green Belt</span>
+<span class="edu-subitem" data-i18n="edu.creds.c2">Digital Marketing &amp; Métricas</span>
+<span class="edu-subitem" data-i18n="edu.creds.c3">Inglés Avanzado C1</span>
+</div>
+</div>
 </section>
-
-<!-- 5. CONTACT SECTION (Deep Dark Navy #0B132B) -->
-<section id="contacto" style="position: relative; background-color: rgb(5, 6, 7); width: 100%; padding: 88px 0px 100px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);" class="">
-  <div class="container">
-    <div style="background: #0C0F14; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45); overflow: hidden; display: flex; flex-wrap: wrap;">
-      <!-- Left Column: Near-Black Editorial Column (~42%) -->
-      <div style="flex: 1 1 380px; max-width: 100%; background: radial-gradient(circle at top left, #10141B 0%, #050607 85%); padding: clamp(36px, 5vw, 56px) clamp(30px, 4vw, 48px); display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(255, 255, 255, 0.08);">
-        <div>
-          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D4E71F; font-weight: 700; margin-bottom: 18px;">
-            <span style="width: 20px; height: 2px; background: #D4E71F; border-radius: 2px;"></span>
-            <span data-i18n="contact.eyebrow" class="">CONTACTO</span>
-          </div>
-          <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.95rem, 3.0vw, 2.45rem); font-weight: 700; color: #FFFFFF; line-height: 1.18; letter-spacing: -0.025em; margin-bottom: 18px;" data-i18n="contact.h2" class="">Hablemos de tu reto, tu equipo o tu próximo proyecto.</h2>
-          <p style="font-family: 'Manrope', sans-serif; font-size: 0.96rem; line-height: 1.62; color: #94A3B8; margin-bottom: 36px;" data-i18n="contact.info.body" class="">No necesitas llegar con todo resuelto. Podemos empezar por el contexto, el reto que quieres explorar o la decisión que necesitas tomar.</p>
-          
-          <div style="display: flex; flex-direction: column; gap: 0;">
-            <div style="padding: 14px 0px; border-top: 1px solid rgba(255, 255, 255, 0.08);" class=""><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px; opacity: 1;" data-i18n="contact.info.email.k" class="">CORREO</span><a href="mailto:marthapatricia.orma@gmail.com" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; display: inline-block; opacity: 1; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">marthapatricia.orma@gmail.com</a></div><div style="padding: 14px 0px; border-top: 1px solid rgba(255, 255, 255, 0.08);" class=""><span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 6px; opacity: 1;" class="">WHATSAPP</span><div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;"><a href="tel:+522221580381" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; opacity: 1; display: inline-block; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">+52 222 158 0381</a><a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; color: #D4E71F; text-decoration: none; opacity: 1; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s ease, transform 0.2s ease;" onmouseover="this.style.color='#E3F52D'; this.style.textDecoration='underline';" onmouseout="this.style.color='#D4E71F'; this.style.textDecoration='none';" class="">Escribir por WhatsApp ↗</a></div></div>
-            <div style="padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px;" data-i18n="contact.info.linkedin.k" class="">LINKEDIN</span>
-              <a href="https://www.linkedin.com/in/marthapatriciaortiz/" rel="noopener" target="_blank" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">linkedin.com/in/marthapatriciaortiz</a>
-            </div>
-            <div style="padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px;" data-i18n="contact.info.kaggle.k" class="">KAGGLE</span>
-              <a href="https://www.kaggle.com/marthapatriciaorma" rel="noopener" target="_blank" style="color: #FFFFFF; font-size: 0.94rem; font-weight: 600; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#FFFFFF'" class="">kaggle.com/marthapatriciaorma</a>
-            </div>
-            <div style="padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-              <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #2D5BFF; font-weight: 700; margin-bottom: 4px;" data-i18n="contact.info.response.k" class="">DISPONIBILIDAD</span>
-              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; color: #94A3B8; font-family: 'JetBrains Mono', monospace;" class="">
-                <span style="width: 7px; height: 7px; border-radius: 50%; background-color: #10B981; box-shadow: 0 0 8px #10B981; display: inline-block;"></span>
-                <span data-i18n="contact.info.response.v" class="">Respuesta en aprox. 2 días hábiles</span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <p style="font-family: Inter, sans-serif; font-size: 0.82rem; line-height: 1.5; color: rgb(100, 116, 139); margin-top: 28px;" data-i18n="contact.info.micro" class="">También puedes contactarme directamente por WhatsApp, correo o LinkedIn.</p>
-      </div>
-
-      <!-- Right Column: Light Warm-Neutral Background with White Card Form (~58%) -->
-      <div style="flex: 1 1 460px; max-width: 100%; background-color: #F5F6F3; padding: clamp(32px, 5vw, 54px) clamp(28px, 4vw, 48px); display: flex; flex-direction: column; justify-content: center;">
-        <div style="background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(5, 6, 7, 0.08); box-shadow: 0 8px 30px rgba(5, 6, 7, 0.04); padding: clamp(28px, 4vw, 38px);">
-          <form class="form" id="contactForm" style="background: transparent; border: none; padding: 0; box-shadow: none;">
-            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.45rem; font-weight: 700; color: #050607; letter-spacing: -0.02em; margin-bottom: 6px;" data-i18n="contact.form.title" class="">Cuéntame un poco.</h3>
-            <p style="font-family: 'Inter', sans-serif; font-size: 0.90rem; color: #5A6679; margin-bottom: 24px;" data-i18n="contact.form.subtitle" class="">Con unas líneas es suficiente para empezar.</p>
-            
-            <div class="form-row-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px;">
-              <div style="display: flex; flex-direction: column;">
-                <label for="firstName" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.firstname" class="">Nombre</label>
-                <input id="firstName" name="firstName" required="" type="text" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
-              </div>
-              <div style="display: flex; flex-direction: column;">
-                <label for="lastName" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.lastname" class="">Apellido</label>
-                <input id="lastName" name="lastName" required="" type="text" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
-              </div>
-            </div>
-            
-            <div class="form-row-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 16px;">
-              <div style="display: flex; flex-direction: column;">
-                <label for="email" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.email" class="">Correo</label>
-                <input id="email" name="email" required="" type="email" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
-              </div>
-              <div style="display: flex; flex-direction: column;">
-                <label for="phone" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.phone" class="">Teléfono</label>
-                <input id="phone" name="phone" type="tel" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
-              </div>
-            </div>
-            
-            <div style="margin-bottom: 16px;">
-              <label for="company" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.company" class="">Empresa / Organización</label>
-              <input id="company" name="company" type="text" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 11px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; outline: none; transition: border-color 0.2s, box-shadow 0.2s;">
-            </div>
-            
-            <div style="margin-bottom: 22px;">
-              <label for="message" style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.70rem; letter-spacing: 0.10em; text-transform: uppercase; color: #475569; font-weight: 700; margin-bottom: 7px;" data-i18n="contact.form.message" class="">Comentarios</label>
-              <textarea id="message" name="message" required="" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; color: #050607; padding: 12px 14px; font-size: 0.92rem; font-family: 'Manrope', sans-serif; width: 100%; min-height: 100px; resize: vertical; outline: none; transition: border-color 0.2s, box-shadow 0.2s;"></textarea>
-            </div>
-            
-            <div class="form-actions" style="display: flex; flex-direction: column; width: 100%; margin-top: 12px;"><button class="btn btn-primary" type="submit" style="width: 100%; height: 50px; display: flex; align-items: center; justify-content: center; background-color: #D4E71F; color: #0B132B; font-family: 'Space Grotesk', 'JetBrains Mono', sans-serif; font-size: 0.92rem; font-weight: 600; border-radius: 8px; border: 1.5px solid transparent; box-shadow: 0 3px 12px rgba(212, 231, 31, 0.28); cursor: pointer; text-decoration: none; transition: all 0.25s ease;" onmouseover="this.style.backgroundColor='#2D5BFF'; this.style.color='#FFFFFF'; this.style.borderColor='#2D5BFF'; this.style.boxShadow='0 4px 16px rgba(45, 91, 255, 0.35)';" onmouseout="this.style.backgroundColor='#D4E71F'; this.style.color='#0B132B'; this.style.borderColor='transparent'; this.style.boxShadow='0 3px 12px rgba(212, 231, 31, 0.28)';" data-i18n="contact.form.submit">Enviar mensaje →</button><div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; flex-wrap: wrap;"><span style="color: #64748B;" class="">¿Prefieres WhatsApp?</span><a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; color: #0B132B; font-weight: 600; text-decoration: none; background: transparent; border: none; padding: 0; transition: color 0.2s ease;" onmouseover="this.style.color='#2D5BFF'; var s=this.querySelector('svg'); if(s) s.style.fill='#2D5BFF';" onmouseout="this.style.color='#0B132B'; var s=this.querySelector('svg'); if(s) s.style.fill='#0B132B';"><svg style="width: 14px; height: 14px; fill: #0B132B; transition: fill 0.2s ease; flex-shrink: 0;" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.23-1.63a11.93 11.93 0 0 0 5.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.52-8.43zM12.07 21.88h-.01c-1.8 0-3.56-.48-5.1-1.39l-.37-.22-3.79.99 1.01-3.69-.24-.38a9.92 9.92 0 0 1-1.52-5.22c0-5.5 4.47-9.97 9.98-9.97 2.66 0 5.16 1.04 7.04 2.92a9.93 9.93 0 0 1 2.92 7.05c0 5.5-4.47 9.91-9.92 9.91zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.64-.93-2.25-.24-.6-.49-.52-.68-.53l-.58-.01c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.51 0 1.48 1.08 2.91 1.23 3.11.15.2 2.13 3.25 5.15 4.56.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.12-.28-.2-.58-.35z"></path></svg><span class="">Escribirme por WhatsApp ↗</span></a></div></div>
-            
-            <p class="form-note" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.74rem; color: rgb(148, 163, 184); margin-top: 16px; line-height: 1.5; text-align: left;" data-i18n="contact.form.note">Al enviar, se abrirá tu correo con el mensaje preparado.</p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- ============ 9. SECCIÓN 'EN MOVIMIENTO' — contenido administrado por Decap CMS ============ -->
+<section class="section-light" id="en-movimiento">
+<div class="wrap">
+<div class="section-head reveal in-view">
+<p class="eyebrow" id="movementEyebrow">EN MOVIMIENTO</p>
+<h2 id="movementHeadline">También aprendo estando donde ocurren las conversaciones.</h2>
+<p class="head-sub" id="movementIntro">Eventos, comunidades y espacios donde sigo explorando cómo evolucionan los datos, la tecnología, los negocios y las industrias que me interesan.</p>
+</div>
+<div class="gallery-mosaic reveal in-view" id="movementGallery" aria-live="polite"></div>
+</div>
 </section>
-<!-- 6. FOOTER (Deep Dark Navy #080E21) -->
-<footer class="site-footer" style="background-color: rgb(5, 6, 7); border-top: 1px solid rgba(255, 255, 255, 0.08); width: 100%;"><div class="container">
-  <div class="footer-grid" style="display: grid; grid-template-columns: 1.6fr 1fr 1.2fr; gap: 56px; margin-bottom: 52px;">
-    <!-- Columna 1: Marca -->
-    <div class="footer-brand">
-      <div style="margin-bottom: 4px;">
-        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: #FFFFFF; letter-spacing: -0.02em; display: block;" class="">Martha Patricia</span>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; color: #D4E71F; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; display: block; margin-top: 3px;" class="">Technology &amp; Data Strategy</span>
-      </div>
-      <p style="color: #94A3B8; font-size: 0.90rem; max-width: 360px; line-height: 1.6; margin-top: 10px;" class="">Conectamos estrategia, datos y tecnología para transformar retos complejos en soluciones reales y medibles.</p>
-    </div>
-    <!-- Columna 2: Navegación -->
-    <div class="footer-col"><h4 style="color: rgb(68, 117, 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; font-weight: 700;" class="">NAVEGACIÓN</h4>
-      <a href="/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Inicio</a>
-      <a href="/enfoque/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Enfoque</a>
-      <a href="/sobre-mi/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Sobre mí</a>
-      <a href="/soluciones/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Soluciones</a>
-      <a href="/contacto/" style="color: rgb(220, 227, 240); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Contacto</a></div>
-    <!-- Columna 3: Contacto -->
-    <div class="footer-col">
-      <h4 style="color: #4475FF; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; font-weight: 700;" class="">CONTACTO</h4>
-      <div style="margin-bottom: 14px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px;" class="">WhatsApp</span>
-        <a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="color: rgb(220, 227, 240); text-decoration: none; font-size: 0.9rem; transition: color 0.2s;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">+52 222 158 0381</a>
-      </div>
-      <div style="margin-bottom: 14px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px;" class="">Teléfono</span>
-        <a href="tel:+522221580381" style="color: #DCE3F0; text-decoration: none; font-size: 0.90rem; transition: color 0.2s ease;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">+52 222 158 0381</a>
-      </div>
-      <div style="margin-bottom: 14px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px;" class="">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/marthapatriciaortiz/" target="_blank" rel="noopener" style="color: #DCE3F0; text-decoration: none; font-size: 0.90rem; transition: color 0.2s ease; display: inline-flex; align-items: center; gap: 4px;" onmouseover="this.style.color='#D4E71F'" onmouseout="this.style.color='#DCE3F0'" class="">Martha Patricia Ortiz →</a>
-      </div>
-    </div>
-  </div>
-  <!-- Barra inferior -->
-  <div class="footer-bottom" style="display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;">
-    <span style="color: #64748B;" class="">© 2026 Martha Patricia Ortiz</span>
-    <span style="display: inline-flex; align-items: center; gap: 8px; color: #94A3B8; font-size: 0.74rem;" class="">
-      <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #D4E71F; display: inline-block;"></span>
-      Technology · Data · Strategy
-    </span>
-  </div>
-</div></footer>
+<!-- ============ 10. MI FORMA DE VERLO (DARK #0B132B) ============ -->
+<section class="section-dark" id="filosofia">
+<div class="wrap">
+<div class="reveal in-view">
+<div class="differentiator-box">
+<p class="eyebrow" data-i18n="diff.eyebrow">MI FORMA DE VERLO</p>
+<h2 class="diff-headline" data-i18n="diff.headline">La mejor tecnología no reemplaza el criterio.<br>Lo amplifica.</h2>
+<p class="diff-support" data-i18n="diff.support">
+Los datos pueden mostrar patrones y la tecnología puede acelerar soluciones. Pero entender el contexto, formular la pregunta correcta y decidir qué vale la pena cambiar sigue siendo <mark style="background: rgb(45, 91, 255); color: rgb(255, 255, 255); padding: 2px 8px; border-radius: 6px; font-weight: 600; display: inline-block; box-shadow: rgba(45, 91, 255, 0.35) 0px 2px 10px;">profundamente humano.</mark>
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ 11. FINAL CTA (DARK #0B132B) ============ -->
+<section class="section-dark" style="padding-top: 20px; padding-bottom: 96px;">
+<div class="wrap">
+<div class="reveal cta-box in-view">
+<div class="cta-copy">
+<h3 data-i18n="cta.h3" class="">¿Qué problema estás intentando entender?</h3>
+<p data-i18n="cta.sub" class="">Podemos empezar por la pregunta.</p>
+</div>
+<div class="cta-actions">
+<a class="btn btn-primary" data-i18n="cta.btn_primary" href="/contacto/">Hablemos →</a>
+<a class="btn btn-ghost-light" data-i18n="cta.btn_secondary" href="/soluciones/">Ver soluciones →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ 12. FOOTER ============ -->
+<footer class="site-footer" style="color: rgb(255, 255, 255); border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 72px 28px 40px; position: relative; z-index: 1; background: rgb(5, 6, 7) !important;"><div class="wrap" style="max-width: var(--maxw); margin: 0px auto;"><div style="display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; gap: 48px; margin-bottom: 56px;"><div style="display: flex; flex-direction: column; gap: 12px;"><div style="font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; font-weight: 700; color: #FFFFFF; letter-spacing: -0.01em;" class="">Martha Patricia</div><div class="mono" style="font-size: 0.78rem; color: #D4E71F; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">Technology &amp; Data Strategy</div><p style="color: #9AA5BD; font-size: 0.92rem; line-height: 1.6; max-width: 360px; margin-top: 4px;" class="">Conectamos estrategia, datos y tecnología para transformar retos complejos en soluciones reales y medibles.</p></div><div style="display: flex; flex-direction: column; gap: 12px;"><h4 class="mono" style="font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(143, 173, 255); font-weight: 600; margin-bottom: 6px;">NAVEGACIÓN</h4><a href="/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Inicio</a><a href="/enfoque/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Enfoque</a><a href="/sobre-mi/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Sobre mí</a><a href="/soluciones/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Soluciones</a><a href="/contacto/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Contacto</a></div><div style="display: flex; flex-direction: column; gap: 12px;"><h4 class="mono" style="font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(143, 173, 255); font-weight: 600; margin-bottom: 6px;">CONTACTO</h4><a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="color: rgb(226, 232, 240); font-size: 0.92rem; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s;" class=""><span class="mono" style="color: #D4E71F;">WhatsApp:</span> +52 222 158 0381</a><a href="tel:+522221580381" style="color: rgb(226, 232, 240); font-size: 0.92rem; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s;" class=""><span class="mono" style="color: #8FADFF;">Tel:</span> +52 222 158 0381</a><a href="https://www.linkedin.com/in/marthapatriciaortiz/" target="_blank" rel="noopener" style="color: rgb(226, 232, 240); font-size: 0.92rem; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s;" class="">Martha Patricia Ortiz →</a></div></div><div style="padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; font-size: 0.82rem; color: #9AA5BD;"><div class="">© 2026 Martha Patricia Ortiz</div><div class="mono" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.76rem; letter-spacing: 0.05em; color: #E2E8F0;"><h4 class="mono" style="font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(143, 173, 255); font-weight: 600; margin-bottom: 6px;">NAVEGACIÓN</h4><a href="/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Inicio</a><a href="/enfoque/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Enfoque</a><a href="/sobre-mi/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Sobre mí</a><a href="/soluciones/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Soluciones</a><a href="/contacto/" style="color: rgb(226, 232, 240); font-size: 0.92rem; transition: color 0.2s;" class="">Contacto</a></div></div></div></footer>
 </div>
 <script>
-// Dynamic navigation scroll state
-var navElement = document.getElementById('mainNav');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 15) {
-    navElement.classList.add('nav-scrolled');
-  } else {
-    navElement.classList.remove('nav-scrolled');
-  }
-}, { passive: true });
 
-// Perspective Data dictionary (ES / EN)
-var currentPerspective = 'business';
-var perspectiveData = {
-  es: {
-    business: {
-      c1Title: "Del problema a la decisión",
-      c1Desc: "Estructuro preguntas ambiguas, defino qué significa éxito y convierto el análisis en recomendaciones accionables.",
-      c1Link: "Ver enfoque",
-      c2Title: "Una perspectiva que cruza disciplinas",
-      c2Desc: "Ingeniería, mejora continua, analytics y consultoría forman una manera de trabajar que conecta contexto, datos y ejecución.",
-      c2Link: "Conocer mi trayectoria",
-      c3Title: "Impacto que se puede medir",
-      c3Desc: "Diseño análisis, modelos y marcos de KPIs orientados a performance, eficiencia y mejores decisiones.",
-      c3Link: "Ver soluciones"
-    },
-    tech: {
-      c1Title: "De hipótesis a evidencia",
-      c1Desc: "Combino análisis estadístico, experimentación y Machine Learning para entender qué ocurre, por qué ocurre y qué hacer después.",
-      c1Link: "Ver enfoque",
-      c2Title: "Modelos que se pueden explicar",
-      c2Desc: "He desarrollado modelos de churn, riesgo y propensión, incorporando interpretabilidad con SHAP y feature importance.",
-      c2Link: "Conocer mi trayectoria",
-      c3Title: "De los datos a producción",
-      c3Desc: "Python, SQL, AWS y dbt para construir análisis, modelos y pipelines reproducibles que puedan escalar.",
-      c3Link: "Ver soluciones"
-    }
-  },
-  en: {
-    business: {
-      c1Title: "From problem to decision",
-      c1Desc: "I structure ambiguous questions, define what success looks like, and translate analysis into actionable recommendations.",
-      c1Link: "View approach",
-      c2Title: "A cross-disciplinary perspective",
-      c2Desc: "Engineering, continuous improvement, analytics, and strategy integrated into a cohesive way of solving problems.",
-      c2Link: "About my journey",
-      c3Title: "Measurable business impact",
-      c3Desc: "I build KPI frameworks, quantitative models, and actionable insights geared toward performance and operational efficiency.",
-      c3Link: "View solutions"
-    },
-    tech: {
-      c1Title: "From hypothesis to evidence",
-      c1Desc: "Combining statistical inference, controlled experimentation, and Machine Learning to understand cause, effect, and next steps.",
-      c1Link: "View approach",
-      c2Title: "Explainable models in production",
-      c2Desc: "Developed churn, risk, and propensity models with full feature importance interpretability using SHAP.",
-      c2Link: "About my journey",
-      c3Title: "From raw data to production",
-      c3Desc: "Python, SQL, AWS, and dbt to engineer reproducible, scalable data pipelines and production-ready models.",
-      c3Link: "View solutions"
-    }
-  }
-};
+/* ================= EN MOVIMIENTO — contenido desde Decap CMS ================= */
+var movementData = null;
 
-// Bilingual dictionary
-var currentLang = 'es';
+function movementText(item, base) {
+  if (!item) return '';
+  var langKey = base + '_' + currentLang;
+  var esKey = base + '_es';
+  return item[langKey] || item[esKey] || '';
+}
+
+function escapeHtml(value) {
+  return String(value || '').replace(/[&<>'"]/g, function(ch) {
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'})[ch];
+  });
+}
+
+function movementMedia(item, featured) {
+  var cls = featured ? 'photo-media featured-media' : 'photo-media';
+  if (item.image) {
+    return '<div class="' + cls + '"><img loading="lazy" src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(movementText(item, 'title')) + '"></div>';
+  }
+  return '<div class="' + cls + '"><div class="movement-empty">' + (currentLang === 'es' ? 'Foto por agregar' : 'Photo to be added') + '</div></div>';
+}
+
+function movementCard(item, featured) {
+  var meta = [movementText(item, 'type'), movementText(item, 'location'), item.year || ''].filter(Boolean).join(' · ');
+  var card = '<div class="photo-frame' + (featured ? ' featured-frame' : '') + '">' +
+    movementMedia(item, featured) +
+    '<div class="photo-caption"><div class="photo-meta">' +
+    '<span class="photo-event">' + escapeHtml(movementText(item, 'title')) + '</span>' +
+    '<span class="photo-loc mono">' + escapeHtml(meta) + '</span></div>' +
+    '<p class="photo-note">' + escapeHtml(movementText(item, 'description')) + '</p></div></div>';
+  if (item.link) {
+    return '<a class="movement-card-link" href="' + escapeHtml(item.link) + '" target="_blank" rel="noopener noreferrer">' + card + '</a>';
+  }
+  return card;
+}
+
+function renderMovement() {
+  if (!movementData) return;
+  var lang = currentLang || 'es';
+  document.getElementById('movementEyebrow').textContent = movementData['eyebrow_' + lang] || movementData.eyebrow_es || '';
+  document.getElementById('movementHeadline').textContent = movementData['headline_' + lang] || movementData.headline_es || '';
+  document.getElementById('movementIntro').textContent = movementData['intro_' + lang] || movementData.intro_es || '';
+  var gallery = document.getElementById('movementGallery');
+  if (!gallery) return;
+  var items = Array.isArray(movementData.items) ? movementData.items : [];
+  if (!items.length) {
+    gallery.innerHTML = '<p class="head-sub">' + (lang === 'es' ? 'Próximamente nuevas actividades.' : 'New activities coming soon.') + '</p>';
+    return;
+  }
+  var left = '<div class="mosaic-left">' + movementCard(items[0], true) + '</div>';
+  var rightItems = items.slice(1).map(function(item){ return movementCard(item, false); }).join('');
+  var right = '<div class="mosaic-right">' + rightItems + '</div>';
+  gallery.innerHTML = left + right;
+}
+
+function loadMovement() {
+  fetch('/content/en-movimiento.json', { cache: 'no-store' })
+    .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+    .then(function(data) { movementData = data; renderMovement(); })
+    .catch(function(err) { console.error('No se pudo cargar En movimiento:', err); });
+}
+
+loadMovement();
+
+/* ================= i18n DICTIONARY ================= */
 var i18n = {
   es: {
     "nav.home": "Inicio",
     "nav.approach": "Enfoque",
     "nav.about": "Sobre mí",
     "nav.services": "Soluciones",
-    "nav.contact": "Contacto",
-    "hero.label": "DATA · NEGOCIO · TECNOLOGÍA",
-    "hero.thesis1": "La tecnología acelera.",
-    "hero.thesis2": "Los datos orientan.",
-    "hero.thesis3": "La estrategia es humana.",
-    "hero.name": "Martha Patricia Ortiz",
-    "hero.role": "Data Scientist · Conectando negocio, datos y tecnología",
-    "hero.linkedin": "Ver LinkedIn",
-    "hero.contact": "Contáctame",
-    "cred.c1.tag": "01. EXPERIENCIA",
-    "cred.c1.val": "+6 años",
-    "cred.c1.sub": "Conectando industria automotriz y analítica avanzada.",
-    "cred.c2.tag": "02. IMPACTO DE NEGOCIO",
-    "cred.c2.val": "Defectos <0.5%",
-    "cred.c2.sub": "Reducción de defectos y modelos predictivos en producción.",
-    "cred.c3.tag": "03. METODOLOGÍA",
-    "cred.c3.val": "Six Sigma Green Belt",
-    "cred.c3.sub": "Experimentación DOE y machine learning con SHAP.",
-    "cred.c4.tag": "04. CAPACIDAD TÉCNICA",
-    "cred.c4.val": "Python · SQL · AWS",
-    "cred.c4.sub": "dbt, Scikit-learn, Tableau y data pipelines.",
-    "hub.eyebrow": "EXPLORA",
-    "hub.title": "Dos perspectivas. Una decisión.",
-    "hub.desc": "Negocio, datos y tecnología no compiten entre sí. Explora cómo abordo los problemas desde una visión estratégica y una visión técnica.",
-    "hub.tab.business": "Negocio & estrategia",
-    "hub.tab.tech": "Datos & tecnología",
-    "hub.c1.category": "ENFOQUE",
-    "hub.c2.category": "SOBRE MÍ",
-    "hub.c3.category": "SOLUCIONES",
-    "contact.eyebrow": "Contacto",
-    "contact.h2": "Hablemos de datos, negocio o tu próximo proyecto",
-    "contact.info.body": "Si prefieres saltarte el formulario, escríbeme directo por correo o LinkedIn.",
-    "contact.info.email.k": "Correo",
-    "contact.info.linkedin.k": "LinkedIn",
-    "contact.info.kaggle.k": "Kaggle",
-    "contact.info.response.k": "Disponibilidad",
-    "contact.info.response.v": "Respuesta en aprox. 2 días hábiles",
-    "contact.form.firstname": "Nombre",
-    "contact.form.lastname": "Apellido",
-    "contact.form.email": "Correo",
-    "contact.form.phone": "Teléfono",
-    "contact.form.message": "Comentarios",
-    "contact.form.submit": "Enviar mensaje",
-    "contact.form.note": "Al enviar se abrirá tu cliente de correo con el mensaje ya redactado, listo para confirmar y enviar.",
+    "nav.contact": "Contacto ↗",
+    "menu.hoy": "Hoy",
+    "menu.persp": "Perspectiva",
+    "menu.tray": "Trayectoria",
+    "menu.exp": "Experiencia",
+    "menu.tech": "Tecnología",
+    "menu.edu": "Formación",
+    "menu.mov": "En movimiento",
+    "hero.eyebrow": "SOBRE MÍ",
+    "hero.headline": "Creo que la tecnología es más poderosa cuando <mark class=\"accent-lime\">parte de las personas.</mark>",
+    "hero.support": "Entender el contexto, hacer las preguntas correctas y conectar negocio, datos y tecnología es lo que convierte una herramienta en una solución.",
+    "hero.author": "Martha Patricia Ortiz · Data Science · Analytics · Strategy",
+    "hero.canvas_badge": "SISTEMA · CONEXIONES · DATOS",
+    "hoy.eyebrow": "HOY",
+    "hoy.headline": "Conecto negocio, datos y tecnología para convertir preguntas abiertas en decisiones que se pueden ejecutar.",
+    "hoy.sub": "Mi trabajo comienza entendiendo qué decisión necesitamos tomar. A partir de ahí estructuro la pregunta, construyo la evidencia y elijo la tecnología adecuada para convertirla en una solución.",
+    "hoy.s1.title": "Entender el problema",
+    "hoy.s1.desc": "Preguntas · contexto · hipótesis · métricas. Alineación clara de la decisión de negocio antes de formular modelos.",
+    "hoy.s2.title": "Construir evidencia",
+    "hoy.s2.desc": "Analytics · experimentación · machine learning. Identificar patrones reproducibles y validar supuestos con rigor.",
+    "hoy.s3.title": "Convertir evidencia en acción",
+    "hoy.s3.desc": "Recomendaciones · KPIs · soluciones. Integración directa en la operación y los procesos donde se toman decisiones.",
+    "persp.eyebrow": "PERSPECTIVA",
+    "persp.headline": "Tres formas de mirar el mismo problema.",
+    "persp.c1.num": "01 — INGENIERÍA",
+    "persp.c1.phrase": "Entender el sistema.",
+    "persp.c1.text": "Procesos, Six Sigma y mejora continua me enseñaron a estructurar problemas, identificar causas raíz y entender cómo una decisión afecta al sistema completo.",
+    "persp.c2.num": "02 — DATOS",
+    "persp.c2.phrase": "Encontrar la señal.",
+    "persp.c2.text": "Uso estadística, experimentación y machine learning para separar evidencia de intuición, identificar patrones y entender qué está ocurriendo y por qué.",
+    "persp.c3.num": "03 — NEGOCIO",
+    "persp.c3.phrase": "Decidir qué importa.",
+    "persp.c3.text": "El análisis genera valor cuando responde a una necesidad real. Conecto resultados técnicos con contexto, prioridades, KPIs y decisiones accionables.",
+    "tray.eyebrow": "TRAYECTORIA PROFESIONAL",
+    "tray.headline": "Distintos contextos. Una forma de resolver problemas que fue evolucionando.",
+    "tray.m1.date": "2018 — 2021",
+    "tray.m1.title": "Data & Process Analyst",
+    "tray.m1.org": "Manufactura",
+    "tray.m1.desc": "Procesos · Six Sigma · DOE · mejora continua y análisis de causas raíz en entornos de alta exigencia operacional.",
+    "tray.m2.date": "2021 — 2024",
+    "tray.m2.title": "Financial Leader & Team Coach",
+    "tray.m2.org": "Innovation Program",
+    "tray.m2.desc": "Negocio · innovación · modelado financiero · liderazgo de equipos multidisciplinarios y experimentación por hipótesis.",
+    "tray.m3.date": "2024 — PRESENTE",
+    "tray.m3.title": "Data Scientist / Analytics Consultant",
+    "tray.m3.org": "Eina Data",
+    "tray.m3.desc": "Analytics avanzado · Machine Learning · estrategia de negocio · pipelines cloud y soluciones analíticas end-to-end.",
+    "impact.eyebrow": "EXPERIENCIA & IMPACTO",
+    "impact.headline": "¿Qué he construido y qué problemas he resuelto?",
+    "impact.c1.tag": "01 · ANALÍTICA AVANZADA & ML",
+    "impact.c1.title": "Analítica Avanzada & Machine Learning",
+    "impact.c1.desc": "Proyectos integrales desde el planteamiento del problema hasta la toma de decisiones. Modelos predictivos de churn, propensión y riesgo interpretados con SHAP. Pipelines reproducibles en AWS (Athena, S3) y dbt. Marcos de KPIs para conectar resultados analíticos con estrategia.",
+    "impact.c2.tag": "02 · INNOVACIÓN & NEGOCIO",
+    "impact.c2.title": "Innovación & Modelado de Negocio",
+    "impact.c2.desc": "Dirección de equipos multidisciplinarios. Modelado financiero y de viabilidad económica. Exploración profunda de datos (EDA) y experimentación basada en hipótesis para validar propuestas de valor.",
+    "impact.c3.tag": "03 · INDUSTRIA & CALIDAD",
+    "impact.c3.title": "Industria & Excelencia Operacional",
+    "impact.c3.desc": "Implementación de metodologías Six Sigma y DOE (Diseño de Experimentos). Análisis riguroso de causa raíz y monitoreo estadístico de calidad. Reducción sostenida de defectos por debajo de 0.5% en procesos de manufactura crítica.",
+    "tech.eyebrow": "TECNOLOGÍA",
+    "tech.headline": "La tecnología cambia. La capacidad de elegirla bien es lo importante.",
+    "tech.sub": "No parto de una herramienta favorita. Elijo el stack según el problema, los datos disponibles y lo que necesitamos poner en operación.",
+    "tech.g1": "DATA & MACHINE LEARNING",
+    "tech.g2": "ANALYTICS & EXPERIMENTACIÓN",
+    "tech.g3": "DATA & CLOUD",
+    "tech.g4": "AI & GENERATIVE AI",
+    "tech.g5": "VISUALIZACIÓN",
+    "edu.eyebrow": "FORMACIÓN",
+    "edu.headline": "Una base que combina sistemas, datos y negocio.",
+    "edu.p1.tag": "01 · BASE",
+    "edu.p1.title": "Ingeniería Industrial",
+    "edu.p1.sub": "Universidad Iberoamericana Puebla · Graduada con honores · GPA 4.0",
+    "edu.p1.desc": "Procesos, estadística, estructuras de datos, optimización y pensamiento sistémico aplicado a la resolución de problemas reales.",
+    "edu.p2.tag": "02 · ESPECIALIZACIÓN",
+    "edu.p2.title": "Data Science",
+    "edu.p2.sub": "TripleTen · Diploma Especializado",
+    "edu.p2.desc": "Machine Learning supervisado y no supervisado, NLP, análisis estadístico riguroso y desarrollo de soluciones analíticas de software.",
+    "edu.p3.tag": "03 · NEGOCIO",
+    "edu.p3.title": "Negocios de Internet",
+    "edu.p3.sub": "ISDI México · En curso",
+    "edu.p3.desc": "Transformación digital, estrategia de negocio, economía de plataformas y ecosistemas de innovación tecnológica.",
+    "edu.creds.label": "Certificaciones adicionales:",
+    "edu.creds.c1": "Lean Six Sigma Green Belt",
+    "edu.creds.c2": "Digital Marketing & Métricas",
+    "edu.creds.c3": "Inglés Avanzado C1",
+    "com.eyebrow": "EN MOVIMIENTO",
+    "com.headline": "También aprendo estando donde ocurren las conversaciones.",
+    "com.sub": "Eventos, comunidades y espacios donde sigo explorando cómo evolucionan los datos, la tecnología, los negocios y las industrias que me interesan.",
+    "com.f1.badge": "FOTO DESTACADA",
+    "com.f1.hint": "[Espacio listo para fotografía de evento o comunidad]",
+    "com.f1.event": "Cumbre de Innovación & Negocios Digitales",
+    "com.f1.loc": "CDMX · 2024",
+    "com.f1.note": "Intercambio de perspectivas sobre adopción de IA en modelos de negocio tradicionales y nuevos ecosistemas digitales.",
+    "com.f2.hint": "[Foto Martha · Conferencia]",
+    "com.f2.event": "Data & AI Meetups",
+    "com.f2.loc": "Comunidad Tech · 2024",
+    "com.f2.note": "Charlas sobre explicabilidad en modelos de Machine Learning (SHAP) y buenas prácticas en producción.",
+    "com.f3.hint": "[Foto Martha · Workshops / Hackathon]",
+    "com.f3.event": "Innovation & Diversity Challenge",
+    "com.f3.loc": "Nacional · 2023",
+    "com.f3.note": "Reconocimiento Top 5 nacional desarrollando prototipos basados en analítica exploratoria e hipótesis de impacto.",
+    "com.f4.hint": "[Foto Martha · Comunidad / Encuentro]",
+    "com.f4.event": "Foro de Manufactura Avanzada & Calidad",
+    "com.f4.loc": "Puebla",
+    "com.f4.note": "Conexión continua con la base industrial, optimización de líneas y control de procesos en tiempo real.",
+    "diff.eyebrow": "MI FORMA DE VERLO",
+    "diff.headline": "La mejor tecnología no reemplaza el criterio.<br>Lo amplifica.",
+    "diff.support": "Los datos pueden mostrar patrones y la tecnología puede acelerar soluciones. Pero entender el contexto, formular la pregunta correcta y decidir qué vale la pena cambiar sigue siendo <mark class=\"accent-lime\">profundamente humano.</mark>",
+    "cta.h3": "¿Qué problema estás intentando entender?",
+    "cta.sub": "Podemos empezar por la pregunta.",
+    "cta.btn_primary": "Hablemos →",
+    "cta.btn_secondary": "Ver soluciones →",
     "footer.blurb": "Traduzco problemas de negocio ambiguos en decisiones respaldadas por datos y tecnología.",
-    "footer.sitecol.title": "Sitio",
-    "footer.contactcol.title": "Contacto",
-    "footer.copyright": "© 2026 Martha Patricia Ortiz. Puebla, México."
+    "footer.sitecol": "Sitio",
+    "footer.contactcol": "Contacto",
+    "footer.copyright": "© 2026 Martha Patricia Ortiz. Puebla, México.",
+    "footer.tagline": "Data Science · Business · Engineering"
   },
   en: {
     "nav.home": "Home",
     "nav.approach": "Approach",
     "nav.about": "About me",
     "nav.services": "Solutions",
-    "nav.contact": "Contact",
-    "hero.label": "DATA · BUSINESS · TECHNOLOGY",
-    "hero.thesis1": "Technology accelerates.",
-    "hero.thesis2": "Data guides.",
-    "hero.thesis3": "Strategy is human.",
-    "hero.name": "Martha Patricia Ortiz",
-    "hero.role": "Data Scientist · Connecting business, data, and engineering",
-    "hero.linkedin": "View LinkedIn",
-    "hero.contact": "Contact me",
-    "cred.c1.tag": "01. EXPERIENCE",
-    "cred.c1.val": "+6 years",
-    "cred.c1.sub": "Bridging automotive engineering and advanced analytics.",
-    "cred.c2.tag": "02. BUSINESS IMPACT",
-    "cred.c2.val": "Defects <0.5%",
-    "cred.c2.sub": "Defect reduction & predictive models in production.",
-    "cred.c3.tag": "03. METHODOLOGY",
-    "cred.c3.val": "Six Sigma Green Belt",
-    "cred.c3.sub": "DOE experimentation & explainable ML with SHAP.",
-    "cred.c4.tag": "04. TECH CAPABILITY",
-    "cred.c4.val": "Python · SQL · AWS",
-    "cred.c4.sub": "dbt, Scikit-learn, Tableau & scalable pipelines.",
-    "hub.eyebrow": "EXPLORE",
-    "hub.title": "Two perspectives. One decision.",
-    "hub.desc": "Business, data, and technology do not compete. Explore how I approach challenges through both a strategic business lens and deep technical expertise.",
-    "hub.tab.business": "Business & strategy",
-    "hub.tab.tech": "Data & technology",
-    "hub.c1.category": "APPROACH",
-    "hub.c2.category": "ABOUT ME",
-    "hub.c3.category": "SOLUTIONS",
-    "contact.eyebrow": "Contact",
-    "contact.h2": "Let's discuss data, business, or your upcoming project",
-    "contact.info.body": "If you'd rather skip the form, reach out directly via email or LinkedIn.",
-    "contact.info.email.k": "Email",
-    "contact.info.linkedin.k": "LinkedIn",
-    "contact.info.kaggle.k": "Kaggle",
-    "contact.info.response.k": "Availability",
-    "contact.info.response.v": "Typical response within ~2 business days",
-    "contact.form.firstname": "First Name",
-    "contact.form.lastname": "Last Name",
-    "contact.form.email": "Email",
-    "contact.form.phone": "Phone",
-    "contact.form.message": "Comments",
-    "contact.form.submit": "Send message",
-    "contact.form.note": "Submitting will open your default email client with the message pre-filled, ready to review and send.",
-    "footer.blurb": "Translating ambiguous business challenges into clear, high-leverage data and engineering decisions.",
-    "footer.sitecol.title": "Site",
-    "footer.contactcol.title": "Contact",
-    "footer.copyright": "© 2026 Martha Patricia Ortiz. Puebla, Mexico."
+    "nav.contact": "Contact ↗",
+    "menu.hoy": "Today",
+    "menu.persp": "Perspective",
+    "menu.tray": "Trajectory",
+    "menu.exp": "Experience",
+    "menu.tech": "Toolkit",
+    "menu.edu": "Education",
+    "menu.mov": "Outside the desk",
+    "hero.eyebrow": "ABOUT ME",
+    "hero.headline": "I believe technology is at its most powerful when it <mark class=\"accent-lime\">starts with people.</mark>",
+    "hero.support": "Understanding the context, asking the right questions, and bridging business, data, and technology is what turns a tool into an enduring solution.",
+    "hero.author": "Martha Patricia Ortiz · Data Science · Analytics · Strategy",
+    "hero.canvas_badge": "SYSTEM · CONNECTIONS · DATA",
+    "hoy.eyebrow": "TODAY",
+    "hoy.headline": "I connect business, data, and technology to turn open questions into actionable decisions.",
+    "hoy.sub": "My work starts with understanding which decision needs to be made. From there, I structure the inquiry, build the evidence, and choose the right technology to transform it into a solution.",
+    "hoy.s1.title": "Understand the problem",
+    "hoy.s1.desc": "Questions · context · hypotheses · metrics. Clear alignment on business decisions before designing algorithms.",
+    "hoy.s2.title": "Build evidence",
+    "hoy.s2.desc": "Analytics · experimentation · machine learning. Extracting reproducible patterns and validating assumptions with rigor.",
+    "hoy.s3.title": "Turn evidence into action",
+    "hoy.s3.desc": "Recommendations · KPIs · operational solutions. Seamless integration directly into the places where decisions get made.",
+    "persp.eyebrow": "PERSPECTIVE",
+    "persp.headline": "Three ways of looking at the same problem.",
+    "persp.c1.num": "01 — ENGINEERING",
+    "persp.c1.phrase": "Understand the system.",
+    "persp.c1.text": "Processes, Six Sigma, and continuous improvement taught me how to structure problems, uncover root causes, and foresee system-wide impacts.",
+    "persp.c2.num": "02 — DATA",
+    "persp.c2.phrase": "Find the signal.",
+    "persp.c2.text": "I use statistics, experimentation, and machine learning to separate evidence from intuition, detect patterns, and understand what is happening and why.",
+    "persp.c3.num": "03 — BUSINESS",
+    "persp.c3.phrase": "Decide what matters.",
+    "persp.c3.text": "Analysis creates true value when it answers a real necessity. I anchor technical models in business context, strategic priorities, and actionable KPIs.",
+    "tray.eyebrow": "CAREER TRAJECTORY",
+    "tray.headline": "Diverse contexts. One problem-solving mindset that continuously evolved.",
+    "tray.m1.date": "2018 — 2021",
+    "tray.m1.title": "Data & Process Analyst",
+    "tray.m1.org": "Manufacturing",
+    "tray.m1.desc": "Processes · Six Sigma · DOE · continuous improvement and root-cause analysis in high-precision operational environments.",
+    "tray.m2.date": "2021 — 2024",
+    "tray.m2.title": "Financial Leader & Team Coach",
+    "tray.m2.org": "Innovation Program",
+    "tray.m2.desc": "Business modeling · innovation · financial valuation · leadership of multidisciplinary squads and hypothesis-driven testing.",
+    "tray.m3.date": "2024 — PRESENT",
+    "tray.m3.title": "Data Scientist / Analytics Consultant",
+    "tray.m3.org": "Eina Data",
+    "tray.m3.desc": "Advanced analytics · Machine Learning · business strategy · scalable cloud pipelines and end-to-end data products.",
+    "impact.eyebrow": "EXPERIENCE & IMPACT",
+    "impact.headline": "What have I built and what challenges have I resolved?",
+    "impact.c1.tag": "01 · ADVANCED ANALYTICS & ML",
+    "impact.c1.title": "Advanced Analytics & Machine Learning",
+    "impact.c1.desc": "End-to-end projects from business inquiry to strategic decisions. Predictive churn, propensity, and credit risk models explained with SHAP. Reproducible pipelines on AWS (Athena, S3) and dbt. KPI architectures linking models to commercial outcomes.",
+    "impact.c2.tag": "02 · INNOVATION & BUSINESS",
+    "impact.c2.title": "Innovation & Business Modeling",
+    "impact.c2.desc": "Direction of cross-functional teams. Financial modeling and economic feasibility assessments. Deep exploratory data analysis (EDA) and hypothesis testing validating value propositions.",
+    "impact.c3.tag": "03 · INDUSTRY & QUALITY",
+    "impact.c3.title": "Industry & Operational Excellence",
+    "impact.c3.desc": "Implementation of Six Sigma and Design of Experiments (DOE). Rigorous root cause analysis and statistical process control. Sustained critical defect reduction below 0.5% in high-precision manufacturing.",
+    "tech.eyebrow": "TOOLKIT",
+    "tech.headline": "Technology evolves. Choosing the right stack is what counts.",
+    "tech.sub": "I don't start with a preconceived tool. I choose the stack according to the core question, data constraints, and operational goals.",
+    "tech.g1": "DATA & MACHINE LEARNING",
+    "tech.g2": "ANALYTICS & EXPERIMENTATION",
+    "tech.g3": "DATA & CLOUD",
+    "tech.g4": "AI & GENERATIVE AI",
+    "tech.g5": "VISUALIZATION",
+    "edu.eyebrow": "EDUCATION",
+    "edu.headline": "A foundation uniting systems, data, and business.",
+    "edu.p1.tag": "01 · FOUNDATION",
+    "edu.p1.title": "Industrial Engineering",
+    "edu.p1.sub": "Universidad Iberoamericana Puebla · Graduated with Honors · GPA 4.0",
+    "edu.p1.desc": "Processes, applied statistics, data structures, optimization, and systemic engineering approaches to real-world challenges.",
+    "edu.p2.tag": "02 · SPECIALIZATION",
+    "edu.p2.title": "Data Science",
+    "edu.p2.sub": "TripleTen · Professional Diploma",
+    "edu.p2.desc": "Supervised and unsupervised Machine Learning, NLP, statistical modeling, algorithmic optimization, and software development.",
+    "edu.p3.tag": "03 · BUSINESS",
+    "edu.p3.title": "Internet Business (MIB)",
+    "edu.p3.sub": "ISDI Mexico · In Progress",
+    "edu.p3.desc": "Digital business models, digital transformation, platform economics, and tech innovation ecosystem strategy.",
+    "edu.creds.label": "Additional Credentials:",
+    "edu.creds.c1": "Lean Six Sigma Green Belt",
+    "edu.creds.c2": "Digital Marketing & Growth Metrics",
+    "edu.creds.c3": "English C1 Advanced",
+    "com.eyebrow": "OUTSIDE THE DESK",
+    "com.headline": "I also learn by showing up where the conversations happen.",
+    "com.sub": "Events, tech communities, and collaborative forums where I explore the evolution of data, technology, and business ecosystems.",
+    "com.f1.badge": "FEATURED PHOTO",
+    "com.f1.hint": "[Ready for event or community photo]",
+    "com.f1.event": "Innovation & Digital Business Summit",
+    "com.f1.loc": "Mexico City · 2024",
+    "com.f1.note": "Exchanging perspectives on practical enterprise AI adoption and platform-driven business mechanics.",
+    "com.f2.hint": "[Martha · Speaking & Panels]",
+    "com.f2.event": "Data & AI Meetups",
+    "com.f2.loc": "Tech Community · 2024",
+    "com.f2.note": "Discussions regarding model interpretability (SHAP) and production reliability in advanced data applications.",
+    "com.f3.hint": "[Martha · Workshops / Challenge]",
+    "com.f3.event": "Innovation & Diversity Challenge",
+    "com.f3.loc": "National · 2023",
+    "com.f3.note": "Top 5 national achievement building prototypes grounded in exploratory analytics and validated hypotheses.",
+    "com.f4.hint": "[Martha · Industry & Manufacturing Forum]",
+    "com.f4.event": "Advanced Manufacturing & Quality Forum",
+    "com.f4.loc": "Puebla",
+    "com.f4.note": "Keeping close ties with operational systems, process optimization, and real-time defect control.",
+    "diff.eyebrow": "MY PERSPECTIVE",
+    "diff.headline": "The best technology never replaces judgment.<br>It magnifies it.",
+    "diff.support": "Data can spotlight patterns and technology can accelerate execution. But grasping the context, framing the right question, and deciding what is truly worth improving remains <mark class=\"accent-lime\">deeply human.</mark>",
+    "cta.h3": "What problem are you trying to understand?",
+    "cta.sub": "We can start with the question.",
+    "cta.btn_primary": "Let's talk →",
+    "cta.btn_secondary": "Explore solutions →",
+    "footer.blurb": "I translate ambiguous business problems into decisions backed by data and technology.",
+    "footer.sitecol": "Site",
+    "footer.contactcol": "Contact",
+    "footer.copyright": "© 2026 Martha Patricia Ortiz. Puebla, Mexico.",
+    "footer.tagline": "Data Science · Business · Engineering"
   }
 };
 
-function updatePerspectiveContent(perspective, smooth) {
-  var lang = currentLang;
-  var data = perspectiveData[lang] ? perspectiveData[lang][perspective] : perspectiveData['es'][perspective];
-  var cardDynamics = [
-    document.getElementById('cardDynamic1'),
-    document.getElementById('cardDynamic2'),
-    document.getElementById('cardDynamic3')
-  ];
-
-  function applyData() {
-    if (cardDynamics[0]) {
-      var t1 = cardDynamics[0].querySelector('.hub-box-title');
-      var d1 = cardDynamics[0].querySelector('.hub-box-text');
-      var l1 = cardDynamics[0].querySelector('.hub-box-link-text');
-      if (t1) t1.textContent = data.c1Title;
-      if (d1) d1.textContent = data.c1Desc;
-      if (l1) l1.textContent = data.c1Link;
-    }
-    if (cardDynamics[1]) {
-      var t2 = cardDynamics[1].querySelector('.hub-box-title');
-      var d2 = cardDynamics[1].querySelector('.hub-box-text');
-      var l2 = cardDynamics[1].querySelector('.hub-box-link-text');
-      if (t2) t2.textContent = data.c2Title;
-      if (d2) d2.textContent = data.c2Desc;
-      if (l2) l2.textContent = data.c2Link;
-    }
-    if (cardDynamics[2]) {
-      var t3 = cardDynamics[2].querySelector('.hub-box-title');
-      var d3 = cardDynamics[2].querySelector('.hub-box-text');
-      var l3 = cardDynamics[2].querySelector('.hub-box-link-text');
-      if (t3) t3.textContent = data.c3Title;
-      if (d3) d3.textContent = data.c3Desc;
-      if (l3) l3.textContent = data.c3Link;
-    }
-  }
-
-  if (!smooth) {
-    applyData();
-    return;
-  }
-
-  cardDynamics.forEach(function(el) { if (el) el.classList.add('is-fading'); });
-  setTimeout(function() {
-    applyData();
-    cardDynamics.forEach(function(el) { if (el) el.classList.remove('is-fading'); });
-  }, 220);
-}
-
-function switchPerspective(newPerspective) {
-  if (currentPerspective === newPerspective) return;
-  currentPerspective = newPerspective;
-
-  var btnBiz = document.getElementById('btnPerspectiveBusiness');
-  var btnTech = document.getElementById('btnPerspectiveTech');
-
-  if (newPerspective === 'business') {
-    btnBiz.classList.add('is-active');
-    btnBiz.setAttribute('aria-selected', 'true');
-    if (!btnBiz.querySelector('.hub-seg-indicator')) {
-      var dot = document.createElement('span');
-      dot.className = 'hub-seg-indicator';
-      dot.setAttribute('aria-hidden', 'true');
-      btnBiz.appendChild(dot);
-    }
-    btnTech.classList.remove('is-active');
-    btnTech.setAttribute('aria-selected', 'false');
-    var oldDot = btnTech.querySelector('.hub-seg-indicator');
-    if (oldDot) oldDot.remove();
-  } else {
-    btnTech.classList.add('is-active');
-    btnTech.setAttribute('aria-selected', 'true');
-    if (!btnTech.querySelector('.hub-seg-indicator')) {
-      var dot2 = document.createElement('span');
-      dot2.className = 'hub-seg-indicator';
-      dot2.setAttribute('aria-hidden', 'true');
-      btnTech.appendChild(dot2);
-    }
-    btnBiz.classList.remove('is-active');
-    btnBiz.setAttribute('aria-selected', 'false');
-    var oldDot2 = btnBiz.querySelector('.hub-seg-indicator');
-    if (oldDot2) oldDot2.remove();
-  }
-
-  updatePerspectiveContent(newPerspective, true);
-}
-
-document.getElementById('btnPerspectiveBusiness').addEventListener('click', function() {
-  switchPerspective('business');
-});
-document.getElementById('btnPerspectiveTech').addEventListener('click', function() {
-  switchPerspective('tech');
-});
-
-// Language Switcher
+var currentLang = 'es';
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -1817,27 +2012,15 @@ function applyLang(lang) {
       el.innerHTML = dict[key];
     }
   });
-
-  var optEs = document.getElementById('langOptEs');
-  var optEn = document.getElementById('langOptEn');
-  if (optEs && optEn) {
-    if (lang === 'es') {
-      optEs.classList.add('active');
-      optEn.classList.remove('active');
-    } else {
-      optEn.classList.add('active');
-      optEs.classList.remove('active');
-    }
-  }
-
-  updatePerspectiveContent(currentPerspective, false);
+  document.getElementById('langToggle').textContent = (lang === 'es') ? 'EN' : 'ES';
+  renderMovement();
 }
 
 document.getElementById('langToggle').addEventListener('click', function() {
   applyLang(currentLang === 'es' ? 'en' : 'es');
 });
 
-// Mobile Nav Toggle
+/* Mobile Nav Toggle */
 var navToggle = document.getElementById('navToggle');
 var navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', function() {
@@ -1845,188 +2028,110 @@ navToggle.addEventListener('click', function() {
   navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
-// Contact Form Handler
-var contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  var f = contactForm;
-  var name = (f.firstName.value.trim() + ' ' + f.lastName.value.trim()).trim();
-  var subject = 'Contacto desde portafolio: ' + name;
-  var body =
-    'Nombre: ' + name + '\n' +
-    'Correo: ' + f.email.value.trim() + '\n' +
-    'Teléfono: ' + f.phone.value.trim() + '\n\n' +
-    'Comentarios:\n' + f.message.value.trim();
-  window.location.href = 'mailto:marthapatricia.orma@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+/* Dropdown Click & Accordion Behavior */
+var dropdownTrigger = document.getElementById('aboutDropdownBtn');
+var dropdownContainer = document.getElementById('navAboutDropdown');
+dropdownTrigger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  var isOpen = dropdownContainer.classList.toggle('is-open');
+  dropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 });
 
-// Smooth Animated Flow Constellation in Hero Canvas
-(function() {
-  var canvas = document.getElementById('heroCanvas');
+document.addEventListener('click', function(e) {
+  if (!dropdownContainer.contains(e.target)) {
+    dropdownContainer.classList.remove('is-open');
+    dropdownTrigger.setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* Smooth Scroll & close mobile menu */
+var dropdownLinks = document.querySelectorAll('.nav-dropdown-menu a');
+dropdownLinks.forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var targetId = this.getAttribute('href');
+    if (targetId.startsWith('#')) {
+      var targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        dropdownContainer.classList.remove('is-open');
+        dropdownTrigger.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+});
+
+/* Scroll Reveal Observer */
+var revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(function(el) { io.observe(el); });
+} else {
+  revealEls.forEach(function(el) { el.classList.add('in-view'); });
+}
+
+/* Constellation Canvas Animation */
+(function initConstellation() {
+  var canvas = document.getElementById('constellationCanvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var w = 0, h = 0, dpr = 1;
-  var mouse = { x: -9999, y: -9999, active: false };
+  var width, height;
+  var nodes = [];
+  var nodeCount = 36;
+  var maxDist = 110;
 
   function resize() {
-    dpr = window.devicePixelRatio || 1;
-    w = canvas.clientWidth;
-    h = canvas.clientHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var rect = canvas.parentElement.getBoundingClientRect();
+    width = canvas.width = rect.width;
+    height = canvas.height = rect.height;
   }
-  window.addEventListener('resize', function() {
-    resize();
-    initNodes();
-  });
-
-  var heroElem = document.getElementById('top');
-  if (heroElem) {
-    heroElem.addEventListener('mousemove', function(e) {
-      var rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouse.active = true;
-    });
-    heroElem.addEventListener('mouseleave', function() {
-      mouse.active = false;
-      mouse.x = -9999;
-      mouse.y = -9999;
-    });
-  }
-
-  var nodes = [];
-  function initNodes() {
-    nodes = [];
-    var count = Math.floor(Math.min(52, Math.max(34, w / 26)));
-    var clusters = [
-      { x: w * 0.72, y: h * 0.32, spread: Math.min(180, w * 0.16) },
-      { x: w * 0.86, y: h * 0.54, spread: Math.min(170, w * 0.15) },
-      { x: w * 0.68, y: h * 0.76, spread: Math.min(150, w * 0.14) }
-    ];
-
-    var limeBudget = 5;
-    var limeAssigned = 0;
-
-    for (var i = 0; i < count; i++) {
-      var x, y;
-      var inCluster = Math.random() < 0.82;
-      if (inCluster) {
-        var c = clusters[Math.floor(Math.random() * clusters.length)];
-        var angle = Math.random() * Math.PI * 2;
-        var dist = Math.pow(Math.random(), 1.1) * c.spread;
-        x = c.x + Math.cos(angle) * dist;
-        y = c.y + Math.sin(angle) * dist;
-      } else {
-        x = w * (0.50 + Math.random() * 0.48);
-        y = h * (0.08 + Math.random() * 0.84);
-      }
-
-      if (x < w * 0.46) {
-        x = w * (0.52 + Math.random() * 0.44);
-      }
-
-      var isLime = false;
-      if (x > w * 0.54 && limeAssigned < limeBudget && Math.random() < 0.28) {
-        isLime = true;
-        limeAssigned++;
-      }
-
-      var radius, color, glow = false;
-      if (isLime) {
-        radius = 3.2 + Math.random() * 1.6;
-        color = { r: 212, g: 231, b: 31, a: 0.95 };
-        glow = true;
-      } else {
-        var rc = Math.random();
-        if (rc < 0.45) {
-          radius = 2.3 + Math.random() * 2.0;
-          color = { r: 45, g: 91, b: 255, a: 0.85 };
-          glow = (radius > 3.4);
-        } else if (rc < 0.78) {
-          radius = 1.9 + Math.random() * 1.6;
-          color = { r: 140, g: 175, b: 255, a: 0.75 };
-        } else {
-          radius = 1.6 + Math.random() * 1.2;
-          color = { r: 220, g: 235, b: 255, a: 0.80 };
-        }
-      }
-
-      var vx = (Math.random() - 0.5) * 0.45;
-      var vy = (Math.random() - 0.5) * 0.40;
-      if (Math.abs(vx) < 0.12) vx = vx < 0 ? -0.2 : 0.2;
-      if (Math.abs(vy) < 0.12) vy = vy < 0 ? -0.2 : 0.2;
-
-      nodes.push({
-        x: x, y: y,
-        originX: x, originY: y,
-        vx: vx, vy: vy,
-        phase: Math.random() * Math.PI * 2,
-        oscFreq: 0.02 + Math.random() * 0.02,
-        radius: radius,
-        color: color,
-        isLime: isLime,
-        glow: glow
-      });
-    }
-  }
-
+  window.addEventListener('resize', resize);
   resize();
-  initNodes();
 
-  var frame = 0;
+  for (var i = 0; i < nodeCount; i++) {
+    nodes.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.45,
+      vy: (Math.random() - 0.5) * 0.45,
+      radius: Math.random() < 0.2 ? 3.5 : 2,
+      isLime: Math.random() < 0.22
+    });
+  }
+
   function render() {
-    ctx.clearRect(0, 0, w, h);
-    frame++;
+    ctx.clearRect(0, 0, width, height);
 
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      if (!reduceMotion) {
-        n.x += n.vx + Math.sin(frame * n.oscFreq + n.phase) * 0.22;
-        n.y += n.vy + Math.cos(frame * n.oscFreq + n.phase) * 0.20;
-
-        if (Math.abs(n.x - n.originX) > 48) n.vx *= -1;
-        if (Math.abs(n.y - n.originY) > 42) n.vy *= -1;
-
-        if (mouse.active && mouse.x > w * 0.42) {
-          var dx = n.x - mouse.x;
-          var dy = n.y - mouse.y;
-          var dist = Math.sqrt(dx * dx + dy * dy);
-          var repelRadius = 120;
-          if (dist < repelRadius && dist > 1) {
-            var force = (1 - dist / repelRadius) * 1.3;
-            n.x += (dx / dist) * force;
-            n.y += (dy / dist) * force;
-          }
-        }
-      }
+    // subtle background grid
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.045)';
+    ctx.lineWidth = 1;
+    var step = 40;
+    for (var x = 0; x < width; x += step) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
+    }
+    for (var y = 0; y < height; y += step) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
     }
 
-    var maxDist = 110;
+    // Connect nodes
     for (var i = 0; i < nodes.length; i++) {
       for (var j = i + 1; j < nodes.length; j++) {
-        if (nodes[i].x < w * 0.44 || nodes[j].x < w * 0.44) continue;
         var dx = nodes[i].x - nodes[j].x;
         var dy = nodes[i].y - nodes[j].y;
-        var d2 = dx * dx + dy * dy;
-
-        if (d2 < maxDist * maxDist) {
-          var dist = Math.sqrt(d2);
-          var lineAlpha = (1 - dist / maxDist) * 0.28;
-
-          var r = 45, g = 91, b = 255;
-          var strokeW = 0.85;
-
-          if (nodes[i].isLime || nodes[j].isLime) {
-            r = 195; g = 225; b = 40;
-            lineAlpha = Math.min(0.50, lineAlpha * 1.4);
-            strokeW = 1.0;
-          }
-
-          ctx.lineWidth = strokeW;
-          ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + lineAlpha + ')';
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < maxDist) {
+          var alpha = (1 - dist / maxDist) * 0.35;
+          ctx.strokeStyle = 'rgba(45, 91, 255, ' + alpha + ')';
+          ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -2035,33 +2140,33 @@ contactForm.addEventListener('submit', function(e) {
       }
     }
 
-    for (var k = 0; k < nodes.length; k++) {
-      var p = nodes[k];
-      var pulse = reduceMotion ? 1 : (1 + 0.08 * Math.sin(frame * 0.04 + p.phase));
+    // Draw nodes
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx;
+      n.y += n.vy;
 
-      if (p.glow) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * 2.4 * pulse, 0, Math.PI * 2);
-        ctx.fillStyle = p.isLime ? 'rgba(212, 231, 31, 0.16)' : 'rgba(45, 91, 255, 0.18)';
-        ctx.fill();
-      }
+      if (n.x < 0 || n.x > width) n.vx *= -1;
+      if (n.y < 0 || n.y > height) n.vy *= -1;
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius * pulse, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(' + p.color.r + ',' + p.color.g + ',' + p.color.b + ',' + p.color.a + ')';
+      ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+      if (n.isLime) {
+        ctx.fillStyle = '#D4E71F';
+        ctx.shadowColor = 'rgba(212, 231, 31, 0.6)';
+        ctx.shadowBlur = 6;
+      } else {
+        ctx.fillStyle = '#2D5BFF';
+        ctx.shadowColor = 'rgba(45, 91, 255, 0.4)';
+        ctx.shadowBlur = 4;
+      }
       ctx.fill();
+      ctx.shadowBlur = 0;
     }
 
-    if (!reduceMotion) {
-      requestAnimationFrame(render);
-    }
-  }
-
-  if (reduceMotion) {
-    render();
-  } else {
     requestAnimationFrame(render);
   }
+  requestAnimationFrame(render);
 })();
 </script>
 
@@ -2071,8 +2176,6 @@ contactForm.addEventListener('submit', function(e) {
 
 
 
-
-<div id="snapdom-measure-slot" aria-hidden="true" style="position: absolute; left: -99999px; top: 0px; width: 0px; height: 0px; overflow: hidden; opacity: 0; pointer-events: none; contain: size layout style;"></div>
 
 
 

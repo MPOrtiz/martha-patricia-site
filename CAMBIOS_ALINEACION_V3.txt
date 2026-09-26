@@ -1,0 +1,32 @@
+MARTHA PATRICIA — Ronda 3: alineación total con KIMO
+
+CÓMO SE HIZO
+- Se copió el motor de animación real de KIMO (assets/kimo-motion.js: portal "del desorden al orden",
+  campo de estrellas, bolitas de heroes) en lugar de la copia adaptada anterior.
+- assets/kimo-align.css y assets/kimo-align.js se cargan al final de cada página y unifican todo.
+
+1. Azul: #2D5BFF -> #4E7BFF (azul de KIMO) en todo el sitio, con degradado violeta->azul en botones.
+2. Portal sin marco: Inicio y Sobre mí usan el portal de KIMO a sangre, fundido con el fondo (sin tarjeta).
+3. Bolitas: Inicio, Sobre mí, Soluciones (hero nuevo), Enfoque y Contacto (panel oscuro).
+4. Onda senoidal (Enfoque): línea con bolitas alrededor, desordenadas a la izquierda y ordenadas a la derecha.
+5. Ritmo blanco/negro: header oscuro; secciones claras alternan paper/blanco; oscuras con resplandor azul-violeta
+   (no negro plano). Pasaron a claro: Inicio>Contacto, Sobre mí>Mi forma de verlo, Soluciones>¿Por dónde empezamos?
+6. Botones/interacciones: píldoras KIMO, CTA del header con contorno azul, tarjetas con hover, selector segmentado.
+
+RONDA 4
+- Hero de Inicio reconstruido con la misma estructura y CSS de KIMO (assets/kimo-pages.css): eyebrow, titular,
+  notas en mono, texto, botón blanco + botón contorno, portal a sangre y estrellas.
+- Heros de subpáginas (Sobre mí, Soluciones, Enfoque) ahora son el "page-hero" de KIMO: compacto (~320px),
+  rejilla tenue y bolitas brillantes. Sobre mí ya no ocupa media pantalla ni lleva portal.
+- Enfoque: metodología rehecha como el flujo senoidal de Principios (tarjetas oscuras/claras alternadas sobre
+  fondo blanco, nodos numerados, línea con bolitas fluyendo).
+
+RONDA 5
+- Traducción ES/EN completada: assets/i18n-extra.js cubre los textos que faltaban (bloque Experiencia de Sobre mí,
+  Contacto, WhatsApp, "Sobre mí", pie de página, Gracias). Se activa con el mismo botón ES/EN y vuelve al español.
+
+RONDA 6
+- Ceros a la izquierda eliminados (Inicio, Soluciones, Enfoque, ES y EN).
+- Soluciones: timeline "Del problema al resultado" en fondo claro con tarjetas estilo KIMO.
+- Inicio: boton "Compartir tu experiencia" justo debajo del texto.
+- Traduccion ES/EN: faltantes de Sobre mi, Contacto y pies de pagina.

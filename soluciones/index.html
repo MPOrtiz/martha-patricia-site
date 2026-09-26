@@ -1,18 +1,20 @@
 <!DOCTYPE html><html lang="es" style=""><head><link rel="stylesheet" href="/assets/nav-unified.css">
 <script defer src="/assets/nav-unified.js"></script>
+<link rel="preload" href="/assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/responsive-safety.css">
+<link rel="stylesheet" href="/assets/kimo-pages.css"><link rel="stylesheet" href="/assets/kimo-align.css"><script defer src="/assets/kimo-motion.js"></script><script defer src="/assets/kimo-align.js"></script>
 </head><body><svg aria-hidden="true" class="inline-defs-container" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Soluciones — Martha Patricia Ortiz</title>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0B132B; --bg-2:#0E1A3A; --bg-3:#122447;
     --nav-bg:#F4F5F7; --nav-text:#0B132B;
-    --blue:#2D5BFF; --blue-dim:#1E3A7A;
-    --lime:#D4E71F; --lime-hover:#c1d316;
+    --blue:#4E7BFF; --blue-dim:#2C4A9A;
+    --lime:#4E7BFF; --lime-hover:#72E5C0;
     --text:#FFFFFF; --text-muted:#BAC7DE; --text-faint:#7E8DA8;
     --light-bg:#F4F5F7; --light-card:#FFFFFF; --light-text:#0B132B; --light-muted:#4A5568;
     --line:rgba(255,255,255,.12); --line-strong:rgba(255,255,255,.22);
@@ -33,7 +35,7 @@
   .nav{position:sticky;top:0;left:0;right:0;z-index:90;background:var(--nav-bg);border-bottom:1px solid rgba(11,19,43,0.1);transition:background 0.2s ease;}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:var(--maxw);margin:0 auto;padding:0 32px;}
   .logo{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--nav-text);letter-spacing:0.04em;}
-  .logo-mark{width:34px;height:34px;border-radius:7px;flex-shrink:0;position:relative;background:conic-gradient(from 210deg, #2D5BFF, #D4E71F 55%, #2D5BFF);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.8rem;color:#0B132B;box-shadow:0 1px 3px rgba(0,0,0,0.15);}
+  .logo-mark{width:34px;height:34px;border-radius:7px;flex-shrink:0;position:relative;background:conic-gradient(from 210deg, #4E7BFF, #72E5C0 55%, #4E7BFF);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.8rem;color:#0B132B;box-shadow:0 1px 3px rgba(0,0,0,0.15);}
   
   .nav-links{display:flex;align-items:center;gap:32px;}
   .nav-links a.nav-link{font-size:0.95rem;color:#334155;transition:color .2s ease;font-weight:500;}
@@ -44,8 +46,8 @@
   .lang-toggle:hover{border-color:#0B132B;background:rgba(11,19,43,0.05);}
   
   .btn{font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:600;letter-spacing:0.02em;padding:12px 24px;border-radius:var(--radius);display:inline-flex;align-items:center;gap:8px;transition:all 0.2s ease;cursor:pointer;}
-  .btn-primary{background:var(--lime);color:#0B132B;border:1px solid var(--lime);font-weight:700;}
-  .btn-primary:hover{background:var(--lime-hover);border-color:var(--lime-hover);transform:translateY(-1px);}
+  .btn-primary{background:var(--lime);color:#FFFFFF;border:1px solid var(--lime);font-weight:700;}
+  .btn-primary:hover{background:var(--lime-hover);color:#0B132B;border-color:var(--lime-hover);transform:translateY(-1px);}
 
   .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:6px;width:32px;height:32px;background:none;border:none;cursor:pointer;}
   .nav-toggle span{display:block;width:100%;height:2px;background:#0B132B;transition:all 0.3s ease;}
@@ -63,8 +65,8 @@
   .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--lime);display:flex;align-items:center;gap:12px;margin-bottom:20px;font-weight:600;}
   .eyebrow::before{content:"";width:24px;height:1px;background:var(--lime);display:inline-block;}
 
-  .eyebrow-dark{color:#2D5BFF;}
-  .eyebrow-dark::before{background:#2D5BFF;}
+  .eyebrow-dark{color:#4E7BFF;}
+  .eyebrow-dark::before{background:#4E7BFF;}
 
   .reveal{opacity:1;transform:translateY(0);transition:opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);}
 
@@ -100,7 +102,7 @@
   .routing-sol{
     font-family:'JetBrains Mono',monospace;font-size:0.82rem;font-weight:600;
     color:var(--lime);letter-spacing:0.04em;text-transform:uppercase;
-    padding:6px 12px;background:rgba(212,231,31,0.08);border-radius:4px;border:1px solid rgba(212,231,31,0.25);
+    padding:6px 12px;background:rgba(114, 229, 192,0.08);border-radius:4px;border:1px solid rgba(114, 229, 192,0.25);
   }
   .routing-arrow{color:var(--text-faint);transition:color .2s ease, transform .2s ease;font-size:1.1rem;}
   .routing-row:hover .routing-arrow{color:var(--lime);transform:translateX(4px);}
@@ -140,20 +142,20 @@
 </style>
 <div id="page">
 <!-- ============ NAVIGATION (Light warm neutral #F4F5F7) ============ -->
-<nav class="nav" style="position: sticky; top: 0px; left: 0px; right: 0px; z-index: 90; background: rgb(255, 255, 255); border-bottom: 1px solid rgba(0, 0, 0, 0.08); box-shadow: rgba(0, 0, 0, 0.03) 0px 2px 10px;">
+<nav class="nav" style="position: sticky; top: 0px; left: 0px; right: 0px; z-index: 90;">
 <div class="nav-inner" style="display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1180px; margin: 0 auto; padding: 0 32px;">
-<a class="logo" href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0;"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTgjJ4jQS-tERUEtTRbzyuF_9TsLa1oB8nCgR4ICMt-aBf0yJ8EUOrkHC5c66dWkS9A3hHRyXEZtlr-EK0ZlkPh0wGBEON09Im1tv3deUkCFB6v81XckrQQRO3XW5H-Kooizq3ohlOggqBSyJujXPqs15C6mnN0AgJYqhj5e1kHi7h6vSJRdr3crMjAjLNO-b_smMn9WkN4AfS-KG93WlYZxoDgufVc0l17H2c0Kqhq_UzSE5LwNbjEhQNh8E6tFPtdJA" alt="Martha Patricia" class="site-logo-img" style="width: 210px; max-width: 220px; height: auto; object-fit: contain; display: block;"></a>
+<a class="logo" href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0;"><span style="width:30px;height:30px;border-radius:8px;flex-shrink:0;position:relative;background:conic-gradient(from 210deg,#4E7BFF,#72E5C0 55%,#4E7BFF);display:inline-flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.68rem;color:#050607;box-shadow:0 2px 8px rgba(0,0,0,.35);margin-right:11px;">MP</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;">Martha Patricia</span></a>
 <button aria-expanded="false" aria-label="Menu" class="nav-toggle" id="navToggle" style="display: none;">
 <span style="display: block; width: 100%; height: 2px; background: #0B132B;"></span>
 <span style="display: block; width: 100%; height: 2px; background: #0B132B;"></span>
 <span style="display: block; width: 100%; height: 2px; background: #0B132B;"></span>
 </button>
 <div class="nav-links" id="navLinks" style="display: flex; align-items: center; gap: 32px;"><a class="nav-link" data-i18n="nav.home" href="/" style="color: rgb(11, 19, 43); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 2px;">Inicio</a>
-<a class="nav-link is-active" data-i18n="nav.services" href="/soluciones/" style="color: rgb(11, 19, 43); font-size: 0.95rem; font-weight: 600; text-decoration: none; border-bottom: 2px solid rgb(212, 231, 31); padding-bottom: 2px;">Soluciones</a>
+<a class="nav-link is-active" data-i18n="nav.services" href="/soluciones/" style="color: rgb(11, 19, 43); font-size: 0.95rem; font-weight: 600; text-decoration: none; border-bottom: 2px solid rgb(114, 229, 192); padding-bottom: 2px;">Soluciones</a>
 <a class="nav-link" data-i18n="nav.approach" href="/enfoque/" style="color: rgb(11, 19, 43); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 2px;">Enfoque</a>
 <a class="nav-link" data-i18n="nav.about" href="/sobre-mi/" style="color: rgb(11, 19, 43); font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 2px;">Sobre mí</a>
 <button class="lang-toggle" id="langToggle" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; border: 1px solid rgb(208, 213, 221); border-radius: 4px; padding: 6px 14px; color: rgb(11, 19, 43); background: rgb(255, 255, 255); cursor: pointer; transition: 0.2s;">EN</button>
-<a class="btn btn-primary" data-i18n="nav.contact" href="/contacto/" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; padding: 11px 22px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; background: rgb(212, 231, 31); color: rgb(11, 19, 43); border: 1px solid rgb(212, 231, 31); text-decoration: none; transition: 0.2s; box-shadow: rgba(212, 231, 31, 0.25) 0px 2px 10px;">Contacto ↗</a></div><style>
+<a class="btn btn-primary" data-i18n="nav.contact" href="/contacto/" style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; padding: 11px 22px; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; background: rgb(78, 123, 255); color: rgb(255, 255, 255); border: 1px solid rgb(78, 123, 255); text-decoration: none; transition: 0.2s; box-shadow: rgba(78, 123, 255, 0.3) 0px 2px 10px;">Contacto ↗</a></div><style>
   .site-logo-img {
     width: 210px;
     max-width: 220px;
@@ -177,52 +179,52 @@
 </div>
 <style>
   .nav .nav-link:not(.is-active):hover {
-    border-bottom: 2px solid #D4E71F !important;
+    border-bottom: 2px solid #72E5C0 !important;
   }
   .nav .lang-toggle:hover {
     border-color: #0B132B !important;
     background: #F4F5F7 !important;
   }
   .nav .btn.btn-primary:hover {
-    background: #2D5BFF !important;
+    background: #4E7BFF !important;
     color: #FFFFFF !important;
-    border-color: #2D5BFF !important;
-    box-shadow: 0 4px 16px rgba(45, 91, 255, 0.3) !important;
+    border-color: #4E7BFF !important;
+    box-shadow: 0 4px 16px rgba(78, 123, 255, 0.3) !important;
   }
 </style>
 </nav>
-<!-- ============ HERO & SOLUCIONES SECTION ============ -->
-<section id="servicios" style="background: rgb(248, 250, 252); padding: 76px 0px 100px; border-bottom: 1px solid rgb(226, 232, 240);">
+<!-- ============ HERO ============ -->
+<section id="soluciones-hero" class="page-hero no-page-portal mp-keep" data-mp-tone="dark"><div class="shell page-hero-grid" style="grid-template-columns:1fr"><div>
+<p class="eyebrow">SOLUCIONES</p>
+<h1>Un proceso claro para convertir datos en decisiones y resultados.</h1>
+<p class="lead">No todas las empresas necesitan lo mismo al mismo tiempo. Por eso organizamos nuestras soluciones como una progresión: desde integrar información y entender qué está ocurriendo, hasta optimizar, anticipar y automatizar con inteligencia aplicada.</p>
+</div></div></section>
+<!-- ============ SOLUCIONES SECTION ============ -->
+<section id="servicios" data-mp-tone="light" style="background: rgb(248, 250, 252); padding: 76px 0px 100px; border-bottom: 1px solid rgb(226, 232, 240);">
 <div class="wrap">
-<!-- Header Block (Clean eyebrow without dash) -->
-<div style="max-width: 880px; margin-bottom: 40px;">
-<p class="" style="color: #2D5BFF; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.18em; font-weight: 700; margin-bottom: 14px; text-transform: uppercase;">SOLUCIONES</p>
-<h1 class="" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.1rem, 3.4vw, 2.85rem); font-weight: 700; color: #0B132B; line-height: 1.2; margin-bottom: 18px; letter-spacing: -0.015em;">Un proceso claro para convertir datos en decisiones y resultados.</h1>
-<p class="" style="font-size: 1.1rem; color: #475569; line-height: 1.65; max-width: 800px; margin: 0;">No todas las empresas necesitan lo mismo al mismo tiempo. Por eso organizamos nuestras soluciones como una progresión: desde integrar información y entender qué está ocurriendo, hasta optimizar, anticipar y automatizar con inteligencia aplicada.</p>
-</div>
 <!-- Integrated 3 Maturity Levels Band (Directly aligned above the 5 cards) -->
 <div class="maturity-band-container" style="position: relative; margin-bottom: 28px;">
 <div class="maturity-band-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; align-items: start;">
 <!-- Level 1 (Spans 2 columns: above Card 01 and 02) -->
-<div style="grid-column: span 2; border-top: 3px solid #2D5BFF; padding-top: 14px;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-<span style="width: 6px; height: 6px; border-radius: 50%; background: #2D5BFF; display: inline-block;"></span>
+<div style="grid-column: span 2; border-top: 3px solid #4E7BFF; padding-top: 14px;">
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #4E7BFF; display: inline-block;"></span>
         NIVEL 1 · BASE ANALÍTICA
       </div>
 <p class="" style="font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #475569; margin: 0; line-height: 1.45;">Información confiable y visibilidad clara del negocio.</p>
 </div>
 <!-- Level 2 (Spans 2 columns: above Card 03 and 04) -->
-<div style="grid-column: span 2; border-top: 3px solid #1E3A7A; padding-top: 14px;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 700; color: #1E3A7A; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-<span style="width: 6px; height: 6px; border-radius: 50%; background: #1E3A7A; display: inline-block;"></span>
+<div style="grid-column: span 2; border-top: 3px solid #2C4A9A; padding-top: 14px;">
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 700; color: #2C4A9A; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #2C4A9A; display: inline-block;"></span>
         NIVEL 2 · INTELIGENCIA DE DECISIÓN
       </div>
 <p class="" style="font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #475569; margin: 0; line-height: 1.45;">Análisis, experimentación, predicción y mejora.</p>
 </div>
 <!-- Level 3 (Spans 1 column: above Card 05) -->
-<div style="grid-column: span 1; border-top: 3px solid #D4E71F; padding-top: 14px;">
+<div style="grid-column: span 1; border-top: 3px solid #72E5C0; padding-top: 14px;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; font-weight: 700; color: #0B132B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-<span style="width: 6px; height: 6px; border-radius: 50%; background: #D4E71F; display: inline-block;"></span>
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #72E5C0; display: inline-block;"></span>
         NIVEL 3 · INTELIGENCIA APLICADA
       </div>
 <p class="" style="font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #475569; margin: 0; line-height: 1.45;">Automatización y agentes de IA en flujos reales.</p>
@@ -231,10 +233,10 @@
 </div>
 <!-- 5 Cards Grid with increasing complexity progression -->
 <div class="services-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; align-items: stretch;">
-<!-- Card 01 -->
+<!-- Card 1 -->
 <div class="service-card" id="card-integrar" onclick="window.location.href='/contacto/'" style="background: rgb(255, 255, 255); border: 1px solid rgba(11, 19, 43, 0.09); border-radius: 14px; padding: 24px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: rgba(11, 19, 43, 0.04) 0px 4px 18px; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; cursor: pointer;">
 <div style="display: flex; flex-direction: column; flex-grow: 1;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
 <span class="" style="color: #0B132B; font-weight: 700;">01</span> · INTEGRAR
           </div>
 <h3 class="" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #0B132B; line-height: 1.3; margin-bottom: 10px; min-height: 2.7em;">Integración y flujo de datos</h3>
@@ -243,17 +245,17 @@
 <div style="border-top: 1px solid #E2E8F0; padding-top: 14px; margin-bottom: 20px;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">CAPACIDADES</div>
 <ul style="display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: #334155;">
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Integración de fuentes</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Limpieza y transformación</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Data pipelines (AWS / dbt)</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Controles de calidad de datos</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Integración de fuentes</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Limpieza y transformación</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Data pipelines (AWS / dbt)</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Controles de calidad de datos</span></li>
 </ul>
 </div>
 </div>
 <!-- Bottom pinned container for perfect baseline alignment -->
 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: auto;">
 <div style="background: #F8FAFC; border-radius: 8px; padding: 12px 14px; border: 1px solid #EDF2F7; height: 96px; display: flex; flex-direction: column; justify-content: center;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
 <p class="" style="font-size: 0.81rem; color: #0F172A; line-height: 1.4; font-weight: 500; margin: 0;">Datos consistentes, disponibles y listos para usarse.</p>
 </div>
 <div style="padding-top: 4px;">
@@ -264,10 +266,10 @@
 </div>
 </div>
 </div>
-<!-- Card 02 -->
+<!-- Card 2 -->
 <div class="service-card" id="card-entender" onclick="window.location.href='/contacto/'" style="background: rgb(255, 255, 255); border: 1px solid rgba(11, 19, 43, 0.09); border-radius: 14px; padding: 24px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: rgba(11, 19, 43, 0.04) 0px 4px 18px; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; cursor: pointer;">
 <div style="display: flex; flex-direction: column; flex-grow: 1;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
 <span class="" style="color: #0B132B; font-weight: 700;">02</span> · VISIBILIZAR
           </div>
 <h3 class="" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #0B132B; line-height: 1.3; margin-bottom: 10px; min-height: 2.7em;">Analítica y Business Intelligence</h3>
@@ -276,17 +278,17 @@
 <div style="border-top: 1px solid #E2E8F0; padding-top: 14px; margin-bottom: 20px;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">CAPACIDADES</div>
 <ul style="display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: #334155;">
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Definición de KPIs y métricas</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">EDA y segmentación</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Dashboards ejecutivos y reporting</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Monitoreo de desempeño</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Definición de KPIs y métricas</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">EDA y segmentación</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Dashboards ejecutivos y reporting</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Monitoreo de desempeño</span></li>
 </ul>
 </div>
 </div>
 <!-- Bottom pinned container for perfect baseline alignment -->
 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: auto;">
 <div style="background: #F8FAFC; border-radius: 8px; padding: 12px 14px; border: 1px solid #EDF2F7; height: 96px; display: flex; flex-direction: column; justify-content: center;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
 <p class="" style="font-size: 0.81rem; color: #0F172A; line-height: 1.4; font-weight: 500; margin: 0;">Una visión clara del desempeño y de dónde enfocar la atención.</p>
 </div>
 <div style="padding-top: 4px;">
@@ -297,10 +299,10 @@
 </div>
 </div>
 </div>
-<!-- Card 03 -->
+<!-- Card 3 -->
 <div class="service-card" id="card-optimizar" onclick="window.location.href='/contacto/'" style="background: rgb(255, 255, 255); border: 1px solid rgba(11, 19, 43, 0.12); border-radius: 14px; padding: 24px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: rgba(11, 19, 43, 0.05) 0px 4px 18px; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; cursor: pointer;">
 <div style="display: flex; flex-direction: column; flex-grow: 1;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #1E3A7A; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #2C4A9A; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
 <span class="" style="color: #0B132B; font-weight: 700;">03</span> · OPTIMIZAR
           </div>
 <h3 class="" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #0B132B; line-height: 1.3; margin-bottom: 10px; min-height: 2.7em;">Analítica avanzada y optimización</h3>
@@ -309,17 +311,17 @@
 <div style="border-top: 1px solid #E2E8F0; padding-top: 14px; margin-bottom: 20px;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">CAPACIDADES</div>
 <ul style="display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: #334155;">
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Análisis estadístico multivariado</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">A/B testing y experimentación</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Diseño de experimentos (DOE)</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Causa raíz y optimización</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Análisis estadístico multivariado</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">A/B testing y experimentación</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Diseño de experimentos (DOE)</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Causa raíz y optimización</span></li>
 </ul>
 </div>
 </div>
 <!-- Bottom pinned container for perfect baseline alignment -->
 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: auto;">
 <div style="background: #F8FAFC; border-radius: 8px; padding: 12px 14px; border: 1px solid #EDF2F7; height: 96px; display: flex; flex-direction: column; justify-content: center;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
 <p class="" style="font-size: 0.81rem; color: #0F172A; line-height: 1.4; font-weight: 500; margin: 0;">Evidencia clara para mejorar procesos, decisiones y resultados.</p>
 </div>
 <div style="padding-top: 4px;">
@@ -330,10 +332,10 @@
 </div>
 </div>
 </div>
-<!-- Card 04 -->
+<!-- Card 4 -->
 <div class="service-card" id="card-anticipar" onclick="window.location.href='/contacto/'" style="background: rgb(255, 255, 255); border: 1px solid rgba(11, 19, 43, 0.12); border-radius: 14px; padding: 24px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: rgba(11, 19, 43, 0.05) 0px 4px 18px; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; cursor: pointer;">
 <div style="display: flex; flex-direction: column; flex-grow: 1;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #1E3A7A; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #2C4A9A; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
 <span class="" style="color: #0B132B; font-weight: 700;">04</span> · ANTICIPAR
           </div>
 <h3 class="" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #0B132B; line-height: 1.3; margin-bottom: 10px; min-height: 2.7em;">Analítica predictiva y Decision Intelligence</h3>
@@ -342,17 +344,17 @@
 <div style="border-top: 1px solid #E2E8F0; padding-top: 14px; margin-bottom: 20px;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">CAPACIDADES</div>
 <ul style="display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: #334155;">
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Modelos de churn y riesgo</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Forecasting cuando aplique</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Validación y monitoreo</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">SHAP e interpretabilidad</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Modelos de churn y riesgo</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Forecasting cuando aplique</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Validación y monitoreo</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">SHAP e interpretabilidad</span></li>
 </ul>
 </div>
 </div>
 <!-- Bottom pinned container for perfect baseline alignment -->
 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: auto;">
 <div style="background: #F8FAFC; border-radius: 8px; padding: 12px 14px; border: 1px solid #EDF2F7; height: 96px; display: flex; flex-direction: column; justify-content: center;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
 <p class="" style="font-size: 0.81rem; color: #0F172A; line-height: 1.4; font-weight: 500; margin: 0;">Señales predictivas para anticipar riesgos, comportamientos y oportunidades.</p>
 </div>
 <div style="padding-top: 4px;">
@@ -364,11 +366,11 @@
 </div>
 </div>
 <!-- Card 05 (High Complexity Accent) -->
-<div class="service-card" id="card-automatizar" onclick="window.location.href='/contacto/'" style="background: rgb(255, 255, 255); border: 1.5px solid rgb(45, 91, 255); border-radius: 14px; padding: 24px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: rgba(45, 91, 255, 0.12) 0px 8px 24px; position: relative; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; cursor: pointer;">
+<div class="service-card" id="card-automatizar" onclick="window.location.href='/contacto/'" style="background: rgb(255, 255, 255); border: 1.5px solid rgb(78, 123, 255); border-radius: 14px; padding: 24px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: rgba(78, 123, 255, 0.12) 0px 8px 24px; position: relative; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; cursor: pointer;">
 <div style="display: flex; flex-direction: column; flex-grow: 1;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #0B132B; letter-spacing: 0.08em; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-<span class="" style="background: #0B132B; color: #D4E71F; padding: 2px 6px; border-radius: 3px;">05</span> · AUTOMATIZAR 
-            <span style="width: 7px; height: 7px; border-radius: 50%; background: #D4E71F; display: inline-block; margin-left: auto; box-shadow: 0 0 6px rgba(212, 231, 31, 0.8);"></span>
+<span class="" style="background: #0B132B; color: #72E5C0; padding: 2px 6px; border-radius: 3px;">05</span> · AUTOMATIZAR 
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #72E5C0; display: inline-block; margin-left: auto; box-shadow: 0 0 6px rgba(114, 229, 192, 0.8);"></span>
 </div>
 <h3 class="" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #0B132B; line-height: 1.3; margin-bottom: 10px; min-height: 2.7em;">Automatización y Agentes de IA</h3>
 <p class="" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; font-weight: 600; color: #1E293B; line-height: 1.45; margin-bottom: 12px; min-height: 2.9em;">Automatizar tareas y decisiones con inteligencia aplicada.</p>
@@ -376,21 +378,21 @@
 <div style="border-top: 1px solid #E2E8F0; padding-top: 14px; margin-bottom: 20px;">
 <div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #64748B; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;">CAPACIDADES</div>
 <ul style="display: flex; flex-direction: column; gap: 7px; font-size: 0.80rem; color: #334155;">
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Agentes de IA para atención y soporte</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Automatización de flujos</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Asistentes de análisis y consulta</span></li>
-<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #2D5BFF; font-size: 0.75rem;">•</span><span class="">Integración con CRM y sistemas internos</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Agentes de IA para atención y soporte</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Automatización de flujos</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Asistentes de análisis y consulta</span></li>
+<li class="" style="display: flex; align-items: flex-start; gap: 8px;"><span class="" style="color: #4E7BFF; font-size: 0.75rem;">•</span><span class="">Integración con CRM y sistemas internos</span></li>
 </ul>
 </div>
 </div>
 <!-- Bottom pinned container for perfect baseline alignment -->
 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: auto;">
 <div style="background: #F8FAFC; border-radius: 8px; padding: 12px 14px; border: 1px solid #EDF2F7; height: 96px; display: flex; flex-direction: column; justify-content: center;">
-<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #2D5BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
+<div class="" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 700; color: #4E7BFF; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;">RESULTADO</div>
 <p class="" style="font-size: 0.81rem; color: #0F172A; line-height: 1.4; font-weight: 500; margin: 0;">Procesos más ágiles, respuestas más rápidas y ejecución más escalable.</p>
 </div>
 <div style="padding-top: 4px;">
-<a class="card-editorial-link" href="/contacto/" style="display: inline-flex; align-items: center; gap: 6px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.82rem; font-weight: 600; color: rgb(45, 91, 255); background: transparent; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; text-decoration: none; padding: 4px 0px; transition: color 0.22s;">
+<a class="card-editorial-link" href="/contacto/" style="display: inline-flex; align-items: center; gap: 6px; font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.82rem; font-weight: 600; color: rgb(78, 123, 255); background: transparent; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; text-decoration: none; padding: 4px 0px; transition: color 0.22s;">
 <span class="">Explorar esta solución</span>
 <span class="editorial-arrow" style="display: inline-block; transition: transform 0.22s ease;">→</span>
 </a>
@@ -400,7 +402,7 @@
 </div>
 <!-- Final CTA in Soluciones Section -->
 <div class="" style="margin-top: 28px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; text-align: center;">
-<span class="" style="color: #2D5BFF; font-size: 0.85rem; font-family: 'JetBrains Mono', monospace;">↳</span>
+<span class="" style="color: #4E7BFF; font-size: 0.85rem; font-family: 'JetBrains Mono', monospace;">↳</span>
 <p class="" style="font-family: 'Inter', sans-serif; font-size: 0.88rem; color: #64748B; margin: 0; line-height: 1.5;">Cada solución responde a un nivel distinto de madurez. Podemos comenzar en el punto que corresponda al contexto actual del equipo.</p>
 </div><div class="services-cta-panel" id="siguiente-paso-cta" style="margin-top: 36px; background: #FFFFFF; border: 1px solid rgba(11, 19, 43, 0.1); border-radius: 16px; box-shadow: 0 8px 30px rgba(11, 19, 43, 0.04); padding: 40px 44px; display: flex; align-items: center; justify-content: space-between; gap: 32px; position: relative;">
 <div style="flex: 1; max-width: 680px;">
@@ -408,7 +410,7 @@
 <p class="" style="font-family: 'Inter', sans-serif; font-size: 1.02rem; line-height: 1.6; color: #475569; margin: 0; max-width: 640px;">Podemos ayudarte a identificar qué necesita resolverse primero y qué solución hace sentido para avanzar.</p>
 </div>
 <div style="display: flex; align-items: center; gap: 14px; flex-shrink: 0; flex-wrap: wrap;">
-<a class="btn btn-primary" href="/contacto/" style="padding: 13px 26px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; font-family: &quot;JetBrains Mono&quot;, monospace; background: rgb(212, 231, 31); color: rgb(11, 19, 43); border: 1px solid rgb(212, 231, 31); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: rgba(212, 231, 31, 0.3) 0px 4px 14px; transition: 0.2s;">Hablemos →</a>
+<a class="btn btn-primary" href="/contacto/" style="padding: 13px 26px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; font-family: &quot;JetBrains Mono&quot;, monospace; background: rgb(78, 123, 255); color: rgb(255, 255, 255); border: 1px solid rgb(78, 123, 255); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: rgba(78, 123, 255, 0.35) 0px 4px 14px; transition: 0.2s;">Hablemos →</a>
 <a class="" href="/contacto/" style="padding: 12px 22px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; font-family: &quot;JetBrains Mono&quot;, monospace; color: rgb(11, 19, 43); border: 1.5px solid rgb(11, 19, 43); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: transparent; transition: 0.2s;">Contáctanos →</a>
 </div>
 </div>
@@ -429,12 +431,12 @@
         .services-grid { grid-template-columns: 1fr !important; }
       }
       .service-card:hover {
-        border-color: rgba(45, 91, 255, 0.45) !important;
+        border-color: rgba(78, 123, 255, 0.45) !important;
         transform: translateY(-3px) !important;
         box-shadow: 0 10px 24px rgba(11, 19, 43, 0.08) !important;
       }
       .service-card:hover .card-editorial-link {
-        color: #2D5BFF !important;
+        color: #4E7BFF !important;
       }
       .service-card:hover .editorial-arrow {
         transform: translateX(5px) !important;
@@ -453,21 +455,21 @@
 </div>
 <div class="roadmap-5-container" style="position: relative; width: 100%;">
 <!-- Continuous Electric Blue Connecting Line -->
-<div class="roadmap-track-line" style="position: absolute; top: 38px; left: 10%; right: 10%; height: 2px; background: rgba(45, 91, 255, 0.4); box-shadow: 0 0 10px rgba(45, 91, 255, 0.35); z-index: 1;"></div>
+<div class="roadmap-track-line" style="position: absolute; top: 38px; left: 10%; right: 10%; height: 2px; background: rgba(78, 123, 255, 0.4); box-shadow: 0 0 10px rgba(78, 123, 255, 0.35); z-index: 1;"></div>
 <!-- 5 Columns Process Grid -->
 <div class="roadmap-steps-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; position: relative; z-index: 2; align-items: stretch;">
 <!-- Step 01 (Default Active) -->
-<div class="methodology-step is-active" data-step="1" style="cursor: pointer; position: relative; border-radius: 12px; padding: 18px 16px 24px; transition: 0.25s; display: flex; flex-direction: column; background: rgb(12, 15, 20); border: 1px solid rgba(45, 91, 255, 0.45); box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 28px;">
+<div class="methodology-step is-active" data-step="1" style="cursor: pointer; position: relative; border-radius: 12px; padding: 18px 16px 24px; transition: 0.25s; display: flex; flex-direction: column; background: rgb(12, 15, 20); border: 1px solid rgba(78, 123, 255, 0.45); box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 28px;">
 <!-- Top node marker -->
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
-<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(45, 91, 255); border: 2.5px solid rgb(212, 231, 31); display: flex; align-items: center; justify-content: center; box-shadow: rgba(45, 91, 255, 0.8) 0px 0px 16px, rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
+<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(78, 123, 255); border: 2.5px solid rgb(114, 229, 192); display: flex; align-items: center; justify-content: center; box-shadow: rgba(78, 123, 255, 0.8) 0px 0px 16px, rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
 <span class="mono step-number" style="font-size: 0.82rem; font-weight: 700; color: #FFFFFF;">01</span>
-<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #D4E71F; box-shadow: 0 0 8px rgba(212, 231, 31, 0.9); display: block;"></span>
+<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #72E5C0; box-shadow: 0 0 8px rgba(114, 229, 192, 0.9); display: block;"></span>
 </div>
 </div>
 <!-- Step Eyebrow Label -->
-<div class="step-phase-label mono" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5C82FF; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-        01 — ENTENDER
+<div class="step-phase-label mono" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #86A6FF; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+        1 — ENTENDER
       </div>
 <!-- Headline -->
 <h3 class="step-title" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #FFFFFF; line-height: 1.35; margin-bottom: 12px;">
@@ -478,18 +480,18 @@
         Antes de pensar en soluciones, entendemos a las personas, el negocio, sus restricciones y qué resultado realmente importa.
       </p>
 </div>
-<!-- Step 02 -->
+<!-- Step 2 -->
 <div class="methodology-step" data-step="2" style="cursor: pointer; position: relative; border-radius: 12px; padding: 18px 16px 24px; transition: all 0.25s ease; display: flex; flex-direction: column; background: transparent; border: 1px solid transparent;">
 <!-- Top node marker -->
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
-<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(45, 91, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
+<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(78, 123, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
 <span class="mono step-number" style="font-size: 0.82rem; font-weight: 700; color: #7E8DA8;">02</span>
-<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #D4E71F; box-shadow: 0 0 8px rgba(212, 231, 31, 0.9); display: none;"></span>
+<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #72E5C0; box-shadow: 0 0 8px rgba(114, 229, 192, 0.9); display: none;"></span>
 </div>
 </div>
 <!-- Step Eyebrow Label -->
 <div class="step-phase-label mono" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7E8DA8; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-        02 — EXPLORAR
+        2 — EXPLORAR
       </div>
 <!-- Headline -->
 <h3 class="step-title" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #BAC7DE; line-height: 1.35; margin-bottom: 12px;">
@@ -500,18 +502,18 @@
         Convertimos lo aprendido en hipótesis, alternativas y caminos posibles para definir qué vale la pena construir.
       </p>
 </div>
-<!-- Step 03 -->
+<!-- Step 3 -->
 <div class="methodology-step" data-step="3" style="cursor: pointer; position: relative; border-radius: 12px; padding: 18px 16px 24px; transition: all 0.25s ease; display: flex; flex-direction: column; background: transparent; border: 1px solid transparent;">
 <!-- Top node marker -->
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
-<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(45, 91, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
+<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(78, 123, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
 <span class="mono step-number" style="font-size: 0.82rem; font-weight: 700; color: #7E8DA8;">03</span>
-<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #D4E71F; box-shadow: 0 0 8px rgba(212, 231, 31, 0.9); display: none;"></span>
+<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #72E5C0; box-shadow: 0 0 8px rgba(114, 229, 192, 0.9); display: none;"></span>
 </div>
 </div>
 <!-- Step Eyebrow Label -->
 <div class="step-phase-label mono" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7E8DA8; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-        03 — TRADUCIR
+        3 — TRADUCIR
       </div>
 <!-- Headline -->
 <h3 class="step-title" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #BAC7DE; line-height: 1.35; margin-bottom: 12px;">
@@ -522,18 +524,18 @@
         Traducimos las necesidades del negocio en decisiones, métricas, procesos y soluciones tecnológicas concretas.
       </p>
 </div>
-<!-- Step 04 -->
+<!-- Step 4 -->
 <div class="methodology-step" data-step="4" style="cursor: pointer; position: relative; border-radius: 12px; padding: 18px 16px 24px; transition: all 0.25s ease; display: flex; flex-direction: column; background: transparent; border: 1px solid transparent;">
 <!-- Top node marker -->
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
-<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(45, 91, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
+<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(78, 123, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
 <span class="mono step-number" style="font-size: 0.82rem; font-weight: 700; color: #7E8DA8;">04</span>
-<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #D4E71F; box-shadow: 0 0 8px rgba(212, 231, 31, 0.9); display: none;"></span>
+<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #72E5C0; box-shadow: 0 0 8px rgba(114, 229, 192, 0.9); display: none;"></span>
 </div>
 </div>
 <!-- Step Eyebrow Label -->
 <div class="step-phase-label mono" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7E8DA8; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-        04 — CONSTRUIR
+        4 — CONSTRUIR
       </div>
 <!-- Headline -->
 <h3 class="step-title" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #BAC7DE; line-height: 1.35; margin-bottom: 12px;">
@@ -544,18 +546,18 @@
         Diseñamos y desarrollamos soluciones útiles, medibles y preparadas para funcionar en un contexto real.
       </p>
 </div>
-<!-- Step 05 -->
+<!-- Step 5 -->
 <div class="methodology-step" data-step="5" style="cursor: pointer; position: relative; border-radius: 12px; padding: 18px 16px 24px; transition: all 0.25s ease; display: flex; flex-direction: column; background: transparent; border: 1px solid transparent;">
 <!-- Top node marker -->
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 22px;">
-<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(45, 91, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
+<div class="step-node" style="width: 40px; height: 40px; border-radius: 50%; background: rgb(16, 20, 27); border: 2px solid rgba(78, 123, 255, 0.4); display: flex; align-items: center; justify-content: center; box-shadow: rgb(5, 6, 7) 0px 0px 0px 5px; position: relative; transition: 0.25s;">
 <span class="mono step-number" style="font-size: 0.82rem; font-weight: 700; color: #7E8DA8;">05</span>
-<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #D4E71F; box-shadow: 0 0 8px rgba(212, 231, 31, 0.9); display: none;"></span>
+<span class="step-dot" style="position: absolute; top: -3px; right: -3px; width: 9px; height: 9px; border-radius: 50%; background: #72E5C0; box-shadow: 0 0 8px rgba(114, 229, 192, 0.9); display: none;"></span>
 </div>
 </div>
 <!-- Step Eyebrow Label -->
 <div class="step-phase-label mono" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7E8DA8; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-        05 — EVOLUCIONAR
+        5 — EVOLUCIONAR
       </div>
 <!-- Headline -->
 <h3 class="step-title" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 700; color: #BAC7DE; line-height: 1.35; margin-bottom: 12px;">
@@ -575,7 +577,7 @@
     .methodology-step { padding: 20px !important; }
   }
   .methodology-step:hover:not(.is-active) {
-    border-color: rgba(45, 91, 255, 0.25) !important;
+    border-color: rgba(78, 123, 255, 0.25) !important;
     background: rgba(14, 26, 58, 0.45) !important;
   }
   .methodology-step:hover:not(.is-active) .step-title {
@@ -585,11 +587,11 @@
     color: #BAC7DE !important;
   }
   .methodology-step:hover:not(.is-active) .step-phase-label {
-    color: #5C82FF !important;
+    color: #86A6FF !important;
   }
   .methodology-step:hover:not(.is-active) .step-node {
-    border-color: #2D5BFF !important;
-    box-shadow: 0 0 10px rgba(45, 91, 255, 0.5), 0 0 0 5px #0B132B !important;
+    border-color: #4E7BFF !important;
+    box-shadow: 0 0 10px rgba(78, 123, 255, 0.5), 0 0 0 5px #0B132B !important;
   }
   .methodology-step:hover:not(.is-active) .step-number {
     color: #FFFFFF !important;
@@ -610,16 +612,16 @@
       var desc = el.querySelector('.step-desc');
       if (isActive) {
         el.style.background = '#0E1A3A';
-        el.style.borderColor = 'rgba(45, 91, 255, 0.4)';
+        el.style.borderColor = 'rgba(78, 123, 255, 0.4)';
         el.style.boxShadow = '0 10px 28px rgba(0, 0, 0, 0.3)';
         if (node) {
-          node.style.background = '#2D5BFF';
-          node.style.border = '2.5px solid #D4E71F';
-          node.style.boxShadow = '0 0 16px rgba(45, 91, 255, 0.8), 0 0 0 5px #0B132B';
+          node.style.background = '#4E7BFF';
+          node.style.border = '2.5px solid #72E5C0';
+          node.style.boxShadow = '0 0 16px rgba(78, 123, 255, 0.8), 0 0 0 5px #0B132B';
         }
         if (num) num.style.color = '#FFFFFF';
         if (dot) dot.style.display = 'block';
-        if (label) label.style.color = '#5C82FF';
+        if (label) label.style.color = '#86A6FF';
         if (title) title.style.color = '#FFFFFF';
         if (desc) desc.style.color = '#BAC7DE';
       } else {
@@ -628,7 +630,7 @@
         el.style.boxShadow = 'none';
         if (node) {
           node.style.background = '#0E1A3A';
-          node.style.border = '2px solid rgba(45, 91, 255, 0.5)';
+          node.style.border = '2px solid rgba(78, 123, 255, 0.5)';
           node.style.boxShadow = '0 0 0 5px #0B132B';
         }
         if (num) num.style.color = '#7E8DA8';
@@ -647,7 +649,7 @@
 </script>
 </div></section>
 <!-- ============ DECISION SECTION: '¿POR DÓNDE EMPEZAMOS?' ============ -->
-<section class="decision-section" style="padding: 90px 0px; background: rgb(5, 6, 7); border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+<section class="decision-section" data-mp-tone="light" style="padding: 90px 0px; background: rgb(5, 6, 7); border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
 <div class="wrap">
 <div class="decision-header">
 <p class="eyebrow" data-i18n="decision.eyebrow">¿POR DÓNDE EMPEZAMOS?</p>
@@ -740,13 +742,13 @@
       .practice-card:hover {
         transform: translateY(-3px);
         box-shadow: 0 12px 28px rgba(11, 19, 43, 0.08);
-        border-color: rgba(45, 91, 255, 0.3);
+        border-color: rgba(78, 123, 255, 0.3);
       }
       .practice-idx {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.75rem;
         font-weight: 700;
-        color: #2D5BFF;
+        color: #4E7BFF;
         letter-spacing: 0.1em;
         margin-bottom: 14px;
         display: inline-flex;
@@ -758,7 +760,7 @@
         display: inline-block;
         width: 16px;
         height: 1px;
-        background: rgba(45, 91, 255, 0.35);
+        background: rgba(78, 123, 255, 0.35);
       }
       .practice-title {
         font-family: 'Space Grotesk', sans-serif;
@@ -812,13 +814,13 @@
 </section>
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer" style="background: rgb(5, 6, 7); border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 80px 32px 40px; position: relative; z-index: 1;">
-  <div class="footer-grid" style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 64px;">
+  <div class="footer-grid" style="max-width: 1180px; margin: 0 auto; display: grid; margin-bottom: 64px;">
     <div class="footer-brand" style="display: flex; flex-direction: column; gap: 14px;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span class="logo-mark" style="width: 34px; height: 34px; border-radius: 7px; flex-shrink: 0; position: relative; background: conic-gradient(from 210deg, #2D5BFF, #D4E71F 55%, #2D5BFF); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.8rem; color: #0B132B; box-shadow: 0 1px 4px rgba(0,0,0,0.4);">MP</span>
+        <span class="logo-mark" style="width: 34px; height: 34px; border-radius: 7px; flex-shrink: 0; position: relative; background: conic-gradient(from 210deg, #4E7BFF, #72E5C0 55%, #4E7BFF); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.8rem; color: #0B132B; box-shadow: 0 1px 4px rgba(0,0,0,0.4);">MP</span>
         <div>
           <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem; color: #FFFFFF; letter-spacing: 0.02em; line-height: 1.2;" class="">Martha Patricia</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #D4E71F; letter-spacing: 0.06em; text-transform: uppercase;" class="">Technology &amp; Data Strategy</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #72E5C0; letter-spacing: 0.06em; text-transform: uppercase;" class="">Technology &amp; Data Strategy</div>
         </div>
       </div>
       <p style="color: #7E8DA8; font-size: 0.92rem; max-width: 340px; line-height: 1.65; margin: 6px 0 0 0;" class="">Conectamos estrategia, datos y tecnología para transformar retos complejos en soluciones reales y medibles.</p>
@@ -827,7 +829,7 @@
       <a href="/" style="display: block; color: rgb(186, 199, 222); font-size: 0.92rem; margin-bottom: 12px; transition: color 0.2s;" class="">Inicio</a>
       <a href="/enfoque/" style="display: block; color: rgb(186, 199, 222); font-size: 0.92rem; margin-bottom: 12px; transition: color 0.2s;" class="">Enfoque</a>
       <a href="/sobre-mi/" style="display: block; color: rgb(186, 199, 222); font-size: 0.92rem; margin-bottom: 12px; transition: color 0.2s;" class="">Sobre mí</a>
-      <a href="/soluciones/" style="display: block; color: rgb(212, 231, 31); font-size: 0.92rem; margin-bottom: 12px; font-weight: 600; transition: color 0.2s;" class="">Soluciones</a>
+      <a href="/soluciones/" style="display: block; color: rgb(114, 229, 192); font-size: 0.92rem; margin-bottom: 12px; font-weight: 600; transition: color 0.2s;" class="">Soluciones</a>
       <a href="/contacto/" style="display: block; color: rgb(186, 199, 222); font-size: 0.92rem; margin-bottom: 12px; transition: color 0.2s;" class="">Contacto</a></div>
     <div class="footer-col"><h4 style="font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(255, 255, 255); margin-bottom: 20px;" class="">CONTACTO</h4>
       <a href="https://wa.me/522221580381" target="_blank" rel="noopener" style="display: block; color: rgb(186, 199, 222); font-size: 0.92rem; margin-bottom: 12px; transition: color 0.2s;" class="">+52 222 158 0381</a>
@@ -837,7 +839,7 @@
   <div class="footer-bottom" style="max-width: 1180px; margin: 0 auto; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #7E8DA8; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
     <span class="">© 2026 Martha Patricia Ortiz</span>
     <div style="display: inline-flex; align-items: center; gap: 8px; color: #BAC7DE;">
-      <span style="width: 6px; height: 6px; border-radius: 50%; background: #D4E71F; display: inline-block; box-shadow: 0 0 6px rgba(212, 231, 31, 0.8);"></span>
+      <span style="width: 6px; height: 6px; border-radius: 50%; background: #72E5C0; display: inline-block; box-shadow: 0 0 6px rgba(114, 229, 192, 0.8);"></span>
       <span class="">Technology · Data · Strategy</span>
     </div>
   </div>
@@ -1043,27 +1045,27 @@ var solutionsCopy = {
     },
     "steps": [
       {
-        "label": "01 — DEFINIR",
+        "label": "1 — DEFINIR",
         "title": "Definimos el contexto, el reto y la decisión que importa.",
         "desc": "Antes de pensar en soluciones, definimos el contexto, las restricciones y el resultado que realmente importa."
       },
       {
-        "label": "02 — EXPLORAR",
+        "label": "2 — EXPLORAR",
         "title": "Exploramos posibilidades.",
         "desc": "Convertimos lo aprendido en hipótesis, alternativas y caminos posibles para definir qué vale la pena construir."
       },
       {
-        "label": "03 — TRADUCIR",
+        "label": "3 — TRADUCIR",
         "title": "Conectamos negocio, datos y tecnología.",
         "desc": "Traducimos las necesidades del negocio en decisiones, métricas, procesos y soluciones tecnológicas concretas."
       },
       {
-        "label": "04 — CONSTRUIR",
+        "label": "4 — CONSTRUIR",
         "title": "Convertimos las ideas en soluciones reales.",
         "desc": "Diseñamos y desarrollamos soluciones útiles, medibles y preparadas para funcionar en un contexto real."
       },
       {
-        "label": "05 — EVOLUCIONAR",
+        "label": "5 — EVOLUCIONAR",
         "title": "Medimos, aprendemos y avanzamos.",
         "desc": "Evaluamos resultados, identificamos oportunidades de mejora y utilizamos lo aprendido para decidir qué sigue."
       }
@@ -1183,27 +1185,27 @@ var solutionsCopy = {
     },
     "steps": [
       {
-        "label": "01 — DEFINE",
+        "label": "1 — DEFINE",
         "title": "Define the context, challenge, and decision that matters.",
         "desc": "Before thinking about solutions, we define the context, constraints, and outcome that truly matters."
       },
       {
-        "label": "02 — EXPLORE",
+        "label": "2 — EXPLORE",
         "title": "Explore possibilities.",
         "desc": "We turn what we learn into hypotheses, alternatives, and possible paths to decide what is worth building."
       },
       {
-        "label": "03 — TRANSLATE",
+        "label": "3 — TRANSLATE",
         "title": "Connect business, data, and technology.",
         "desc": "We translate business needs into decisions, metrics, processes, and concrete technology solutions."
       },
       {
-        "label": "04 — BUILD",
+        "label": "4 — BUILD",
         "title": "Turn ideas into real solutions.",
         "desc": "We design and develop useful, measurable solutions ready to operate in a real-world context."
       },
       {
-        "label": "05 — EVOLVE",
+        "label": "5 — EVOLVE",
         "title": "Measure, learn, and move forward.",
         "desc": "We evaluate outcomes, identify improvement opportunities, and use what we learn to decide what comes next."
       }
@@ -1242,8 +1244,8 @@ function applySolutionsStatic(lang){
   document.title = c.pageTitle;
   var services = document.getElementById('servicios');
   if (services) {
-    var wrap = services.querySelector('.wrap');
-    var header = wrap ? wrap.firstElementChild : null;
+    var heroSec = document.getElementById('soluciones-hero');
+    var header = heroSec ? heroSec.querySelector('.page-hero-grid > div') : null;
     if (header) {
       var hp = header.querySelector('p'), hh = header.querySelector('h1'), ps = header.querySelectorAll('p');
       if (hp) hp.textContent = c.hero.eyebrow; if (hh) hh.textContent = c.hero.title; if (ps.length > 1) ps[1].textContent = c.hero.lead;

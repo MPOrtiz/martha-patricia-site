@@ -1,0 +1,34 @@
+{
+  "eyebrow_es": "Beyond the Desk",
+  "eyebrow_en": "Beyond the Desk",
+  "headline_es": "Experiencias, ideas y aprendizaje",
+  "headline_en": "Experiences, ideas, and learning",
+  "intro_es": "Busco espacios que amplíen mi forma de entender el negocio, los datos y la tecnología. Conversaciones, experiencias y comunidades que me ayuden a descubrir nuevas perspectivas y convertirlas en mejores decisiones.",
+  "intro_en": "I seek spaces that broaden my understanding of business, data, and technology, conversations, experiences, and communities that help me discover new perspectives and turn them into better decisions.",
+  "items": [
+    {
+      "description_en": "The Master Internet Business at ISDI has helped me broaden the way I think about technology—not only through data and analytics, but also through strategy, product, business and transformation. I am especially interested in the point where different disciplines meet and help us ask better questions before building solutions.",
+      "type_en": "Learning",
+      "title_en": "Learning also means changing perspective",
+      "description_es": "El Master Internet Business de ISDI ha sido una oportunidad para ampliar mi forma de entender la tecnología: no solo desde los datos y la analítica, sino desde estrategia, producto, negocio y transformación. Me interesa especialmente ese punto donde distintas disciplinas se encuentran y permiten formular mejores preguntas antes de construir soluciones.",
+      "location_en": "Mexico",
+      "type_es": "Formación",
+      "title_es": "Aprender también es cambiar de perspectiva",
+      "location_es": "Mexico",
+      "image": "/uploads/1778297999662.jpg",
+      "year": "2026"
+    },
+    {
+      "description_en": "Great ideas don’t need to be perfect. They need to be tested.\n\nI had the opportunity to join Release Before Ready Hackathon by 500, surrounded by incredibly talented people building, experimenting, and sharing ideas.\n\nWorking across Data Science, Analytics & AI, I loved the mindset behind the experience: build, test, learn, and iterate.",
+      "type_en": "Comunidad ",
+      "title_en": "Release Before Ready",
+      "description_es": "Las grandes ideas no tienen por qué ser perfectas; necesitan ser puestas a prueba.\n\nTuve la oportunidad de participar en el hackathon Release Before Ready de 500, rodeado de personas increíblemente talentosas que creaban, experimentaban y compartían ideas. \n\nAl trabajar en los ámbitos de ciencia de datos, analítica e IA, me encantó la mentalidad detrás de la experiencia: construir, probar, aprender e iterar.",
+      "location_en": "México",
+      "type_es": "Comunidad/Aprendizaje",
+      "title_es": "Release Before Ready",
+      "location_es": "Mexico",
+      "image": "/uploads/rbr.jpg",
+      "year": "2026"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+LOGOS DEL CINTILLO "HEMOS TRABAJADO CON"
+
+- Sube aquí el logo de cada cliente que ya te autorizó usarlo (png, svg, webp o jpg;
+  ideal con fondo transparente).
+- Nombra el archivo con el nombre de la empresa: emotiva.png, grupo-acme.svg, etc.
+- Al publicar, Netlify actualiza content/clientes.json y el logo aparece en el cintillo.
+- Si no hay ningún logo, el cintillo no se muestra.
+- Con 4 logos o más empiezan a desfilar solos.

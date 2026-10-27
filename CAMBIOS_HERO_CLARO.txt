@@ -1,0 +1,38 @@
+MARTHA PATRICIA — Hero claro, cintillo de clientes, ícono nuevo y reseñas (oct 2026)
+
+1. HERO DEL INICIO (versión clara)
+- Sin cuadrícula y sin portal. Fondo claro con manchas suaves de azul, celeste y menta.
+- Menú superior en blanco (solo en el inicio).
+- Visual "lo que hago": Dashboard financiero (Finanzas · Retail), Agenda (Health · Admin),
+  Tableau Bridge (BI) y el proceso Diagnóstico → Estrategia → Implementación.
+  Cada tarjeta incluye "Mi parte". Las cifras son ilustrativas.
+- Chips de servicios bajo los botones: Consultoría estratégica, Analítica & BI,
+  Software a la medida, Ingeniería de datos.
+- Todo traducido ES/EN (atributos data-es / data-en, los cambia assets/mp-hero.js).
+- Archivos: assets/mp-hero.css, assets/mp-hero.js, index.html.
+
+2. CINTILLO "HEMOS TRABAJADO CON"
+- Dentro del hero, abajo, fondo azul marino y logos en blanco (a color al pasar el cursor).
+- CÓMO AGREGAR UN CLIENTE: sube su logo a la carpeta /clientes (png/svg/webp, ideal fondo
+  transparente). Nombra el archivo con el nombre de la empresa, p. ej. grupo-acme.png.
+- En cada deploy, Netlify corre "node scripts/build-clientes.js" (ver netlify.toml) y
+  regenera content/clientes.json. Con 4 logos o más empiezan a desfilar solos.
+- Si alguna vez subes el sitio sin build (Netlify Drop), corre ese comando antes en tu
+  computadora para actualizar content/clientes.json.
+
+3. ÍCONO MP ("Datos que orientan")
+- assets/mp-mark.svg, aplicado en el menú de todas las páginas vía assets/nav-unified.css.
+
+4. RESEÑAS
+- /resenas/: se quitó la nota "Nada se publica automáticamente…" y la línea de arriba.
+- Inicio: el recuadro vacío ahora solo dice "Esta sección se construye con experiencias reales."
+
+5. PALETA MÁS AZUL
+- En assets/kimo-align.css los degradados violeta→azul de los botones (Enviar mensaje,
+  Enviar reseña, Compartir tu experiencia, etc.) ahora son azul profundo→azul.
+
+PENDIENTE — BEYOND THE DESK (Sobre mí)
+- Las fotos no se ven porque NO existen en el repo: content/en-movimiento.json apunta a
+  /uploads/1778297999662.jpg y /uploads/rbr.jpg, pero la carpeta /uploads no está.
+- Solución: sube esas dos fotos a /uploads con esos nombres exactos (o vuelve a subirlas
+  desde /admin). No hace falta cambiar código.

@@ -1,0 +1,37 @@
+/* Privacidad: banner de cookies, aviso corto en formularios y enlaces legales */
+.mp-cookie-banner{
+  position:fixed;left:20px;bottom:20px;z-index:9999;max-width:400px;
+  background:#0B132B;color:#E2E8F0;border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:18px 18px 16px;box-shadow:0 18px 50px rgba(5,6,7,.35);
+  font-family:'Inter','Manrope',sans-serif;font-size:.86rem;line-height:1.55;
+  opacity:0;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease;
+}
+.mp-cookie-banner.is-visible{opacity:1;transform:none}
+.mp-cookie-banner[hidden]{display:none}
+.mp-cookie-eyebrow{margin:0 0 8px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;font-weight:700;color:#72E5C0;display:flex;align-items:center;gap:8px}
+.mp-cookie-dot{width:6px;height:6px;border-radius:50%;background:#72E5C0;display:inline-block;box-shadow:0 0 6px #72E5C0}
+.mp-cookie-body{margin:0 0 14px;color:#CBD5E1}
+.mp-cookie-body a{color:#8FADFF;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.mp-cookie-body a:hover{color:#72E5C0}
+.mp-cookie-actions{display:flex;gap:10px;justify-content:flex-end}
+.mp-cookie-btn{font-family:'JetBrains Mono',monospace;font-size:.78rem;font-weight:700;border-radius:8px;padding:9px 16px;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.mp-cookie-reject{background:transparent;color:#E2E8F0;border:1px solid rgba(255,255,255,.28)}
+.mp-cookie-reject:hover{border-color:#72E5C0;color:#72E5C0}
+.mp-cookie-accept{background:#4E7BFF;color:#FFFFFF;border:1px solid #4E7BFF}
+.mp-cookie-accept:hover{background:#72E5C0;border-color:#72E5C0;color:#0B132B}
+.mp-cookie-btn:focus-visible,.mp-legal-links a:focus-visible,.mp-legal-links button:focus-visible{outline:2px solid #72E5C0;outline-offset:2px}
+@media (max-width:600px){
+  .mp-cookie-banner{left:16px;right:16px;bottom:16px;max-width:none}
+  .mp-cookie-actions .mp-cookie-btn{flex:1}
+}
+
+/* Aviso de privacidad simplificado junto a formularios */
+.mp-privacy-short{font-family:'Inter','Manrope',sans-serif;font-size:.76rem;line-height:1.6;color:#64748B;margin:12px 0 0;text-align:left}
+.mp-privacy-short a{color:#3B5BDB;text-decoration:underline;text-underline-offset:2px;font-weight:600}
+.mp-privacy-short a:hover{color:#0B132B}
+
+/* Enlaces legales en el pie de página */
+.mp-legal-links{display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:.74rem}
+.mp-legal-links a,.mp-legal-links button{color:#A1AEC6;text-decoration:none;background:none;border:0;padding:0;font:inherit;cursor:pointer;transition:color .2s}
+.mp-legal-links a:hover,.mp-legal-links button:hover{color:#72E5C0}
+.mp-legal-links .mp-sep{color:#475569}

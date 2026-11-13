@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /entregables/
-Disallow: /resenas/gracias/
-
-Sitemap: https://marthapatriciaortiz.com/sitemap.xml
